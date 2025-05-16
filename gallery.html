@@ -177,9 +177,15 @@
             <section class="gallery-container">
                 <div class="gallery-categories">
                     <button class="category-btn active" data-category="all">All Photos</button>
+                    <button class="category-btn" data-category="team">Team Members</button>
+                    <button class="category-btn" data-category="screentime">Screen Time</button>
+                    <button class="category-btn" data-category="productivity">Productivity</button>
+                    <button class="category-btn" data-category="ergonomics">Ergonomics</button>
+                    <button class="category-btn" data-category="mindfulness">Mindfulness</button>
                 </div>
                 
                 <div class="gallery-grid">
+                    <!-- Team Members -->
                     <div class="gallery-item" data-category="team">
                         <a href="pictures/cyrus.jpg" target="pic">
                             <img src="pictures/cyrus.jpg" alt="Cyrus Luigi Cabero">
@@ -240,6 +246,78 @@
                             <div class="gallery-caption">Kurt Tancio</div>
                         </a>
                     </div>
+                    
+                    <!-- Screen Time Images -->
+                    <div class="gallery-item" data-category="screentime">
+                        <a href="TOPIC 2 - Screen Time and Mental Health/addiction.jpg" target="pic">
+                            <img src="TOPIC 2 - Screen Time and Mental Health/addiction.jpg" alt="Digital Addiction">
+                            <div class="gallery-caption">Digital Addiction</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item" data-category="screentime">
+                        <a href="TOPIC 2 - Screen Time and Mental Health/anxiety.JPG" target="pic">
+                            <img src="TOPIC 2 - Screen Time and Mental Health/anxiety.JPG" alt="Digital Anxiety">
+                            <div class="gallery-caption">Digital Anxiety</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item" data-category="screentime">
+                        <a href="TOPIC 2 - Screen Time and Mental Health/bluelight.JPG" target="pic">
+                            <img src="TOPIC 2 - Screen Time and Mental Health/bluelight.JPG" alt="Blue Light Effects">
+                            <div class="gallery-caption">Blue Light Effects</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item" data-category="screentime">
+                        <a href="TOPIC 2 - Screen Time and Mental Health/child.jpg" target="pic">
+                            <img src="TOPIC 2 - Screen Time and Mental Health/child.jpg" alt="Children and Screen Time">
+                            <div class="gallery-caption">Children and Screen Time</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item" data-category="screentime">
+                        <a href="TOPIC 2 - Screen Time and Mental Health/cyberbullying.jpg" target="pic">
+                            <img src="TOPIC 2 - Screen Time and Mental Health/cyberbullying.jpg" alt="Cyberbullying">
+                            <div class="gallery-caption">Cyberbullying</div>
+                        </a>
+                    </div>
+                    
+                    <!-- Productivity Images -->
+                    <div class="gallery-item" data-category="productivity">
+                        <a href="TOPIC 3 - Productivity Techniques/images/pomodora.png" target="pic">
+                            <img src="TOPIC 3 - Productivity Techniques/images/pomodora.png" alt="Pomodoro Technique">
+                            <div class="gallery-caption">Pomodoro Technique</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item" data-category="productivity">
+                        <a href="TOPIC 3 - Productivity Techniques/images/timeblocking.png" target="pic">
+                            <img src="TOPIC 3 - Productivity Techniques/images/timeblocking.png" alt="Time Blocking">
+                            <div class="gallery-caption">Time Blocking</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item" data-category="productivity">
+                        <a href="TOPIC 3 - Productivity Techniques/images/deepwork.png" target="pic">
+                            <img src="TOPIC 3 - Productivity Techniques/images/deepwork.png" alt="Deep Work">
+                            <div class="gallery-caption">Deep Work</div>
+                        </a>
+                    </div>
+                    
+                    <!-- Mindfulness Images -->
+                    <div class="gallery-item" data-category="mindfulness">
+                        <a href="TOPIC 7 - Focus Tools & Apps/images/calm jpeg.jpg" target="pic">
+                            <img src="TOPIC 7 - Focus Tools & Apps/images/calm jpeg.jpg" alt="Calm App">
+                            <div class="gallery-caption">Calm App for Mindfulness</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item" data-category="mindfulness">
+                        <a href="TOPIC 7 - Focus Tools & Apps/images/digital balance.jpg" target="pic">
+                            <img src="TOPIC 7 - Focus Tools & Apps/images/digital balance.jpg" alt="Digital Balance">
+                            <div class="gallery-caption">Digital Balance</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item" data-category="mindfulness">
+                        <a href="TOPIC 2 - Screen Time and Mental Health/detox.jpg" target="pic">
+                            <img src="TOPIC 2 - Screen Time and Mental Health/detox.jpg" alt="Digital Detox">
+                            <div class="gallery-caption">Digital Detox</div>
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>
@@ -249,6 +327,61 @@
         <span class="lightbox-close">&times;</span>
         <img src="" alt="Enlarged photo">
     </div>
+
+    <script>
+        // Lightbox functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item a');
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = document.querySelector('.lightbox img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            
+            // Open lightbox when clicking on gallery items
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    lightboxImg.src = this.getAttribute('href');
+                    lightboxImg.alt = this.querySelector('img').alt;
+                    lightbox.style.display = 'flex';
+                });
+            });
+            
+            // Close lightbox when clicking on close button or outside the image
+            lightboxClose.addEventListener('click', function() {
+                lightbox.style.display = 'none';
+            });
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            });
+            
+            // Category filtering
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show/hide gallery items based on category
+                    document.querySelectorAll('.gallery-item').forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
     <footer>
         <div class="footer-content">
