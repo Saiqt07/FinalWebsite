@@ -57,6 +57,120 @@
             font-size: 0.95rem;
             margin-bottom: 0;
         }
+        
+        /* Downloadable Resources Styles */
+        .downloadable-resources {
+            margin-top: 50px;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .resource-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .resource-category h3 {
+            color: #6D597A;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-category h3 i {
+            margin-right: 10px;
+            color: #355070;
+        }
+        
+        .resource-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .resource-list li {
+            margin-bottom: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-list li:hover {
+            background: #f0f0f5;
+            transform: translateY(-2px);
+        }
+        
+        .download-link {
+            display: flex;
+            padding: 12px 15px;
+            color: #355070;
+            text-decoration: none;
+            font-weight: 500;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .download-link i {
+            margin-right: 10px;
+            color: #6D597A;
+            flex-shrink: 0;
+        }
+        
+        .download-link span:first-of-type {
+            flex-grow: 1;
+            padding-right: 10px;
+        }
+        
+        .file-info {
+            font-size: 0.8rem;
+            color: #6c757d;
+            font-weight: normal;
+            flex-shrink: 0;
+            text-align: right;
+            min-width: 80px;
+        }
+        
+        .download-note {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #6D597A;
+        }
+        
+        .download-note p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #495057;
+        }
+        
+        .download-note i {
+            color: #6D597A;
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .resource-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-link {
+                flex-wrap: wrap;
+            }
+            
+            .download-link span:first-of-type {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            
+            .file-info {
+                margin-left: auto;
+            }
+        }
         </style>
 </head>
 <body>
@@ -259,6 +373,144 @@
                         <h3>Social Media Limits</h3>
                         <p>Limiting social media usage by setting daily app limits prevents endless scrolling and helps reclaim time for more fulfilling offline activities.<sup>15</sup></p>
                     </div>
+                </div>
+            </section>
+
+            <section class="downloadable-resources">
+                <h2>Downloadable Resources</h2>
+                <p>Access our collection of free downloadable resources to help you improve your digital wellness habits and discover useful apps.</p>
+                
+                <div class="resource-categories">
+                    <div class="resource-category">
+                        <h3><i class="fas fa-file-pdf"></i> Digital Wellness Guides</h3>
+                        <ul class="resource-list">
+                            <li>
+                                <a href="downloads/digital-boundaries-guide.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Digital Boundaries Guide</span>
+                                    <span class="file-info">PDF, 2.4MB</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="downloads/screen-time-management.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Screen Time Management Workbook</span>
+                                    <span class="file-info">PDF, 1.8MB</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="downloads/digital-detox-planner.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>30-Day Digital Detox Planner</span>
+                                    <span class="file-info">PDF, 3.2MB</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-category">
+                        <h3><i class="fas fa-check-square"></i> Checklists & Worksheets</h3>
+                        <ul class="resource-list">
+                            <li>
+                                <a href="downloads/ergonomic-workspace-checklist.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Ergonomic Workspace Checklist</span>
+                                    <span class="file-info">PDF, 1.2MB</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="downloads/digital-wellbeing-assessment.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Digital Wellbeing Self-Assessment</span>
+                                    <span class="file-info">PDF, 0.9MB</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="downloads/notification-audit-worksheet.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Notification Audit Worksheet</span>
+                                    <span class="file-info">PDF, 0.7MB</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-category">
+                        <h3><i class="fas fa-mobile-alt"></i> App Recommendations</h3>
+                        <ul class="resource-list">
+                            <li>
+                                <a href="downloads/focus-productivity-apps.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Top Focus & Productivity Apps</span>
+                                    <span class="file-info">PDF, 1.5MB</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="downloads/digital-wellbeing-apps.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Digital Wellbeing Apps Guide</span>
+                                    <span class="file-info">PDF, 2.1MB</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="downloads/mindfulness-meditation-apps.pdf" download class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Mindfulness & Meditation Apps</span>
+                                    <span class="file-info">PDF, 1.7MB</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="download-note">
+                    <p><i class="fas fa-info-circle"></i> Note: These resources are regularly updated. Check back for new additions to our digital wellness library.</p>
+                </div>
+            </section>
+
+            <section class="external-links" style="margin-top: 50px; background: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <h2>External Links & Support</h2>
+                <p>Connect with trusted organizations and resources for additional guidance and support on digital wellness.</p>
+                
+                <div style="margin-top: 25px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px; background: #f8f9fa; border-radius: 8px; transition: all 0.3s ease; padding: 15px;">
+                            <a href="https://www.humanetech.com" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: #355070;">
+                                <i class="fas fa-external-link-alt" style="margin-right: 15px; color: #6D597A; font-size: 1.2rem;"></i>
+                                <div>
+                                    <h3 style="margin: 0 0 5px 0; font-size: 1.2rem; color: #6D597A;">Center for Humane Technology</h3>
+                                    <p style="margin: 0; font-size: 0.9rem; color: #495057;">Leading the charge for more ethical technology design and digital well-being.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 15px; background: #f8f9fa; border-radius: 8px; transition: all 0.3s ease; padding: 15px;">
+                            <a href="https://digitalwellnesslab.org" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: #355070;">
+                                <i class="fas fa-external-link-alt" style="margin-right: 15px; color: #6D597A; font-size: 1.2rem;"></i>
+                                <div>
+                                    <h3 style="margin: 0 0 5px 0; font-size: 1.2rem; color: #6D597A;">Digital Wellness Lab at Harvard</h3>
+                                    <p style="margin: 0; font-size: 0.9rem; color: #495057;">Research-based resources on digital media's impact on physical and mental health.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 15px; background: #f8f9fa; border-radius: 8px; transition: all 0.3s ease; padding: 15px;">
+                            <a href="https://www.commonsensemedia.org" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: #355070;">
+                                <i class="fas fa-external-link-alt" style="margin-right: 15px; color: #6D597A; font-size: 1.2rem;"></i>
+                                <div>
+                                    <h3 style="margin: 0 0 5px 0; font-size: 1.2rem; color: #6D597A;">Common Sense Media</h3>
+                                    <p style="margin: 0; font-size: 0.9rem; color: #495057;">Comprehensive digital parenting resources and media reviews for families.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 15px; background: #f8f9fa; border-radius: 8px; transition: all 0.3s ease; padding: 15px;">
+                            <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: #355070;">
+                                <i class="fas fa-phone-alt" style="margin-right: 15px; color: #6D597A; font-size: 1.2rem;"></i>
+                                <div>
+                                    <h3 style="margin: 0 0 5px 0; font-size: 1.2rem; color: #6D597A;">Mental Health Hotlines</h3>
+                                    <p style="margin: 0; font-size: 0.9rem; color: #495057;">Support resources if digital habits are affecting your mental well-being.</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
         </div>
