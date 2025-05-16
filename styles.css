@@ -112,7 +112,6 @@ body {
     white-space: nowrap;
     position: relative;
     overflow: hidden;
-    outline: 1px dashed red;
 }
 
 .nav-link:hover {
