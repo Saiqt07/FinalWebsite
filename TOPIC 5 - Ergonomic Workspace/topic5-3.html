@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Health in the Workplace: Ergonomics and Lighting | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="topics.css">
+
+    <style>
+	
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .topic-image:hover {
+            transform: scale(1.02);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+
+        .key-points-box {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Strategy cards */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .strategy-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .strategy-icon {
+            font-size: 2rem;
+            color: #B56576;
+            margin-bottom: 15px;
+        }
+
+        .strategy-title {
+            font-size: 1.2rem;
+            color: #355070;
+            margin-bottom: 10px;
+        }
+
+        .key-point {
+            font-weight: bold;
+            color: #B56576;
+        }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            min-width: 300px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .styled-table thead tr {
+            background-color: #6D597A;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid #EAE0D5;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #6D597A;
+        }
+
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+            color: #B56576;
+        }
+
+        .assessment-container {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #6D597A;
+        }
+        
+        .assessment-title {
+            color: #355070;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .assessment-question {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .assessment-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        
+        .assessment-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0 25px;
+        }
+        
+        .scale-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">Eye Health in the Workplace: Ergonomics and Lighting</h1>
+                </div>
+                <p>Learn how to protect your vision with proper ergonomics and lighting in the workplace.</p>
+
+                <div class="topic-content">
+                    <section class="topic-section intro-section">
+                        <h3>The Importance of Eye Health in the Workplace</h3>
+                        <p>
+                            Our eyes are crucial for performing daily tasks, especially in today's digital work environment.
+                            Prolonged computer use and exposure to artificial lighting can strain our eyes and lead to various issues.
+                            This section explores how ergonomics and lighting play a vital role in maintaining eye health and
+                            provides practical tips for creating a healthier workspace.
+                        </p>
+                    </section>
+
+                    <section class="topic-section ergonomics-section">
+                        <h3>Ergonomics and Eye Health</h3>
+                        <p>
+                            Ergonomics is the science of designing workspaces and equipment to fit the human body,
+                            reducing strain and promoting well-being. Proper ergonomic setup is essential for minimizing
+                            eye strain and related discomfort.
+                        </p>
+                        <div class="key-points-box">
+                            <h4>Key Ergonomic Factors for Eye Health:</h4>
+                            <ul>
+                                <li><strong>Viewing Distance:</strong> Maintain an optimal distance between your eyes and the screen.</li>
+                                <li><strong>Screen Position:</strong> Position your screen to minimize glare and optimize viewing angles.</li>
+                                <li><strong>Posture:</strong>  Ensure correct posture to reduce strain on your neck and shoulders, which can contribute to eye discomfort.</li>
+                                 <li><strong>Breaks:</strong>  Take regular breaks to reduce eye fatigue.</li>
+                            </ul>
+                        </div>
+                        <img src="https://www.mykidsvision.org/api/BlogSection/8ad3a539-83d5-4fdb-b5c6-08dbea3349f8/download/ContentImage/a1cefe9b-9cee-4b6b-3e07-08dbea3289d7" alt="Ergonomics and Eye Health" class="topic-image">
+                    </section>
+
+                    <section class="topic-section lighting-section">
+                        <h3>The Impact of Lighting on Eye Health</h3>
+                        <p>
+                            Lighting significantly affects our vision. Both insufficient and excessive lighting can lead to eye strain,
+                            headaches, and decreased productivity. Understanding the principles of good lighting is crucial for
+                            creating a comfortable and healthy workspace.
+                        </p>
+                        <div class="key-points-box">
+                            <h4>Key Lighting Considerations for Eye Health:</h4>
+                            <ul>
+                                <li><strong>Natural Light:</strong> Maximize natural light while minimizing glare.</li>
+                                <li><strong>Artificial Light:</strong> Use appropriate artificial lighting to supplement natural light.</li>
+                                <li><strong>Glare Reduction:</strong> Minimize glare from screens and light sources.</li>
+                                <li><strong>Brightness and Contrast:</strong> Adjust screen brightness and contrast for optimal viewing.</li>
+                            </ul>
+                         </div>
+                        <img src="https://storage-asset.msi.com/global/picture/news/2023/dt/blue-light-20230808-2.jpg" alt="Impact of Lighting on Eye Health" class="topic-image">
+                    </section>
+
+                    <section class="topic-section tips-section">
+                        <h3>Practical Tips for a Healthier Workspace</h3>
+                        <p>Here are some actionable tips to improve your workspace and protect your eye health:</p>
+                        <div class="strategy-grid">
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-eye"></i></div>
+                                <h4 class="strategy-title">Follow the 20-20-20 Rule</h4>
+                                <p>Every 20 minutes, look at something 20 feet away for 20 seconds.</p>
+                            </div>
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-desktop"></i></div>
+                                <h4 class="strategy-title">Optimize Screen Distance</h4>
+                                <p>Maintain a distance of 20-28 inches from your screen.</p>
+                            </div>
+                            <div class="strategy-card">
+                                 <div class="strategy-icon"><i class="fas fa-arrow-up-down-left-right"></i></div>
+                                 <h4 class="strategy-title">Adjust Screen Position</h4>
+                                 <p>Position the top of your monitor at or slightly below eye level.</p>
+                            </div>
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-lightbulb"></i></div>
+                                <h4 class="strategy-title">Control Lighting</h4>
+                                <p>Minimize glare with proper use of natural and artificial light.</p>
+                            </div>
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-sync-alt"></i></div>
+                                 <h4 class="strategy-title">Blink Frequently</h4>
+                                 <p>Make a conscious effort to blink regularly to keep your eyes lubricated.</p>
+                            </div>
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                                <h4 class="strategy-title">Reduce Glare</h4>
+                                <p>Use a matte screen filter to minimize glare.</p>
+                            </div>
+                            <div class="strategy-card">
+                                 <div class="strategy-icon"><i class="fas fa-text-size"></i></div>
+                                 <h4 class="strategy-title">Adjust Text Size</h4>
+                                 <p>Increase the text size on your screen for comfortable reading.</p>
+                            </div>
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-tint"></i></div>
+                                <h4 class="strategy-title">Use Artificial Tears</h4>
+                                <p>Use lubricating eye drops if you experience dry eyes.</p>
+                            </div>
+                        </ul>
+                    </section>
+
+                    <section class="topic-section exams-section">
+                        <h3>Regular Eye Exams</h3>
+                        <p>
+                            In addition to workplace adjustments, regular eye exams are vital for maintaining eye health.
+                            An eye care professional can detect early signs of eye problems and recommend preventive measures.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th>Age Group</th>
+                                        <th>Recommended Frequency</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Adults (18-60)</td>
+                                        <td>Every two years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adults (61+)</td>
+                                        <td>Annually</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Children and teenagers</td>
+                                        <td>At least every two years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Individuals with risk factors</td>
+                                        <td>More frequent exams as recommended by an eye doctor</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="topic-section assessment-section">
+                        <h3>Quick-Assessment: Eye Health in Ergonomics</h3>
+                            <p>Reflecting on your current technology habits is the first step toward more intentional use. Consider these questions:</p>
+                            
+                            <div class="assessment-container">
+                                <h4 class="assessment-title">Quick Self-Assessment</h4>
+                                
+                                <p class="assessment-question">1. How often do you experience eye strain, such as tired, burning, or itchy eyes, after using digital devices?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Rarely</span>
+                                    <span class="scale-label">Sometimes</span>
+                                    <span class="scale-label">Frequently</span>
+                                    <span class="scale-label">Constantly</span>
+                                </div>
+                                
+                                <p class="assessment-question">2. How often do you experience blurred vision after prolonged screen time?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Never</span>
+                                    <span class="scale-label">Occasionally</span>
+                                    <span class="scale-label">Frequently</span>
+                                    <span class="scale-label">Very often</span>
+                                </div>
+                                
+                                <p class="assessment-question">3. How often do you adjust the brightness or contrast of your screens to feel more comfortable?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Rarely</span>
+                                    <span class="scale-label">Sometimes</span>
+                                    <span class="scale-label">Frequently</span>
+                                    <span class="scale-label">Very often</span>
+                                </div>
+                                
+                                <p class="assessment-question">4. How often do you take breaks from looking at screens to rest your eyes?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Regularly (every 20-30 minutes)</span>
+                                    <span class="scale-label">Sometimes (less than every hour)</span>
+                                    <span class="scale-label">Rarely</span>
+                                    <span class="scale-label">Almost Never</span>
+                                </div>
+                                
+                                <p class="assessment-question">5. How conscious are you of maintaining an appropriate viewing distance (arm's length or more) from your screens?p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Very conscious</span>
+                                    <span class="scale-label">Somewhat conscious</span>
+                                    <span class="scale-label">Not very conscious</span>
+                                    <span class="scale-label">Not at all conscious</span>
+                                </div>
+								
+								<p class="assessment-question">6. How often do you find yourself working or using devices in dimly lit environments?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Never</span>
+                                    <span class="scale-label">Occasionally</span>
+                                    <span class="scale-label">Frequently</span>
+                                    <span class="scale-label">Constantly</span>
+                                </div>
+								
+								<p class="assessment-question">7. How often do you experience headaches that you suspect are related to screen use?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Never</span>
+                                    <span class="scale-label">Occasionally</span>
+                                    <span class="scale-label">Frequently</span>
+                                    <span class="scale-label">Very Often</span>
+                                </div>
+								
+								<p class="assessment-question">8. How often do you blink while using digital devices?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Frequently and consciously</span>
+                                    <span class="scale-label">Sometimes</span>
+                                    <span class="scale-label">Rarely</span>
+                                    <span class="scale-label">Almost Never</span>
+                                </div>
+								
+								<p class="assessment-question">9. How often do you notice dry eyes?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Never</span>
+                                    <span class="scale-label">Occasionally</span>
+                                    <span class="scale-label">Frequently</span>
+                                    <span class="scale-label">Constantly</span>
+                                </div>
+								
+								<p class="assessment-question">10. How often do you adjust the font size on your screens to make reading easier?</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">Rarely</span>
+                                    <span class="scale-label">Sometimes</span>
+                                    <span class="scale-label">Frequently</span>
+                                    <span class="scale-label">Very Often</span>
+                                </div>
+								
+								
+                                
+                                <p style="margin-top: 20px;"><em>This self-assessment is meant for personal reflection. If your answers trend toward the right side of the scales, you might benefit from adopting more eye-friendly ergonomic habits and consulting an eye care professional if you have concerns.</em></p>
+                            </div>
+                        </div>
+                        
+                    </section>
+                </div>
+            <section class="topic-section">
+                <ul>
+
+                </ul>
+            </section>
+        </div>
+        <div class="pagination">
+            <a href="topic1-2.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="topic5html" class="page-number">1</a>
+            <a href="topic5-2.html" class="page-number">2</a>
+            <a href="topic5-3.html" class="page-number active">3</a>
+            <a href="topic5-4.html" class="page-number">4</a>
+            <a href="topic5-5.html" class="page-number">5</a>
+            <a href="topic5-6.html" class="page-number">6</a>
+            <a href="topic5-7.html" class="page-number">7</a>
+            <a href="topic5-8.html" class="page-number">8</a>
+            <a href="topic5-9.html" class="page-number">9</a>
+            <a href="topic5-10.html" class="page-number">10</a>
+            <a href="#" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+        </div>    
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

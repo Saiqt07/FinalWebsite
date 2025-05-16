@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Tech Habits | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Topic page specific styles */
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);;
+            font-weight: 500;
+             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+        }
+        
+        .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+
+        .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">02</div>
+                    <h1 class="topic-title-large">How to Practice Digital Mindfulness Daily</h1>
+        </div>
+        
+        <div class="topic-content">
+                    <!-- Page 2: Mindful Technology Use -->
+                    <div id="page2" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Practice Digital Mindfulness Daily</h3>
+                            <p>Digital mindfulness is the practice of being fully present and intentional while using technology. Instead of falling into autopilot checking your phone constantly or scrolling endlessly you become more aware of your digital habits and how they affect your mood, time, and attention.</p>
+
+                             <div class="wellness-image-container">
+                                <img src="https://t4.ftcdn.net/jpg/12/43/99/93/360_F_1243999372_vdr21PhiDowncPIa2N5WQI97LocQRD8u.jpg" alt="Brain and Digital Technology" class="topic-image">
+                                <p class="image-caption">Being Mindful into Digital Practice helps you think</p>
+                            </div>
+
+                            <div class="wellness-image-container">
+                                <img src="https://t4.ftcdn.net/jpg/06/90/93/95/360_F_690939566_4eBVwyDfCaiAdkqLML9d2jRwSejxRTUx.jpg" alt="Brain and Digital Technology" class="topic-image">
+                            </div>
+
+                            <ul>
+                                <li>
+                                    <strong>Start the Day Without Screens</strong>
+                                    <p>Begin your morning with a few minutes of quiet, breathwork, stretching, or journaling before reaching for your phone. This helps you set your tone for the day rather than letting external inputs (like emails or social media) dictate your mindset.
+
+</p>
+                                </li>
+
+                                <li>
+                                    <strong>Pause Before Unlocking</strong>
+                                    <p>Before unlocking your phone or opening your laptop, ask:
+“Why am I doing this?”
+This short pause helps shift your actions from reactive to intentional.</p>
+                                </li>
+
+                                <li>
+                                    <strong>Create Tech-Free Moments</strong>
+                                    <p>Schedule regular screen-free breaks during the day—during meals, walks, or while talking with someone. Even just 10–15 minutes away from screens can reset your nervous system.</p>
+                                </li>
+
+                                <li>
+                                    <strong>Use Apps Intentionally</strong>
+                                    <p>Instead of jumping between apps, open only the one you need and close it when you're done. Turn off non-essential notifications and delete apps that no longer serve you.</p>
+                                </li>
+
+                                <li>
+                                    <strong>Practice Single-Tasking</strong>
+                                    <p>Multitasking might feel productive, but it often reduces focus and increases stress. Try doing one digital task at a time like writing an email, reading an article, or attending a meeting without distractions.
+
+</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="topic-section">
+                            <h3>Practicing Digital Mindfulness Helps Physical and Mental Health</h3>
+                            <p>Comprehensive guide on Practicing Digital Mindfulness Daily:</p>
+                            
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/hYh4RwIq8N8?si=SOeDQSEhXL55Ohpt" title=" Incorporate Mindful Tech Habits for a Digital Detox" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <ul>
+                                <li><strong>Morning: Start with Intention</strong> - Avoid screens for the first 15–30 minutes.
+Try breathwork, journaling, light stretching, or simply sipping your coffee in silence.</li>
+                                <li><strong>During the Day: Stay Aware & Grounded</strong> 
+                                <p>1. Pause Before Unlocking
+
+Ask: “Why am I reaching for my phone?”
+Create a 5-second pause between the urge and the action.</p>
+                                <p>2. Single-Task Your Tech Use
+
+Focus on one thing at a time: one tab, one app, one task.</p>
+                                <p>3. Use Tech-Free Zones or Times
+
+Examples:
+
+No phones at meals
+
+10-minute walk without your phone
+
+Do Not Disturb mode during focused work</p></li>
+                                <li><strong>Check In Regularly
+</strong> - Ask yourself: “Am I feeling energized or drained?” “Is this adding value to my day?”</li>
+                                <li><strong> Evening: Unwind with Awareness</strong> - Set a Tech Curfew
+
+30–60 minutes before bed, shut off screens.
+Read a book, journal, meditate, or talk with someone in person.</li>
+                                <li><strong>Weekly Bonus Tip: Digital Declutter</strong> - Once a week, take 15–30 minutes to:
+
+Unfollow or mute accounts that don’t uplift you
+
+Delete unused apps
+
+Organize your digital space (emails, files, etc.)</li>
+                            </ul>
+                        </div>
+                    </div>        
+                </div>    
+            </div>    
+        </div>
+
+        <div class="pagination">
+                <a href="habit1.html" class="page-btn">Previous</a>
+                <a href="habit1.html" class="page-number">1</a>
+                <a href="habit2.html" class="page-number active">2</a>
+                <a href="habit3.html" class="page-number">3</a>
+                <a href="habit4.html" class="page-number">4</a>
+                <a href="habit5.html" class="page-number">5</a>
+                <a href="habit6.html" class="page-number">6</a>
+                <a href="habit7.html" class="page-number">7</a>
+                <a href="habit8.html" class="page-number">8</a>
+                <a href="habit9.html" class="page-number">9</a>
+                <a href="habit10.html" class="page-number">10</a>
+                <a href="habit3.html" class="page-btn">Next</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>
+
+

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Set Healthy Digital Boundaries (Page 7) | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Topic page specific styles */
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .wellness-image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Strategy cards */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .strategy-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #355070;
+        }
+        
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .strategy-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #355070;
+        }
+        
+        .strategy-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #355070;
+        }
+        
+        /* Tool box styles */
+        .tool-box {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tool-box h4 {
+            color: #355070;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        /* Self-assessment styles */
+        .assessment-container {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #6D597A;
+        }
+        
+        .assessment-title {
+            color: #355070;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .assessment-question {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .assessment-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        
+        .assessment-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0 25px;
+        }
+        
+        .scale-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Expert insights styles */
+        .expert-quote {
+            background-color: #f5f5f5;
+            border-left: 4px solid #6D597A;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .expert-quote:before {
+            content: '\201C';
+            font-size: 60px;
+            font-family: Georgia, serif;
+            color: #6D597A;
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            font-weight: bold;
+            color: #355070;
+            text-align: right;
+        }
+
+        /* Boundary examples */
+        .boundary-example {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #EAAC8B;
+        }
+
+        .boundary-example h4 {
+            color: #355070;
+            margin-bottom: 10px;
+        }
+
+        /* Checklist styles */
+        .checklist {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        /* Bullet point indentation styles */
+        ul, ol {
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        ul li, ol li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .checklist {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            text-indent: 0;
+        }
+
+        .checklist li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #6D597A;
+        }
+        
+        /* Nested list indentation */
+        ul ul, ol ol, ul ol, ol ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">01</div>
+                    <h1 class="topic-title-large">How to Set Healthy Digital Boundaries</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <!-- Page 7: How to Set Healthy Digital Boundaries -->
+                    <div id="page7" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Understanding Digital Boundaries</h3>
+                            <p>Digital boundaries are the limits we set around our use of technology and our digital interactions with others. Just as we establish boundaries in our physical relationships, digital boundaries help us maintain a healthy relationship with technology and protect our mental well-being in the digital space.</p>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Person setting boundaries with technology" class="topic-image">
+                                <p class="image-caption">Setting clear boundaries helps maintain a healthy relationship with technology</p>
+                            </div>
+                            
+                            <p>Healthy digital boundaries allow us to:</p>
+                            <ul>
+                                <li><strong>Protect our time and attention</strong> from constant digital demands</li>
+                                <li><strong>Maintain privacy</strong> and control over our personal information</li>
+                                <li><strong>Preserve our mental and emotional energy</strong> by limiting digital overwhelm</li>
+                                <li><strong>Nurture in-person relationships</strong> without digital distractions</li>
+                                <li><strong>Align our technology use</strong> with our values and priorities</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Recognizing When Boundaries Are Needed</h3>
+                            <p>The first step in setting healthy digital boundaries is recognizing when they're needed. Here are some signs that your digital boundaries may need strengthening:</p>
+                            
+                            <div class="boundary-example">
+                                <h4>Work-Life Balance Issues</h4>
+                                <p>You feel obligated to respond to work emails or messages outside of working hours, or you find yourself checking work communications during personal time, vacations, or family events.</p>
+                            </div>
+                            
+                            <div class="boundary-example">
+                                <h4>Social Media Pressure</h4>
+                                <p>You experience anxiety about responding immediately to messages, feel compelled to like or comment on posts, or worry about missing out on social media updates.</p>
+                            </div>
+                            
+                            <div class="boundary-example">
+                                <h4>Digital Intrusions</h4>
+                                <p>You feel uncomfortable with how much personal information apps collect, or you notice that targeted ads seem to know too much about your private conversations and activities.</p>
+                            </div>
+                            
+                            <div class="boundary-example">
+                                <h4>Attention Fragmentation</h4>
+                                <p>You have difficulty focusing on tasks without checking your phone, or you notice that digital interruptions are preventing you from being fully present in important moments.</p>
+                            </div>
+                            
+                            <div class="boundary-example">
+                                <h4>Digital Fatigue</h4>
+                                <p>You feel mentally exhausted after spending time online, or you notice that certain digital interactions consistently leave you feeling drained rather than energized.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Types of Digital Boundaries</h3>
+                            <p>Digital boundaries can be established in various areas of our digital lives:</p>
+                            
+                            <div class="strategy-grid">
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-clock"></i></div>
+                                    <h4 class="strategy-title">Time Boundaries</h4>
+                                    <p>Limits on when and for how long you use technology, such as device-free meals, no-phone hours before bed, or designated times for checking email.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-briefcase"></i></div>
+                                    <h4 class="strategy-title">Work Boundaries</h4>
+                                    <p>Separating work and personal digital life, such as using different devices or accounts for work and personal use, or setting clear expectations about after-hours availability.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-user-friends"></i></div>
+                                    <h4 class="strategy-title">Social Boundaries</h4>
+                                    <p>Guidelines for digital social interactions, such as response time expectations, social media connection policies, or limits on sharing personal information.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <h4 class="strategy-title">Space Boundaries</h4>
+                                    <p>Designating tech-free zones in your home or life, such as no devices in the bedroom or during family activities.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-lock"></i></div>
+                                    <h4 class="strategy-title">Privacy Boundaries</h4>
+                                    <p>Protecting your personal information and digital footprint through privacy settings, selective sharing, and mindful posting.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-brain"></i></div>
+                                    <h4 class="strategy-title">Cognitive Boundaries</h4>
+                                    <p>Protecting your attention and mental space from digital distractions, information overload, and negative online content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Setting Digital Boundaries in Different Contexts</h3>
+                            
+                            <h4>Work Context</h4>
+                            <ul class="checklist">
+                                <li>Communicate clear expectations about your availability outside of work hours</li>
+                                <li>Use separate devices or accounts for work and personal use when possible</li>
+                                <li>Set up auto-responders during off-hours or vacation time</li>
+                                <li>Establish a dedicated workspace to help maintain separation</li>
+                                <li>Use "do not disturb" settings during focused work periods</li>
+                                <li>Schedule specific times for checking and responding to emails</li>
+                            </ul>
+                            
+                            <h4>Personal Relationships</h4>
+                            <ul class="checklist">
+                                <li>Communicate your digital communication preferences to friends and family</li>
+                                <li>Establish device-free zones and times during family activities</li>
+                                <li>Set expectations about response times to messages</li>
+                                <li>Be mindful about what personal information you share online</li>
+                                <li>Discuss and agree on boundaries around posting photos or information about others</li>
+                                <li>Create tech-free rituals for connecting with loved ones</li>
+                            </ul>
+                            
+                            <h4>Social Media</h4>
+                            <ul class="checklist">
+                                <li>Regularly audit and curate your friend/follow lists</li>
+                                <li>Use platform tools to mute, unfollow, or limit exposure to content that doesn't serve you</li>
+                                <li>Set time limits for social media use</li>
+                                <li>Be selective about what you share and who can see it</li>
+                                <li>Consider taking periodic breaks from social platforms</li>
+                                <li>Disable unnecessary notifications to reduce the pull of constant checking</li>
+                            </ul>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Person setting boundaries with phone" class="topic-image">
+                                <p class="image-caption">Creating tech-free zones helps maintain healthy boundaries</p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Communicating Your Digital Boundaries</h3>
+                            <p>Setting boundaries is only effective if you communicate them clearly to others. Here are some tips for communicating your digital boundaries:</p>
+                            
+                            <ul>
+                                <li><strong>Be clear and specific</strong> about your boundaries (e.g., "I don't check work emails after 6 PM" rather than "I need better work-life balance")</li>
+                                <li><strong>Use "I" statements</strong> to express your needs without blaming others (e.g., "I need uninterrupted family time in the evenings")</li>
+                                <li><strong>Explain the why</strong> behind your boundaries to help others understand their importance</li>
+                                <li><strong>Be consistent</strong> in maintaining your boundaries to establish new expectations</li>
+                                <li><strong>Use technology to help</strong> communicate boundaries (e.g., email signatures stating your working hours, auto-responders, status messages)</li>
+                                <li><strong>Respect others' boundaries</strong> to create a culture of mutual respect</li>
+                            </ul>
+                            
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/aLEmnGcxWg4?si=hjkEh78LzcUMGNWb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                            </div>
+                            <p class="image-caption">Video: Expert advice on setting and maintaining healthy digital boundaries</p>
+                            
+                            <div class="tool-box">
+                                <h4>Sample Boundary Statements</h4>
+                                <ul>
+                                    <li>"I check emails between 9 AM and 5 PM on weekdays. For urgent matters, please call me."</li>
+                                    <li>"I'm taking a social media break on weekends to be more present with my family."</li>
+                                    <li>"I prefer to keep my personal phone number private. Please contact me through [alternative method]."</li>
+                                    <li>"I don't accept work calls during dinner time (6-7 PM). I'll return any calls after that."</li>
+                                    <li>"Please ask before tagging me in photos or posts on social media."</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Maintaining Your Digital Boundaries</h3>
+                            <p>Setting boundaries is just the beginning—maintaining them requires ongoing attention and commitment:</p>
+                            
+                            <ul>
+                                <li><strong>Start small</strong> with one or two important boundaries rather than trying to change everything at once</li>
+                                <li><strong>Use technology tools</strong> to help enforce boundaries (screen time limits, app blockers, auto-responders)</li>
+                                <li><strong>Create environmental cues</strong> that support your boundaries (charging stations outside the bedroom, designated spots for devices)</li>
+                                <li><strong>Prepare for pushback</strong> and have responses ready for boundary violations</li>
+                                <li><strong>Practice self-compassion</strong> when you struggle to maintain boundaries</li>
+                                <li><strong>Regularly reassess</strong> your boundaries to ensure they still serve your needs</li>
+                            </ul>
+                            
+                            <div class="assessment-container">
+                                <h4 class="assessment-title">Boundary Reflection Exercise</h4>
+                                <p>Take a moment to reflect on your current digital boundaries by considering these questions:</p>
+                                
+                                <p class="assessment-question">1. In what areas of your digital life do you feel most overwhelmed or drained?</p>
+                                <p class="assessment-question">2. What specific boundaries could help address these challenges?</p>
+                                <p class="assessment-question">3. What obstacles might make it difficult to maintain these boundaries?</p>
+                                <p class="assessment-question">4. What support systems or tools could help you maintain these boundaries?</p>
+                                <p class="assessment-question">5. What small step could you take today to begin establishing a healthier digital boundary?</p>
+                                
+                                <p style="margin-top: 20px;"><em>Consider writing down your answers and revisiting them regularly as you work on establishing healthier digital boundaries.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Expert Insights on Digital Boundaries</h3>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"Digital boundaries aren't about rejecting technology—they're about reclaiming your agency. When you set boundaries around your digital life, you're making an intentional choice about how technology serves you, rather than the other way around."</p>
+                                <p class="quote-author">— Dr. Julie Smith, Clinical Psychologist and Author</p>
+                            </div>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"The most effective digital boundaries are those that align with your core values. Ask yourself what matters most to you—connection, presence, productivity, creativity—and then design boundaries that protect and nurture those values in your digital life."</p>
+                                <p class="quote-author">— Catherine Price, Author of "How to Break Up With Your Phone"</p>
+                            </div>
+                            
+                            <p>Setting healthy digital boundaries is an essential skill in today's connected world. By thoughtfully defining and communicating your limits around technology use, you can create a digital life that enhances rather than detracts from your well-being, relationships, and productivity. Remember that boundary-setting is a personal process—what works for someone else may not work for you. The goal is to create a relationship with technology that reflects your unique needs, values, and circumstances.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic1-6.html" class="page-btn">Previous</a>
+                <a href="topic1.html" class="page-number">1</a>
+                <a href="topic1-2.html" class="page-number">2</a>
+                <a href="topic1-3.html" class="page-number">3</a>
+                <a href="topic1-4.html" class="page-number">4</a>
+                <a href="topic1-5.html" class="page-number">5</a>
+                <a href="topic1-6.html" class="page-number">6</a>
+                <a href="topic1-7.html" class="page-number active">7</a>
+                <a href="topic1-8.html" class="page-number">8</a>
+                <a href="topic1-8.html" class="page-number">9</a>
+                <a href="topic1-9.html" class="page-number">10</a>
+                <a href="topic1-8.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

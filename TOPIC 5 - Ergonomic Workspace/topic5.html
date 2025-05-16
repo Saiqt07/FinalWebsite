@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Digital Wellness? | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="topics.css">
+
+    <style>
+ 
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+   
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+
+
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .nav-container {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .nav-links {
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+        
+        .nav-item {
+            width: 100%;
+        }
+        
+        .nav-link {
+            justify-content: center;
+        }
+        
+        .pagination {
+            gap: 5px;
+        }
+        
+        .page-number {
+            min-width: 34px;
+            height: 34px;
+            font-size: 0.9rem;
+        }
+        
+        .page-btn {
+            padding: 8px 14px;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-container {
+            flex-direction: column;
+        }
+        
+        .strategy-grid, .symptom-grid, .approach-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .topic-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .topic-number-large {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+        
+        .topic-title-large {
+            font-size: 24px;
+        }
+    }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .strategy-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .strategy-icon {
+            font-size: 2rem;
+            color: #B56576;
+            margin-bottom: 15px;
+        }
+
+        .strategy-title {
+            font-size: 1.2rem;
+            color: #355070;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">Unlock Digital Wellness and Boost Productivity with an Ergonomic Workspace</h1>
+                </div>
+
+                 <div class="topic-content">
+                    <div class="topic-section">
+                        <h3>What is Ergonomics?</h3>
+                        <p><span style="font-weight: bold; color: #B56576;">Ergonomics</span> is the science of designing and arranging workplaces, products, and systems so that they fit the people who use them. It focuses on optimizing human well-being and overall system performance. In the context of digital wellness, ergonomics plays a crucial role in minimizing physical strain and maximizing comfort and productivity.</p>
+                    </div>
+					<div class="topic-section">
+					<h3>Benefits of an Ergonomic Workspace for Students</h3>
+                        <p>Setting up your study space ergonomically can have many advantages:</p>
+                        <ul>
+                            <li><span style="font-weight: bold; color: #B56576;">Less Physical Strain:</span> You won't feel as much discomfort, like aches and pains, when studying.</li>
+                            <li><span style="font-weight: bold; color: #B56576;">Better Focus:</span> When you're comfortable, it's easier to concentrate and pay attention in your studies.</li>
+                            <li><span style="font-weight: bold; color: #B56576;">Improved Mood:</span> Feeling good physically can help you feel better emotionally while you study.</li>
+                            <li><span style="font-weight: bold; color: #B56576;">Fewer Missed Study Days:</span> By preventing injuries, you're less likely to miss study time.</li>
+                             <li><span style="font-weight: bold; color: #B56576;">Happier Studying:</span> Being comfortable can make studying more enjoyable.</li>
+                        </ul>
+                        <img src="https://x-team.com/hubfs/x-team-blog-featured%20image%20-%20How%20to%20Design%20an%20Ergonomic%20Workspace.jpg" alt="Example of an Ergonomic Workspace" class="topic-image">
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3>Ergonomic Strategies to Boost Digital Wellness and Productivity</h3>
+                        <p>Implementing ergonomic principles in your digital workspace can significantly reduce strain and enhance your focus and efficiency. Here are some key strategies:</p>
+                    
+                        <div class="strategy-grid">
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-desktop"></i></div>
+                                <h4 class="strategy-title">Optimize Your Monitor Setup</h4>
+                                <p>Position your monitor at arm's length, with the top of the screen at or slightly below eye level. Use a monitor stand if necessary.</p>
+                            </div>
+                    
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-chair"></i></div>
+                                <h4 class="strategy-title">Choose an Ergonomic Chair</h4>
+                                <p>Select a chair with good lumbar support, adjustable height, armrests, and seat depth. Ensure your feet are flat on the floor or a footrest.</p>
+                            </div>
+                    
+                            <div class="strategy-card">
+                                 <div class="strategy-icon"><i class="fas fa-keyboard"></i></div>
+                                <h4 class="strategy-title">Position Your Keyboard and Mouse Correctly</h4>
+                                <p>Place your keyboard directly in front of you, allowing your elbows to be bent at a 90-degree angle and your wrists to be straight. Keep your mouse close to the keyboard to minimize reaching.</p>
+                            </div>
+                    
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-lightbulb"></i></div>
+                                <h4 class="strategy-title">Optimize Lighting</h4>
+                                <p>Minimize glare on your screen from overhead lights or windows. Position your workstation to avoid direct light sources reflecting on your monitor.</p>
+                            </div>
+                    
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-arrows-alt-v"></i></div>
+                                <h4 class="strategy-title">Take Regular Breaks</h4>
+                                <p>Follow the 20-20-20 rule: every 20 minutes, look at something 20 feet away for at least 20 seconds. Stand up and move around every hour.</p>
+                            </div>
+                    
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                                <h4 class="strategy-title">Utilize Ergonomic Accessories</h4>
+                                <p>Consider using a vertical mouse, ergonomic keyboard, wrist rest, or footrest to further enhance comfort and support.</p>
+                            </div>
+                        </div>
+                    </div>
+					
+                        
+
+                    <div class="topic-section">
+                        <h3>The Strain of the Digital Age</h3>
+                        <p>In our increasingly digital world, we spend countless hours interacting with screens. While technology offers immense benefits, prolonged and improper use can lead to <span style="font-weight: bold; color: #B56576;">digital strain</span> – a combination of physical discomfort and reduced productivity. This often manifests as:</p>
+                       
+                        <img src="https://images.myopiaprofile.com/tr:w-1200,h-675,fo-auto/api/KnowledgeArticle/a38a38d6-8485-40cc-6982-08db1612fe23/download/HeroImage/17754391-df19-4aba-a913-08db1612fd32" alt="Person Experiencing Digital Strain" class="topic-image">
+                     <ul>
+                            <li>Eye strain, headaches, and blurred vision</li>
+                            <li>Neck and shoulder pain</li>
+                            <li>Backaches and stiffness</li>
+                            <li>Wrist and hand pain (e.g., carpal tunnel syndrome)</li>
+                            <li>Fatigue and decreased focus</li>
+                        </ul>
+					</div>
+					<p>This physical discomfort directly impacts our ability to concentrate and work effectively, creating a negative cycle of pain and low productivity.</p>
+                </div>
+            </div>
+
+            <section class="topic-section">
+                <ul>
+                    <div class="pagination">
+                        <a href="topic1-2.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <a href="topic5.html" class="page-number active">1</a>
+                        <a href="topic5-2.html" class="page-number">2</a>
+                        <a href="topic5-3.html" class="page-number">3</a>
+                        <a href="topic5-4.html" class="page-number">4</a>
+                        <a href="topic5-5.html" class="page-number">5</a>
+                        <a href="topic5-6.html" class="page-number">6</a>
+                        <a href="topic5-7.html" class="page-number">7</a>
+                        <a href="topic5-8.html" class="page-number">8</a>
+                        <a href="topic5-9.html" class="page-number">9</a>
+                        <a href="topic5-10.html" class="page-number">10</a>
+                        <a href="#" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

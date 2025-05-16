@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track & Reflect on Detox Progress | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="topic9-9.css">
+    <style>
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 10px;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-2px);
+        }
+        
+        .page-btn.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #EAE0D5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Detox Challenges</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="author.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-user-edit"></i></span>
+                        About the Author
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">09</div>
+                    <h1 class="topic-title-large">How to Track & Reflect on Your Detox Progress</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <div id="page1" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Effective Tracking Methods</h3>
+                            <p>Monitoring your digital detox journey helps maintain motivation and identify patterns. Here are proven tracking techniques:</p>
+                            
+                            <div class="wellness-image-container">
+                                <img src="topic9.jpg" alt="Tracking Progress" class="topic-image">
+                                <p class="image-caption">Consistent tracking provides valuable insights into your digital habits</p>
+                            </div>
+                            
+                            <ul>
+                                <li>
+                                    <strong>Digital Usage Apps</strong>
+                                    <p>Use built-in screen time trackers (iOS/Android) or third-party apps like Moment or RescueTime to monitor daily device usage and app-specific activity.</p>
+                                </li>
+                                
+                                <li>
+                                    <strong>Journaling</strong>
+                                    <p>Maintain a detox journal noting daily screen time, productive hours, and emotional states to identify correlations between digital use and wellbeing.</p>
+                                </li>
+                                
+                                <li>
+                                    <strong>Time Blocking</strong>
+                                    <p>Schedule tech-free periods in your calendar and track adherence. Color-code successful vs. missed blocks for visual feedback.</p>
+                                </li>
+                                
+                                <li>
+                                    <strong>Habit Trackers</strong>
+                                    <p>Create a simple checklist or use habit-tracking apps to mark successful detox days and build streaks of positive behavior.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Reflection Techniques</h3>
+                            <p>Regular reflection deepens your understanding of progress and areas needing improvement:</p>
+                            
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/9z8_YhWoq2o" title="Reflection Techniques" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            
+                            <ul>
+                                <li><strong>Weekly Reviews</strong> - Dedicate 30 minutes each week to analyze tracking data, noting trends and setting small, achievable goals for the coming week.</li>
+                                <li><strong>Progress Photos</strong> - Take screenshots of your screen time reports weekly to create a visual timeline of improvement.</li>
+                                <li><strong>Mindfulness Check-ins</strong> - Pause 3x daily to assess your digital consumption and its impact on your current mental state.</li>
+                                <li><strong>Gratitude Practice</strong> - Note 2-3 benefits you've experienced from reduced screen time each day to reinforce positive changes.</li>
+                                <li><strong>Accountability Partners</strong> - Share progress with a friend or support group to gain external perspective and motivation.</li>
+                            </ul>
+                            <br>
+                            <p>By combining consistent tracking with thoughtful reflection, you can create meaningful, lasting changes in your digital habits and overall wellbeing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+              <div class="pagination">
+                <a href="topic9-8.html" class="page-btn">Previous</a>
+                <a href="topic9-1.html" class="page-number">1</a>
+                <a href="topic9-2.html" class="page-number">2</a>
+                <a href="topic9-3.html" class="page-number">3</a>
+                <a href="topic9-4.html" class="page-number">4</a>
+                <a href="topic9-5.html" class="page-number">5</a>
+                <a href="topic9-6.html" class="page-number">6</a>
+                <a href="topic9-7.html" class="page-number">7</a>
+                <a href="topic9-8.html" class="page-number">8</a>
+                <a href="topic9-9.html" class="page-number active">9</a>
+                <a href="topic9-10.html" class="page-number">10</a>
+                <a href="topic9-10.html" class="page-btn">Next</a>
+            </div>
+            
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member leader">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

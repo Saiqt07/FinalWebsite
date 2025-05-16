@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus-Boosting Timers & Scheduling Tools | Digital Wellness &amp; Productivity Hub</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Link to your external stylesheet (if available) -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* General Styles */
+
+    .topic-container {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      max-width: 900px;
+    }
+    .topic-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .topic-number-large {
+      background-color: #6D597A;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .topic-title-large {
+      color: #355070;
+      font-size: 28px;
+      margin: 0;
+    }
+    .topic-content {
+      margin-top: 20px;
+    }
+    .topic-section {
+      margin-bottom: 30px;
+    }
+    .topic-section h3 {
+      color: #B56576;
+      font-size: 22px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #EAE0D5;
+      padding-bottom: 8px;
+    }
+    .topic-content p, .topic-content li {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .topic-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 20px;
+    }
+    .topic-content ul ul {
+      list-style-type: circle;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    /* Video Container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;  /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    /* Checklist Styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    .checklist input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    /* Interactive Timer Styles */
+    #timerDisplay {
+      font-size: 48px;
+      font-weight: bold;
+      color: #355070;
+      text-align: center;
+      margin: 10px 0;
+    }
+    .timer-controls {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .timer-controls button {
+      padding: 10px 20px;
+      background-color: #6D597A;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: background-color 0.3s ease;
+    }
+    .timer-controls button:hover {
+      background-color: #B56576;
+    }
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      gap: 10px;
+    }
+    .page-btn, .page-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      background-color: #6D597A;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      font-weight: 500;
+    }
+    .page-btn:hover, .page-number:hover:not(.active) {
+      background-color: #B56576;
+      transform: translateY(-2px);
+    }
+    .page-number {
+      width: 36px;
+      height: 36px;
+      background-color: #EAE0D5;
+      color: #355070;
+    }
+    .page-number.active {
+      background-color: #B56576;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+        <span class="logo-text">Digital Wellness</span>
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span> Home</a></li>
+        <li class="nav-item"><a href="resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span> Resources</a></li>
+        <li class="nav-item"><a href="aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span> About Us</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span> Photo Gallery</a></li>
+        <li class="nav-item"><a href="author.html" class="nav-link"><span class="nav-icon"><i class="fas fa-user-edit"></i></span> About the Author</a></li>
+        <li class="nav-item"><a href="contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span> Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section class="topic-container">
+      <div class="topic-header">
+        <div class="topic-number-large">6</div>
+        <h2 class="topic-title-large">Focus-Boosting Timers & Scheduling Tools</h2>
+      </div>
+      <div class="topic-content">
+        <!-- Why Timers Matter -->
+        <section class="topic-section">
+          <h3>Why Timers Matter</h3>
+          <p>
+            A timer serves as a powerful focal point by visually representing your work intervals. Watching a countdown creates a sense of urgency that helps you maintain focus. Studies show that having a visual representation of time passing can reduce procrastination and improve overall task performance.
+          </p>
+          <p>
+            Whether you’re following the Pomodoro Technique or customizing your own intervals, a timer transforms overwhelming tasks into bite-sized, time-bound sessions that keep you on track.
+          </p>
+        </section>
+        
+        <!-- Overview of Timer Apps -->
+        <section class="topic-section">
+          <h3>Overview of Timer Apps</h3>
+          <p>
+            There are many timer apps available to help you structure your day. These apps allow you to break your work into focused sessions and schedule breaks to avoid burnout. Popular apps include:
+          </p>
+          <ul>
+            <li>
+              <strong>Focus Booster:</strong> Utilizes Pomodoro sessions to keep your work in focused intervals.
+            </li>
+            <li>
+              <strong>Marinara Timer:</strong> A web-based timer that allows customization for different session lengths.
+            </li>
+            <li>
+              <strong>Be Focused:</strong> Provides interval work sessions with detailed task tracking and progress analysis.
+            </li>
+          </ul>
+          <div style="text-align:center;">
+            <img src="./images/timer overview.webp" alt="Overview of Timer Apps" class="topic-image" style="max-width:95%;">
+          </div>
+        </section>
+        
+        <!-- Interactive Timer Demo/Widget -->
+        <section class="topic-section">
+          <h3>Interactive Timer Demo</h3>
+          <p>
+            Try out our interactive timer below. Set your work interval and experiment with starting, pausing, and resetting the timer. This demo illustrates how visual countdowns can help structure your work sessions.
+          </p>
+          <!-- Timer Display -->
+          <div id="timerDisplay">25:00</div>
+          <!-- Timer Controls -->
+          <div class="timer-controls">
+            <button onclick="startTimer()">Start</button>
+            <button id="pauseButton" onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+          </div>
+        </section>
+        
+        <!-- Scheduling Tips -->
+        <section class="topic-section">
+          <h3>Scheduling Tips</h3>
+          <p>
+            Effective scheduling is essential for maximizing productivity. Time blocking is a powerful method that divides your day into dedicated segments for work, breaks, and personal time. Here are some tips:
+          </p>
+          <ul>
+            <li>Plan your schedule the night before.</li>
+            <li>Block out uninterrupted focus sessions and short breaks.</li>
+            <li>Prioritize tasks by urgency and impact.</li>
+            <li>Review and adjust your schedule regularly to reflect changes in priorities.</li>
+          </ul>
+          <p>
+            "A timer can serve as a powerful focal point, breaking down your work into manageable, time-bound sessions. Whether you prefer a classic Pomodoro setup or a flexible scheduling app, find a tool that turns your clock into a productivity ally."
+          </p>
+        </section>
+        
+        <!-- Additional Image Gallery -->
+        <section class="topic-section">
+          <h3>Additional Scheduling Resources</h3>
+          <p>
+            Explore these visual aids to optimize your scheduling:
+          </p>
+          <div style="text-align: center;">
+            <img src="./images/time blocking concept.png" alt="Time Blocking Concept" class="topic-image" style="max-width:45%; margin-right: 5px;">
+            <img src="./images/focus calendar.jpg" alt="Focus Calendar" class="topic-image" style="max-width:45%; margin-left: 5px;">
+          </div>
+        </section>
+        
+        <!-- Example Video -->
+        <section class="topic-section">
+          <h3>Example Video: Mastering Time Management with Timers</h3>
+          <div class="video-container">
+            <!-- Replace with a relevant video URL if desired -->
+            <iframe src="./videos/How I Manage My Time - 10 Time Management Tips.mp4" allowfullscreen></iframe>
+          </div>
+          <p>
+            This video offers actionable strategies on leveraging timers and effective scheduling to transform your workflow. Learn practical tips for time blocking, setting intervals, and integrating these tools into your daily routine.
+          </p>
+        </section>
+      </div>
+    </section>
+    
+    <!-- Pagination -->
+    <div class="pagination">
+      <a href="topic1-5.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+      <a href="topic1-1.html" class="page-number">1</a>
+      <a href="topic1-2.html" class="page-number">2</a>
+      <a href="topic1-3.html" class="page-number">3</a>
+      <a href="topic1-4.html" class="page-number">4</a>
+      <a href="topic1-5.html" class="page-number">5</a>
+      <a href="topic1-6.html" class="page-number active">6</a>
+      <a href="topic1-7.html" class="page-number">7</a>
+      <a href="topic1-8.html" class="page-number">8</a>
+      <a href="topic1-9.html" class="page-number">9</a>
+      <a href="topic1-10.html" class="page-number">10</a>
+      <a href="topic1-7.html" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="team-members">
+        <div class="member">Balang, Clark</div>
+        <div class="member">Bumanlag, Sean</div>
+        <div class="member leader">Cabero, Cyrus Luigi</div>
+        <div class="member">Camaymayan, Xjhann</div>
+        <div class="member">Menidola, Nicole</div>
+        <div class="member">Reyes, Clint</div>
+        <div class="member">Roldan, Zedrick</div>
+        <div class="member">Tancio, Kurt</div>
+        <div class="member">Valiao, Joaquin</div>
+        <div class="member">Vargas, Johanne</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Go to Top Button -->
+  <a href="#top" class="go-top-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <!-- Timer Script -->
+  <script>
+    let timer;
+    let totalTime = 25 * 60; // default 25 minutes
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(totalTime / 60);
+      const seconds = totalTime % 60;
+      document.getElementById('timerDisplay').textContent =
+        `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+    }
+
+    function startTimer() {
+      if (timer) return; // Prevent multiple intervals
+      timer = setInterval(() => {
+        if (totalTime > 0) {
+          totalTime--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(timer);
+          timer = null;
+        }
+      }, 1000);
+      document.getElementById('pauseButton').textContent = "Pause";
+    }
+
+    function pauseTimer() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+        document.getElementById('pauseButton').textContent = "Resume";
+      } else {
+        startTimer();
+        document.getElementById('pauseButton').textContent = "Pause";
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = null;
+      totalTime = 25 * 60;
+      updateTimerDisplay();
+      document.getElementById('pauseButton').textContent = "Pause";
+    }
+
+    // Initialize timer display on page load
+    updateTimerDisplay();
+  </script>
+</body>
+</html>

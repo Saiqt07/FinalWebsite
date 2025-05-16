@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact of Screen Time | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+         .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section ul {
+            padding-left: 20px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span>Home</a></li>
+            <li class="nav-item"><a href="../resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span>Resources</a></li>
+            <li class="nav-item"><a href="../aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span>About Us</a></li>
+            <li class="nav-item"><a href="../gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span>Photo Gallery</a></li>
+            <li class="nav-item"><a href="../contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">03</div>
+                    <h1 class="topic-title-large">Impact of Screen Time: Anxiety and Depression in the Digital Age </h1>
+                </div>
+                <div class="topic-section">
+                    <h3>Screen Time and Its Link to Anxiety & Depression</h3>
+                    <p>In today’s digital age, screens have become an integral part of daily life—used for work, study, entertainment, and social connection. However, as screen time increases, researchers and mental health professionals have observed a parallel rise in anxiety and depression, particularly among young people.</p>
+                
+                    <p>While screens themselves are not inherently harmful, the *amount* and *type* of screen use can significantly impact mental health. Passive activities such as endless scrolling on social media, binge-watching content, or constant exposure to distressing news have been associated with negative emotional outcomes.</p>
+                
+                    <div class="wellness-image-container">
+                        <div align="center">
+                        <img src="anxiety.JPG" alt="Person looking overwhelmed by screens" class="topic-image">
+                        <p class="image-caption">Too much screen time can lead to overstimulation, emotional fatigue, and reduced face-to-face interaction.</p>
+                        </div>
+                        
+                    </div>
+                
+                    <h4>Psychological Effects of Excessive Screen Time</h4>
+                    <ul>
+                        <li><strong>Overstimulation:</strong> Constant engagement with screens—notifications, bright lights, fast-paced videos—keeps the brain in a heightened state of alertness, making it difficult to relax and increasing anxiety levels.</li>
+                        <li><strong>Social Disconnection:</strong> While social media can help maintain connections, overuse often leads to feelings of loneliness, isolation, and fear of missing out (FOMO).</li>
+                        <li><strong>Negative Thought Patterns:</strong> Exposure to unrealistic portrayals of life and beauty online can reinforce cognitive distortions, such as “I’m not good enough” or “Everyone else is happier than me.”</li>
+                        <li><strong>Reduced Self-Reflection:</strong> Constant distraction from screens leaves little time for introspection, mindfulness, or emotional processing, which are essential for mental well-being.</li>
+                    </ul>
+                
+                    <p>Studies from organizations like the American Academy of Pediatrics and the Journal of the American Medical Association (JAMA) Psychiatry have consistently linked high screen time—especially over 3-4 hours a day—with increased symptoms of depression, anxiety, and even suicidal ideation among teens and young adults.</p>
+                
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/74o_aKBMKk0?si=NKrnhH6AO99371zI" title="Screen Time and Mental Health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                
+                    <h4>Biological Mechanisms at Play</h4>
+                    <p>Excessive screen use impacts the brain’s reward system. Social media platforms and apps are designed to provide intermittent positive reinforcement through likes, notifications, and updates—leading to dopamine spikes that mimic addictive behavior. Over time, the brain craves this stimulation, making it harder to focus, feel satisfied, or relax without screens.</p>
+                
+                    <p>In addition, disrupted circadian rhythms due to late-night screen use reduce melatonin production and impair sleep. Poor sleep has a well-established link to increased emotional dysregulation and mood disorders such as anxiety and depression.</p>
+                </div>
+                
+                <div class="topic-section">
+                    <h3>Practical Strategies to Improve Mental Health Through Screen Management</h3>
+                    <p>Creating a healthy digital routine doesn’t mean eliminating screen time entirely. It means becoming more intentional with how, when, and why you use digital devices. Here are research-backed strategies that can help reduce the mental health impact of screen overuse:</p>
+                    <ul>
+                        <li><strong>Track your screen time:</strong> Use apps or built-in features on your phone to become aware of how much time you spend on various platforms.</li>
+                        <li><strong>Set digital boundaries:</strong> Limit screen use before bed, during meals, or first thing in the morning. Replace those moments with calming or meaningful activities.</li>
+                        <li><strong>Create "tech-free" zones:</strong> Keep screens out of bedrooms and study areas to reduce distractions and support better sleep and focus.</li>
+                        <li><strong>Engage actively, not passively:</strong> Choose screen activities that promote learning, connection, or creativity instead of mindless consumption.</li>
+                        <li><strong>Unfollow or mute toxic content:</strong> Curate your digital environment to include accounts that make you feel empowered, inspired, and supported.</li>
+                        <li><strong>Practice mindfulness:</strong> Take breaks from screens to reflect, meditate, journal, or simply spend time in nature. These practices strengthen emotional resilience.</li>
+                    </ul>
+                
+                    <p>Over time, even small digital wellness changes can have a big impact on reducing anxiety and depression symptoms, while boosting mood, focus, and confidence.</p>
+                </div>
+                
+                <div class="topic-section">
+                    <h3>When Should You Seek Support?</h3>
+                    <p>If screen time is starting to interfere with your mood, relationships, school or work performance, or your ability to enjoy offline life, it may be time to seek help. Here are some warning signs:</p>
+                    <ul>
+                        <li>Persistent feelings of sadness or hopelessness.</li>
+                        <li>Increased irritability, anxiety, or emotional outbursts after online activity.</li>
+                        <li>Loss of interest in hobbies or spending time with others in real life.</li>
+                        <li>Disrupted sleep patterns and exhaustion despite resting.</li>
+                        <li>Using screens as the main escape from emotions or stress.</li>
+                    </ul>
+                
+                    <p>Talk to a trusted adult, school counselor, or mental health professional. Early intervention can prevent symptoms from worsening and help you regain a healthier balance with technology and your mental health.</p>
+                </div>                
+            </div>
+
+            <div class="pagination">
+                <a href="topic2-2.html" class="page-btn">Previous</a>
+                <a href="topic2-1.html" class="page-number">1</a>
+                <a href="topic2-2.html" class="page-number">2</a>
+                <a href="topic2-3.html" class="page-number active">3</a>
+                <a href="topic2-4.html" class="page-number">4</a>
+                <a href="topic2-5.html" class="page-number">5</a>
+                <a href="topic2-6.html" class="page-number">6</a>
+                <a href="topic2-7.html" class="page-number">7</a>
+                <a href="topic2-8.html" class="page-number">8</a>
+                <a href="topic2-9.html" class="page-number">9</a>
+                <a href="topic2-10.html" class="page-number">10</a>
+                <a href="topic2-4.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Mendiola, Sherisse Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

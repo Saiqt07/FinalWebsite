@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signs of Digital Overload & Burnout (Page 4) | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Topic page specific styles */
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Symptom cards */
+        .symptom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .symptom-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #B56576;
+        }
+        
+        .symptom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .symptom-icon {
+            font-size: 2rem;
+            color: #B56576;
+            margin-bottom: 15px;
+        }
+        
+        .symptom-title {
+            font-size: 1.2rem;
+            color: #355070;
+            margin-bottom: 10px;
+        }
+        
+        /* Self-assessment checklist */
+        .checklist {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .checklist-title {
+            color: #355070;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist-title i {
+            margin-right: 10px;
+            color: #B56576;
+        }
+        
+        .checklist-items {
+            list-style-type: none;
+        }
+        
+        .checklist-item {
+            margin-bottom: 12px;
+            padding-left: 35px;
+            position: relative;
+        }
+        
+        .checklist-item:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #6D597A;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">01</div>
+                    <h1 class="topic-title-large">Signs of Digital Overload & Burnout</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <!-- Page 4: Signs of Digital Overload & Burnout -->
+                    <div id="page4" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Recognizing Digital Burnout</h3>
+                            <p>Digital burnout is a state of chronic stress and exhaustion related to the overwhelming use of digital devices and platforms. Unlike traditional burnout, digital burnout specifically stems from our relationship with technology. Recognizing the warning signs early can help prevent more serious consequences.</p>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://www.verywellmind.com/thmb/lLCDSfbkKBzEwqvTHrnu4UZr53A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/stress-and-burnout-symptoms-and-causes-3144516-e343e7071b6a44b28eb25f5378c92b0a.png" alt="Person experiencing digital burnout" class="topic-image">
+                                <p class="image-caption">Digital burnout can manifest through physical, emotional, and behavioral symptoms</p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Common Symptoms of Digital Overload</h3>
+                            <p>Digital overload and burnout manifest in various ways. Here are the most common signs to watch for:</p>
+                            
+                            <div class="symptom-grid">
+                                <div class="symptom-card">
+                                    <div class="symptom-icon"><i class="fas fa-head-side-virus"></i></div>
+                                    <h4 class="symptom-title">Physical Symptoms</h4>
+                                    <ul>
+                                        <li>Frequent headaches or migraines</li>
+                                        <li>Eye strain and vision problems</li>
+                                        <li>Neck and shoulder tension</li>
+                                        <li>Sleep disturbances and insomnia</li>
+                                        <li>General fatigue and low energy</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="symptom-card">
+                                    <div class="symptom-icon"><i class="fas fa-brain"></i></div>
+                                    <h4 class="symptom-title">Cognitive Symptoms</h4>
+                                    <ul>
+                                        <li>Difficulty concentrating</li>
+                                        <li>Decreased productivity</li>
+                                        <li>Forgetfulness and mental fog</li>
+                                        <li>Reduced creativity</li>
+                                        <li>Information overload anxiety</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="symptom-card">
+                                    <div class="symptom-icon"><i class="fas fa-heart-broken"></i></div>
+                                    <h4 class="symptom-title">Emotional Symptoms</h4>
+                                    <ul>
+                                        <li>Irritability and mood swings</li>
+                                        <li>Anxiety about missing notifications</li>
+                                        <li>Feeling overwhelmed by digital demands</li>
+                                        <li>Decreased enjoyment of activities</li>
+                                        <li>Emotional detachment</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="symptom-card">
+                                    <div class="symptom-icon"><i class="fas fa-users-slash"></i></div>
+                                    <h4 class="symptom-title">Social Symptoms</h4>
+                                    <ul>
+                                        <li>Preferring online over in-person interaction</li>
+                                        <li>Feeling disconnected from loved ones</li>
+                                        <li>Comparing yourself to others online</li>
+                                        <li>Social media envy or inadequacy</li>
+                                        <li>Withdrawal from social activities</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="symptom-card">
+                                    <div class="symptom-icon"><i class="fas fa-mobile-alt"></i></div>
+                                    <h4 class="symptom-title">Behavioral Symptoms</h4>
+                                    <ul>
+                                        <li>Compulsive checking of devices</li>
+                                        <li>Inability to disconnect</li>
+                                        <li>Using technology to escape problems</li>
+                                        <li>Neglecting physical health</li>
+                                        <li>Decreased work/life boundaries</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="symptom-card">
+                                    <div class="symptom-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                                    <h4 class="symptom-title">Warning Signs</h4>
+                                    <ul>
+                                        <li>Panic when battery is low or no WiFi</li>
+                                        <li>First and last thing you check is your phone</li>
+                                        <li>Phantom vibration syndrome</li>
+                                        <li>Increased conflict about technology use</li>
+                                        <li>Feeling guilty about screen time</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Self-Assessment: Are You Experiencing Digital Burnout?</h3>
+                            <p>Take a moment to reflect on your relationship with technology. The following checklist can help you determine if you might be experiencing digital burnout:</p>
+                            
+                            <div class="checklist">
+                                <h4 class="checklist-title"><i class="fas fa-clipboard-check"></i> Digital Burnout Checklist</h4>
+                                <ul class="checklist-items">
+                                    <li class="checklist-item">You feel anxious when you can't check your devices</li>
+                                    <li class="checklist-item">You often lose track of time when using digital devices</li>
+                                    <li class="checklist-item">You feel mentally exhausted after video calls or online meetings</li>
+                                    <li class="checklist-item">You have trouble focusing on one task without checking notifications</li>
+                                    <li class="checklist-item">Your sleep is affected by late-night device use</li>
+                                    <li class="checklist-item">You feel pressure to respond immediately to messages</li>
+                                    <li class="checklist-item">You experience physical discomfort (headaches, eye strain) from screen use</li>
+                                    <li class="checklist-item">You find yourself mindlessly scrolling through content</li>
+                                    <li class="checklist-item">You feel overwhelmed by the volume of digital information</li>
+                                    <li class="checklist-item">You struggle to be fully present in face-to-face interactions</li>
+                                </ul>
+                                <p style="margin-top: 15px;"><strong>Note:</strong> If you checked 5 or more items, you may be experiencing digital burnout and could benefit from implementing digital wellness strategies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>The Science of Digital Burnout</h3>
+                            <p>Research into digital burnout has revealed important insights about how and why our brains become overwhelmed by technology:</p>
+                            
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/Pgo65s1R6TM" title="Digital Burnout: What It Is and How to Prevent It" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            
+                            <ul>
+                                <li><strong>Attentional Fatigue:</strong> Our brains have limited attentional resources. Constant task-switching and notifications deplete these resources faster than we can replenish them.</li>
+                                <li><strong>Technostress:</strong> The pressure to be constantly available and responsive creates a state of persistent stress that can lead to burnout.</li>
+                                <li><strong>Digital Boundaries:</strong> The blurring of boundaries between work and personal life due to technology makes it difficult for our brains to enter recovery mode.</li>
+                                <li><strong>Comparison Effect:</strong> Social media exposure triggers social comparison processes that can negatively impact self-esteem and increase stress levels.</li>
+                            </ul>
+                            
+                            <p>Understanding the neurological and psychological mechanisms behind digital burnout is the first step toward developing effective strategies to prevent and address it. In the next section, we'll explore practical approaches to restore digital balance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic1-3.html" class="page-btn">Previous</a>
+                <a href="topic1.html" class="page-number">1</a>
+                <a href="topic1-2.html" class="page-number">2</a>
+                <a href="topic1-3.html" class="page-number">3</a>
+                <a href="topic1-4.html" class="page-number active">4</a>
+                <a href="topic1-5.html" class="page-number">5</a>
+                <a href="topic1-6.html" class="page-number">6</a>
+                <a href="topic1-7.html" class="page-number">7</a>
+                <a href="topic1-8.html" class="page-number">8</a>
+                <a href="topic1-9.html" class="page-number">9</a>
+                <a href="topic1-10.html" class="page-number">10</a>
+                <a href="topic1-5.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

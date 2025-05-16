@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Addiction | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+         .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .topic-section ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span>Home</a></li>
+                <li class="nav-item"><a href="../resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span>Resources</a></li>
+                <li class="nav-item"><a href="../aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span>About Us</a></li>
+                <li class="nav-item"><a href="../gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span>Photo Gallery</a></li>
+                <li class="nav-item"><a href="../contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">04</div>
+                    <h1 class="topic-title-large">Digital Addiction: Understanding Its Impact on Mental Health and Daily Life</h1>
+
+                </div>
+                <div class="topic-section">
+                    <h3>What Is Digital Addiction?</h3>
+                    <p>Digital addiction refers to the compulsive and excessive use of digital devices such as smartphones, computers, tablets, or gaming systems, often at the expense of real-life relationships, work, sleep, and mental well-being. It is not just about spending long hours online—it’s about the loss of control and the dependency formed around digital interactions and content.</p>
+                
+                    <p>Unlike healthy use of technology, digital addiction is characterized by an inability to cut back usage despite knowing its harmful effects. This pattern is especially common among teens and young adults who are growing up in an age where social interaction, entertainment, education, and even identity are all closely tied to digital environments.</p>
+                </div>
+                
+                <div class="topic-section">
+                    <h3>Psychological & Behavioral Consequences</h3>
+                    <p>Digital addiction can deeply affect mental health, leading to a wide range of emotional and psychological issues. While technology can be enriching and convenient, excessive dependence creates imbalance and stress in the brain and body. Here are key psychological consequences:</p>
+                    <ul>
+                        <li><strong>Chronic Anxiety:</strong> Fear of missing out (FOMO), comparison on social media, and constant notifications increase stress levels and create anxiety over time.</li>
+                        <li><strong>Depression:</strong> Isolation, disrupted sleep, and lack of in-person interaction contribute to depressive symptoms in digital addicts.</li>
+                        <li><strong>Low Self-Esteem:</strong> Constant exposure to filtered lives and curated perfection on social media distorts self-image and confidence.</li>
+                        <li><strong>Attention Deficits:</strong> Digital overuse rewires the brain to seek constant stimulation, impairing the ability to concentrate or remain still without checking a device.</li>
+                        <li><strong>Escapism & Avoidance:</strong> Many turn to screens to escape emotional pain, stress, or boredom, developing dependency as a coping mechanism.</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-section">
+                    <div class="wellness-image-container">
+                        <div align="center">
+                            <img src="addiction.jpg" alt="Person overwhelmed by screens" class="topic-image">
+                            <p class="image-caption">Digital addiction isolates individuals from the real world and causes psychological overload.</p>
+                        </div>
+                        
+                    </div>
+                
+                    <h4>Biological Impact of Digital Dependency</h4>
+                    <p>Digital addiction affects the brain in ways similar to substance addictions. When we receive a notification, like, or message, the brain releases dopamine—a “feel good” neurotransmitter. This short-term pleasure creates a feedback loop that conditions us to seek more of it through compulsive behavior.</p>
+                
+                    <p>Over time, our tolerance for digital stimulation increases, making us crave more intense or frequent interactions. This rewires reward circuits in the brain, leading to irritability, restlessness, and even withdrawal symptoms when away from screens. Additionally, blue light from screens disrupts melatonin production, reducing sleep quality and aggravating emotional dysregulation.</p>
+                </div>
+                
+                <div class="topic-section">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NAP44XrjtRM?si=eUtMBAALFwW4t98r" title="Digital Addiction and Mental Health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                
+                    <h4>How It Affects Daily Life</h4>
+                    <p>Digital addiction doesn’t just affect mental health—it disrupts routines, relationships, and responsibilities. Many people report staying up late on their phones, neglecting school or work, or feeling anxious without their device nearby. Social skills can also suffer, as digital communication replaces meaningful face-to-face interaction.</p>
+                
+                    <p>This behavior often extends into meals, study sessions, commutes, and even bathrooms—times previously used for relaxation or social bonding. Over time, this erodes productivity, increases procrastination, and causes real-world disconnection.</p>
+                </div>
+                
+                <div class="topic-section">
+                    <h3>How to Recognize and Address Digital Addiction</h3>
+                    <p>Becoming aware of digital addiction is the first step to recovery. Here are common warning signs and steps you can take:</p>
+                    <ul>
+                        <li>Feeling anxious or restless when you’re away from your phone or internet access.</li>
+                        <li>Using devices to escape from problems or bad moods.</li>
+                        <li>Neglecting sleep, school, or relationships because of screen time.</li>
+                        <li>Lying to others about how much time you spend online.</li>
+                        <li>Failing multiple times to reduce your screen time despite wanting to.</li>
+                    </ul>
+                
+                    <h4>Helpful Strategies for Digital Balance</h4>
+                    <ul>
+                        <li><strong>Set time limits:</strong> Use app timers and screen monitors to reduce unconscious overuse.</li>
+                        <li><strong>Replace digital time with real-world hobbies:</strong> Reading, drawing, walking, and in-person conversations are healthy substitutes.</li>
+                        <li><strong>Turn off notifications:</strong> Reduce the frequency of interruptions to allow for focused, intentional use of technology.</li>
+                        <li><strong>Designate screen-free times:</strong> Create rituals—like screen-free meals, mornings, or nights—to mentally detach from devices.</li>
+                        <li><strong>Seek professional help:</strong> Therapists and counselors can provide support, especially if digital addiction is linked with depression, anxiety, or trauma.</li>
+                    </ul>
+                
+                    <p>Remember: technology is a tool—it should serve you, not control you. With consistent boundaries and support, it's possible to regain balance and improve both your digital habits and mental well-being.</p>
+                </div>                 
+            </div>
+
+            <div class="pagination">
+                <a href="topic2-3.html" class="page-btn">Previous</a>
+                <a href="topic2-1.html" class="page-number">1</a>
+                <a href="topic2-2.html" class="page-number">2</a>
+                <a href="topic2-3.html" class="page-number">3</a>
+                <a href="topic2-4.html" class="page-number active">4</a>
+                <a href="topic2-5.html" class="page-number">5</a>
+                <a href="topic2-6.html" class="page-number">6</a>
+                <a href="topic2-7.html" class="page-number">7</a>
+                <a href="topic2-8.html" class="page-number">8</a>
+                <a href="topic2-9.html" class="page-number">9</a>
+                <a href="topic2-10.html" class="page-number">10</a>
+                <a href="topic2-5.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Mendiola, Sherisse Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

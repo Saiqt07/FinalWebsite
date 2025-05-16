@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberbullying and Its Impact on Mental Health | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+         .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section ul {
+            padding-left: 20px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span>Home</a></li>
+                <li class="nav-item"><a href="../resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span>Resources</a></li>
+                <li class="nav-item"><a href="../aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span>About Us</a></li>
+                <li class="nav-item"><a href="../gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span>Photo Gallery</a></li>
+                <li class="nav-item"><a href="../contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">Cyberbullying and Its Impact on Mental Health</h1>
+                </div>
+                <div class="topic-section">
+                    <h3>Understanding Cyberbullying in the Digital Era</h3>
+                    <p>Cyberbullying refers to the use of digital platforms—social media, messaging apps, gaming communities, and forums—to harass, threaten, or humiliate others. Unlike traditional bullying, it can happen 24/7, reach a wider audience, and often occurs anonymously. For many, especially teens and young adults, the digital world is inseparable from daily life, which makes escaping online abuse incredibly difficult.</p>
+                    <p>Cyberbullying can take many forms: spreading rumors, sharing embarrassing images or videos, sending abusive messages, impersonation, or exclusion from online groups. Even a single harmful comment can have a deep psychological impact, but frequent or ongoing harassment is particularly damaging.</p>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Mental Health Impacts of Cyberbullying</h3>
+                    <ul>
+                        <li><strong>Anxiety and Fear:</strong> Victims of cyberbullying often experience persistent fear and anxiety, especially about what might be posted next or how others perceive them online.</li>
+                        <li><strong>Depression and Hopelessness:</strong> Constant exposure to digital hate can lead to feelings of sadness, worthlessness, and hopelessness—hallmarks of clinical depression.</li>
+                        <li><strong>Social Withdrawal:</strong> In an effort to avoid further harm, individuals may isolate themselves from friends, both online and offline, reducing their support system and increasing loneliness.</li>
+                        <li><strong>Low Self-Esteem:</strong> Being targeted by peers online can erode self-worth and confidence, particularly during critical years of identity formation.</li>
+                        <li><strong>Sleep Disturbances:</strong> Worrying about online attacks can disrupt sleep, which further affects mood and mental resilience.</li>
+                        <li><strong>Increased Risk of Self-Harm:</strong> In severe cases, victims may engage in self-harming behaviors or develop suicidal thoughts, particularly if they feel there is no escape or support.</li>
+                    </ul>
+                </div>
+            
+                <div class="wellness-image-container">
+                    <div align="center">
+                        <img src="cyberbullying.jpg" alt="Cyberbullying impact on mental health" class="topic-image">
+                        <p class="image-caption">Online harassment can follow victims anywhere, making it hard to disconnect and recover emotionally.</p>
+                    </div>
+                  
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Recognizing the Signs of Cyberbullying</h3>
+                    <p>It’s not always easy to know if someone is being cyberbullied, but there are warning signs to look out for. These include sudden changes in online behavior, avoiding devices, becoming withdrawn or irritable, and changes in academic or social performance. Victims might delete social media accounts or express fear or dread about going online.</p>
+                    <p>Being aware of these signals can help peers, parents, and educators intervene early to support the affected person.</p>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>What to Do If You're Being Cyberbullied</h3>
+                    <ul>
+                        <li><strong>Don’t respond:</strong> Engaging with the bully often escalates the situation. Save the evidence and avoid retaliation.</li>
+                        <li><strong>Report and block:</strong> Use built-in tools on social platforms to report abusive content and block the perpetrators.</li>
+                        <li><strong>Tell someone you trust:</strong> Speak with a friend, parent, counselor, or mental health professional. You are not alone.</li>
+                        <li><strong>Seek professional help:</strong> If your mental health is suffering, don’t hesitate to consult a therapist or counselor.</li>
+                        <li><strong>Protect your online presence:</strong> Strengthen privacy settings and be mindful of who has access to your information online.</li>
+                    </ul>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Creating a Safer Digital Environment</h3>
+                    <p>Everyone has a role in preventing cyberbullying. Being respectful online, standing up for others, and reporting harmful content helps create a more supportive digital culture. Schools and communities should implement digital citizenship programs that teach empathy, online ethics, and healthy communication.</p>
+                    <p>Digital wellness is not just about limiting screen time—it’s also about fostering safe, respectful interactions in every corner of the internet.</p>
+                </div>
+            
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dffc-Yhk3eE?si=MtqIRJ-Oos7q_U5X" title="How Cyberbullying Affects Mental Health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="topic2-4.html" class="page-btn">Previous</a>
+                <a href="topic2-1.html" class="page-number">1</a>
+                <a href="topic2-2.html" class="page-number">2</a>
+                <a href="topic2-3.html" class="page-number">3</a>
+                <a href="topic2-4.html" class="page-number">4</a>
+                <a href="topic2-5.html" class="page-number active">5</a>
+                <a href="topic2-6.html" class="page-number">6</a>
+                <a href="topic2-7.html" class="page-number">7</a>
+                <a href="topic2-8.html" class="page-number">8</a>
+                <a href="topic2-9.html" class="page-number">9</a>
+                <a href="topic2-10.html" class="page-number">10</a>
+                <a href="topic2-6.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Mendiola, Sherisse Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

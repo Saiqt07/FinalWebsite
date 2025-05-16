@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews & Comparisons of Focus Apps | Digital Wellness &amp; Productivity Hub</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Link to your external stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* General Styles */
+
+    .topic-container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 40px;
+      max-width: 920px;
+      margin: 40px auto;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .topic-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .topic-number-large {
+      background-color: #6D597A;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 28px;
+      line-height: 60px;
+      text-align: center;
+      margin: 0 auto 10px;
+    }
+    .topic-title-large {
+      font-size: 32px;
+      color: #355070;
+      margin: 0;
+    }
+    .topic-content {
+      margin-top: 20px;
+    }
+    .topic-section {
+      margin-bottom: 30px;
+    }
+    .topic-section h3 {
+      font-size: 24px;
+      color: #B56576;
+      border-bottom: 2px solid #EAE0D5;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .topic-content p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+    .topic-content ul {
+      list-style-type: disc;
+      padding-left: 40px;
+      margin-bottom: 15px;
+    }
+    .topic-content ul ul {
+      list-style-type: circle;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .topic-image {
+      max-width: 100%;
+      display: block;
+      margin: 20px auto; 
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    /* Comparative Table Styles */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 15px;
+      text-align: center;
+    }
+    .comparison-table th {
+      background-color: #f9f9f9;
+    }
+    /* Checklist Styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    .checklist input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      gap: 10px;
+    }
+    .page-btn,
+    .page-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      background-color: #6D597A;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      font-weight: 500;
+    }
+    .page-btn:hover,
+    .page-number:hover:not(.active) {
+      background-color: #B56576;
+      transform: translateY(-2px);
+    }
+    .page-number {
+      width: 36px;
+      height: 36px;
+      background-color: #EAE0D5;
+      color: #355070;
+    }
+    .page-number.active {
+      background-color: #B56576;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width:36px; height:36px;">
+        <span class="logo-text">Digital Wellness</span>
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li class="nav-item"><a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Resources</a></li>
+        <li class="nav-item"><a href="aboutus.html" class="nav-link"><i class="fas fa-users"></i> About Us</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link"><i class="fas fa-images"></i> Photo Gallery</a></li>
+        <li class="nav-item"><a href="author.html" class="nav-link"><i class="fas fa-user-edit"></i> About the Author</a></li>
+        <li class="nav-item"><a href="contacts.html" class="nav-link"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main>
+    <section class="topic-container">
+      <div class="topic-header">
+        <div class="topic-number-large">9</div>
+        <h2 class="topic-title-large">Reviews &amp; Comparisons of Focus Apps</h2>
+      </div>
+      <div class="topic-content">
+        <!-- Overview & Criteria for Review -->
+        <section class="topic-section">
+          <h3>Overview &amp; Criteria for Review</h3>
+          <p>
+            With so many focus apps on the market, choosing the right one can be overwhelming. Our reviews are based on criteria such as ease of use, functionality, design, and pricing. This enables us to provide balanced insights to help you select the ideal tool.
+          </p>
+          <p>
+            We assess each app based on its intuitive interface, usefulness, integration abilities, and price-performance ratio.
+          </p>
+        </section>
+        
+        <!-- App Reviews -->
+        <section class="topic-section">
+          <h3>App Reviews</h3>
+          <ul>
+            <li>
+              <strong>Focus Booster:</strong>
+              <br><em>Features:</em> Pomodoro timer, session tracking.
+              <br><em>Pros:</em> Simple, effective reporting.
+              <br><em>Cons:</em> Limited customization.
+              <br><em>Rating:</em> 4/5
+            </li>
+            <li>
+              <strong>Marinara Timer:</strong>
+              <br><em>Features:</em> Customizable intervals.
+              <br><em>Pros:</em> Flexible, web-based.
+              <br><em>Cons:</em> Lacks advanced analytics.
+              <br><em>Rating:</em> 4.2/5
+            </li>
+            <li>
+              <strong>Todoist:</strong>
+              <br><em>Features:</em> Task management, reminders.
+              <br><em>Pros:</em> Feature-rich, cross-platform.
+              <br><em>Cons:</em> Overwhelming for beginners.
+              <br><em>Rating:</em> 4.5/5
+            </li>
+            <li>
+              <strong>Forest:</strong>
+              <br><em>Features:</em> Visual focus, gamification.
+              <br><em>Pros:</em> Engaging, fun.
+              <br><em>Cons:</em> Primarily a distraction blocker.
+              <br><em>Rating:</em> 4.3/5
+            </li>
+            <li>
+              <strong>Headspace:</strong>
+              <br><em>Features:</em> Guided meditation, mindfulness.
+              <br><em>Pros:</em> Comprehensive, user-friendly.
+              <br><em>Cons:</em> Subscription-based.
+              <br><em>Rating:</em> 4.6/5
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Comparative Analysis -->
+        <section class="topic-section">
+          <h3>Comparative Analysis</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>App Name</th>
+                <th>Ease of Use</th>
+                <th>Key Features</th>
+                <th>Pros</th>
+                <th>Cons</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Focus Booster</td>
+                <td>★★★★☆</td>
+                <td>Pomodoro Timer, Analytics</td>
+                <td>Simple, effective</td>
+                <td>Limited customization</td>
+                <td>4/5</td>
+              </tr>
+              <tr>
+                <td>Marinara Timer</td>
+                <td>★★★★☆</td>
+                <td>Custom Intervals</td>
+                <td>Flexible, web-based</td>
+                <td>No advanced analytics</td>
+                <td>4.2/5</td>
+              </tr>
+              <tr>
+                <td>Todoist</td>
+                <td>★★★★★</td>
+                <td>Task Management, Reminders</td>
+                <td>Feature-rich, cross-platform</td>
+                <td>Can be complex</td>
+                <td>4.5/5</td>
+              </tr>
+              <tr>
+                <td>Forest</td>
+                <td>★★★★☆</td>
+                <td>Visual Focus, Gamification</td>
+                <td>Engaging, fun</td>
+                <td>Limited functionality</td>
+                <td>4.3/5</td>
+              </tr>
+              <tr>
+                <td>Headspace</td>
+                <td>★★★★★</td>
+                <td>Meditation, Mindfulness</td>
+                <td>User-friendly, comprehensive</td>
+                <td>Subscription-based</td>
+                <td>4.6/5</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <!-- Summary -->
+        <section class="topic-section">
+          <h3>Summary</h3>
+          <p>
+            With so many focus apps available, choosing the right one can be challenging. Our comprehensive reviews and comparison chart break down the features, benefits, and drawbacks, empowering you to select the tool that best fits your working style.
+          </p>
+        </section>
+        
+        <!-- Example Video -->
+        <section class="topic-section">
+          <h3>Example Video: Choosing the Right Focus App</h3>
+          <div class="video-container">
+            <iframe src="./videos/The Top 5 Focus Apps in 2025.mp4" allowfullscreen></iframe>
+          </div>
+          <p>
+            Watch this video for an in-depth look at the key focus app functionalities and how they compare, helping you make an informed decision.
+          </p>
+        </section>
+      </div>
+    </section>
+    
+    <!-- Pagination -->
+    <div class="pagination">
+      <a href="page8.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+      <a href="page1.html" class="page-number">1</a>
+      <a href="page2.html" class="page-number">2</a>
+      <a href="page3.html" class="page-number">3</a>
+      <a href="page4.html" class="page-number">4</a>
+      <a href="page5.html" class="page-number">5</a>
+      <a href="page6.html" class="page-number">6</a>
+      <a href="page7.html" class="page-number">7</a>
+      <a href="page8.html" class="page-number active">8</a>
+      <a href="page9.html" class="page-number">9</a>
+      <a href="page10.html" class="page-number">10</a>
+      <a href="page9.html" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="team-members">
+        <div class="member">Balang, Clark</div>
+        <div class="member">Bumanlag, Sean</div>
+        <div class="member leader">Cabero, Cyrus Luigi</div>
+        <div class="member">Camaymayan, Xjhann</div>
+        <div class="member">Menidola, Nicole</div>
+        <div class="member">Reyes, Clint</div>
+        <div class="member">Roldan, Zedrick</div>
+        <div class="member">Tancio, Kurt</div>
+        <div class="member">Valiao, Joaquin</div>
+        <div class="member">Vargas, Johanne</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Go to Top Button -->
+  <a href="#top" class="go-top-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+</body>
+</html>

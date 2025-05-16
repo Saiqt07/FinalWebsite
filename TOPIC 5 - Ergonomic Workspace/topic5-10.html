@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Trends in Ergonomic Design | Digitally Driven World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="topics.css">
+
+    <style>
+        
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #355070;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+            line-height: 1.2; 
+        }
+
+        .topic-content {
+            margin-top: 20px;
+            line-height: 1.6; 
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #EAE0D5; 
+            padding-bottom: 10px; 
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05); 
+        }
+		
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        
+        .trend-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid #2F4F4F;
+        }
+
+        .trend-item h4 {
+            color: #2F4F4F; 
+            margin-bottom: 10px;
+        }
+
+        .trend-icon {
+            font-size: 1.5rem;
+            color: #B56576;
+            margin-right: 10px;
+        }
+
+        .key-feature {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            list-style-type: disc;
+            color:  #2F4F4F;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            background-color: #f0f0f0; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            color: #aaa;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Student Productivity Hub Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">StudyWell</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                         Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">Future Trends in Ergonomic Design for a Digitally Driven World</h1>
+                </div>
+
+                <div class="topic-content">
+                    <p>As our world becomes increasingly digital, the field of ergonomic design is rapidly evolving to address new challenges and opportunities. This page explores some of the key future trends shaping how we interact with technology and design our student workspaces.</p>
+
+                    <div class="topic-section">
+                        <h3>The Rise of Adaptive and Personalized Ergonomics</h3>
+                        <p>One significant trend is the shift towards more adaptive and personalized ergonomic solutions. Instead of one-size-fits-all approaches, future designs will likely leverage technology to adjust to individual user needs in real-time.</p>
+                        <div class="trend-item">
+                            <h4><i class="fas fa-user-cog trend-icon"></i> AI-Powered Ergonomic Adjustments</h4>
+                            <p>Artificial intelligence and machine learning will play a crucial role in analyzing user posture, movement, and work habits. This data can then be used to automatically adjust furniture, lighting, and even software interfaces to optimize comfort and reduce strain.</p>
+                            <ul>
+                                <li class="key-feature">Smart chairs that detect and correct posture.</li>
+                                <li class="key-feature">Desks that dynamically adjust height based on activity and user preferences.</li>
+                                 <li class="key-feature">Software that provides real-time feedback on typing posture and mouse usage.</li>
+                            </ul>
+                        </div>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/iqVOdPEGGXg?si=yBkjfq3TXbFI-Ht0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p class="image-caption">Video: Example of AI-Powered Ergonomics</p>
+                    </div>
+
+                    <div class="topic-section">
+                        <h3>Integration of Biometric Data for Enhanced Comfort</h3>
+                        <p>Future ergonomic designs will increasingly incorporate biometric data to create more intuitive and comfortable user experiences.</p>
+                        <div class="trend-item">
+                            <h4><i class="fas fa-heartbeat trend-icon"></i> Biometric Sensors in Devices</h4>
+                            <p>Wearable sensors and integrated technology will monitor physiological signals such as heart rate, muscle tension, and eye strain. This information can be used to personalize device settings and provide alerts for potential discomfort.</p>
+                            <ul>
+                                <li class="key-feature">Keyboards and mice that adapt sensitivity based on grip strength and hand size.</li>
+                                <li class="key-feature">Displays that adjust brightness and color temperature based on ambient light and user fatigue.</li>
+                                <li class="key-feature">Virtual reality and augmented reality interfaces that adapt to user movements and physiological responses to minimize motion sickness and eye strain.</li>
+                            </ul>
+                        </div>
+
+                    <div class="topic-section">
+                        <h3>Focus on Hybrid and Flexible Student Workspaces</h3>
+                        <p>The rise of remote and hybrid work models necessitates ergonomic solutions that can adapt to various environments, from home offices to co-working spaces.</p>
+                        <div class="trend-item">
+                            <h4><i class="fas fa-suitcase trend-icon"></i> Portable and Modular Ergonomic Solutions</h4>
+                            <p>We will see more emphasis on portable, lightweight, and modular ergonomic accessories that users can easily transport and set up in different locations.</p>
+                            <ul>
+                                <li class="key-feature">Foldable and adjustable laptop stands.</li>
+                                <li class="key-feature">Compact and ergonomic keyboards and mice.</li>
+                                <li class="key-feature">Modular desk setups that can be easily reconfigured.</li>
+                            </ul>
+                        </div>
+						<div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Tx1dWEUKJxE?si=m8eU3mVdHgdrZYUI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p class="image-caption">Video: Advanced Ergonomic Devices</p>
+                    </div>
+                    </div>
+
+                    <div class="topic-section">
+                        <h3>Ergonomics for Extended Reality (XR) Environments</h3>
+                        <p>As virtual reality (VR), augmented reality (AR), and mixed reality (MR) technologies become more prevalent, new ergonomic challenges and design considerations will emerge.</p>
+                        <div class="trend-item">
+                            <h4><i class="fas fa-vr-cardboard trend-icon"></i> Designing Comfortable and Intuitive XR Interfaces</h4>
+                            <p>Future research will focus on minimizing discomfort, motion sickness, and cognitive load associated with prolonged XR use. This includes developing more natural and intuitive interaction methods.</p>
+                            <ul>
+                                <li class="key-feature">Lightweight and well-balanced XR headsets.</li>
+                                <li class="key-feature">Gesture-based and haptic feedback systems for intuitive interaction.</li>
+                                <li class="key-feature">Ergonomic design principles for prolonged use in immersive digital environments.</li>
+                            </ul>
+                        </div>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/p3QIeG66wZQ?si=YQUmHpPnGYJyGkaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p class="image-caption">Video: Ergonomics in XR</p>
+                    </div>
+
+                    <div class="topic-section">
+                        <h3>Sustainability and Inclusive Design in Ergonomics</h3>
+                        <p>Future ergonomic design will increasingly prioritize sustainability and inclusivity, ensuring that solutions are not only comfortable and efficient but also environmentally responsible and accessible to all users.</p>
+                        <div class="trend-item">
+                            <h4><i class="fas fa-leaf trend-icon"></i> Sustainable Materials and Manufacturing</h4>
+                            <p>Emphasis will be placed on using eco-friendly materials and sustainable manufacturing processes in the production of ergonomic furniture and accessories.</p>
+                            <li class="key-feature">Use of recycled and biodegradable materials.</li>
+                            <li class="key-feature">Designs that promote longevity and reduce waste.</li>
+                        </div>
+                        <div class="trend-item">
+                            <h4><i class="fas fa-universal-access trend-icon"></i> Universal Design Principles</h4>
+                            <p>Ergonomic solutions will be designed with a focus on universal design principles, ensuring usability for individuals with diverse abilities and needs.</p>
+                            <li class="key-feature">Adjustability features that accommodate a wide range of body types and preferences.</li>
+                            <li class="key-feature">Intuitive interfaces and controls that are easy to use for everyone.</li>
+                        </div>
+                    </div>
+
+                    <p>The future of ergonomic design in a digitally driven world is dynamic and exciting. By embracing technological advancements and focusing on user-centered, sustainable, and inclusive principles, we can create healthier, more comfortable, and more productive digital experiences for everyone.</p>
+                </div>
+            </div>
+            
+            <section class="topic-section">
+                <ul>
+                    <div class="pagination">
+                        <a href="topic1-2.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+                        <a href="topic5.html" class="page-number">1</a>
+                        <a href="topic5-2.html" class="page-number">2</a>
+                        <a href="topic5-3.html" class="page-number">3</a>
+                        <a href="topic5-4.html" class="page-number">4</a>
+                        <a href="topic5-5.html" class="page-number">5</a>
+                        <a href="topic5-6.html" class="page-number">6</a>
+                        <a href="topic5-7.html" class="page-number">7</a>
+                        <a href="topic5-8.html" class="page-number">8</a>
+                        <a href="topic5-9.html" class="page-number">9</a>
+                        <a href="topic5-10.html" class="page-number active">10</a>
+                        <a href="#" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

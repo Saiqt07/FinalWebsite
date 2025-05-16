@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Digital Wellness? | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="topics.css">
+
+    <style>
+
+
+        
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+		
+		.topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            transition: transform 0.3s ease-in-out; 
+        }
+
+        .topic-image:hover {
+            transform: scale(1.02); 
+		}
+        
+     .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">Perfect Desk Setup for Posture and Comfort</h1>
+                </div>
+                <p>Optimize your workspace to prevent strain and enhance productivity.</p>
+
+                <div class="topic-content">
+                    <section class="topic-section chair-section">
+                        <h3>1. The Ergonomic Chair</h3>
+                        <p>A good chair is the foundation of an ergonomic setup.  It should support your spine's natural curve.</p>
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Adjustable Height:</strong>  Allows your feet to rest flat on the floor.</li>
+                            <li><strong>Lumbar Support:</strong>  Supports your lower back.</li>
+                            <li><strong>Adjustable Backrest:</strong>  Allows you to recline slightly.</li>
+                            <li><strong>Adjustable Armrests:</strong>  Support your forearms and shoulders.</li>
+                            <li><strong>Swivel Base:</strong> Enables easy movement.</li>
+                        </ul>
+                        <img src="https://cdn.mos.cms.futurecdn.net/qgsRYsRmbXchT23htPugsn.jpg" alt="Ergonomic Chair" class="topic-image">
+                    </section>
+
+                    <section class="topic-section desk-section">
+                        <h3>2. The Right Desk</h3>
+                        <p>Your desk height and depth are crucial for maintaining good posture.</p>
+                        <ul>
+                            <li><strong>Height:</strong> Should allow your elbows to be at a 90-degree angle when typing.</li>
+                            <li><strong>Depth:</strong>  Should provide enough space for your monitor and keyboard.</li>
+                            <li><strong>Standing Desk Option:</strong> Consider alternating between sitting and standing.</li>
+                        </ul>
+                        <img src="https://www.ctvnews.ca/content/dam/ctv-ecommerce/uploadImg/2025/03/06/best-standing-desks-in-canada.jpeg" alt="Adjustable Desk" class="topic-image">
+                    </section>
+
+                    <section class="topic-section monitor-section">
+                        <h3>3. Monitor Placement</h3>
+                        <p>Proper monitor positioning prevents neck strain and eye fatigue.</p>
+                        <h4>Key Guidelines:</h4>
+                        <ul>
+                            <li><strong>Height:</strong> Top of the screen at or slightly below eye level.</li>
+                            <li><strong>Distance:</strong> An arm's length away.</li>
+                            <li><strong>Tilt:</strong> Adjust to minimize glare.</li>
+                        </ul>
+                        <img src="https://hk-portal-web.oss-cn-hongkong.aliyuncs.com/Doc/3a112eaac35d7383ce1c29ffc2f38477.jpg" alt="Correct Monitor Setup" class="topic-image">
+                    </section>
+
+                    <section class="topic-section keyboard-mouse-section">
+                        <h3>4. Keyboard and Mouse Position</h3>
+                        <p>Your keyboard and mouse should be positioned to minimize strain on your wrists and forearms.</p>
+                        <h4>Key Points:</h4>
+                        <ul>
+                            <li><strong>Placement:</strong>  Close to your body.</li>
+                            <li><strong>Height:</strong>  Elbows at a 90-degree angle.</li>
+                            <li><strong>Wrist Position:</strong>  Neutral, straight position.</li>
+                            <li><strong>Ergonomic Accessories:</strong> Consider a keyboard tray and ergonomic mouse.</li>
+                        </ul>
+                        <img src="https://apexgamingpcs.com/cdn/shop/articles/image_2022-09-22_144938139_1600x.png?v=1663877383" alt="Keyboard and Mouse Position" class="topic-image">
+                    </section>
+
+                    <section class="topic-section lighting-section">
+                        <h3>5. Lighting</h3>
+                        <p>Proper lighting can reduce eye strain and headaches.</p>
+                        <ul>
+                            <li><strong>Natural Light:</strong>  Maximize natural light, but control glare.</li>
+                            <li><strong>Task Lighting:</strong>  Use a desk lamp for focused illumination.</li>
+                            <li><strong>Avoid Glare:</strong>  Position your monitor away from direct light sources.</li>
+                        </ul>
+                        <img src="https://cdn.shopify.com/s/files/1/0518/2557/4043/files/ongriddesign_blog_study_room_lighting_2_1024x1024.jpg?v=1703139410" alt="Proper Lighting" class="topic-image">
+                    </section>
+                </div>    
+            </div>    
+        </div>
+    <div class="pagination">
+        <a href="topic1-2.html" class="page-btn">Previous</a>
+        <a href="topic5.html" class="page-number">1</a>
+        <a href="topic5-2.html" class="page-number active">2</a>
+        <a href="topic5-3.html" class="page-number">3</a>
+        <a href="topic5-4.html" class="page-number">4</a>
+        <a href="topic5-5.html" class="page-number">5</a>
+        <a href="topic5-6.html" class="page-number">6</a>
+        <a href="topic5-7.html" class="page-number">7</a>
+        <a href="topic5-8.html" class="page-number">8</a>
+        <a href="topic5-9.html" class="page-number">9</a>
+        <a href="topic5-10.html" class="page-number">10</a>
+        <a href="#" class="page-btn">Next</a>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

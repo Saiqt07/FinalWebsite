@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Minimalism & Focus | Digital Wellness &amp; Productivity Hub</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Link to your external stylesheet (if available) -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* General Styles */
+
+    .topic-container {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      max-width: 900px;
+    }
+    .topic-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .topic-number-large {
+      background-color: #6D597A;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .topic-title-large {
+      color: #355070;
+      font-size: 28px;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+    }
+    .topic-content {
+      margin-top: 20px;
+    }
+    .topic-section {
+      margin-bottom: 30px;
+    }
+    .topic-section h3 {
+      color: #B56576;
+      font-size: 22px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #EAE0D5;
+      padding-bottom: 8px;
+    }
+    .topic-content p,
+    .topic-content li {
+      font-size: 16px;
+      color: #333;
+    }
+    .topic-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 20px;
+    }
+    .topic-content ul ul {
+      list-style-type: circle;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .topic-image {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 20px auto;
+      display: block;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    /* Checklist Styles */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    .checklist input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      gap: 10px;
+    }
+    .page-btn,
+    .page-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      background-color: #6D597A;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      font-weight: 500;
+    }
+    .page-btn:hover,
+    .page-number:hover:not(.active) {
+      background-color: #B56576;
+      transform: translateY(-2px);
+    }
+    .page-number {
+      width: 36px;
+      height: 36px;
+      background-color: #EAE0D5;
+      color: #355070;
+    }
+    .page-number.active {
+      background-color: #B56576;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width:36px; height:36px;">
+        <span class="logo-text">Digital Wellness</span>
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span> Home</a></li>
+        <li class="nav-item"><a href="resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span> Resources</a></li>
+        <li class="nav-item"><a href="aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span> About Us</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span> Photo Gallery</a></li>
+        <li class="nav-item"><a href="author.html" class="nav-link"><span class="nav-icon"><i class="fas fa-user-edit"></i></span> About the Author</a></li>
+        <li class="nav-item"><a href="contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span> Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section class="topic-container">
+      <div class="topic-header">
+        <div class="topic-number-large">7</div>
+        <h2 class="topic-title-large">Digital Minimalism & Focus</h2>
+      </div>
+      <div class="topic-content">
+    
+        <!-- Understanding Digital Minimalism -->
+        <section class="topic-section">
+          <h3>Understanding Digital Minimalism</h3>
+          <p>
+            Digital minimalism is the practice of paring down your online and digital life to only the most essential tools and information. In a world saturated with constant notifications and an overwhelming amount of data, this approach offers a way to reclaim your focus and creativity by reducing digital clutter.
+          </p>
+          <p>
+            By embracing digital minimalism, you intentionally choose quality over quantity, keeping only the applications, websites, and digital interactions that truly serve your goals. The result? A clearer mind and more space for meaningful work and creativity.
+          </p>
+          <img src="./images/digital mini.png" alt="Digital Minimalism" class="topic-image">
+        </section>
+        
+        <!-- Top Minimalist Apps & Tools -->
+        <section class="topic-section">
+          <h3>Top Minimalist Apps &amp; Tools</h3>
+          <p>
+            When it comes to a focused digital life, less is more. Consider these minimalist apps that encourage reduced screen time and more concentrated work:
+          </p>
+          <ul>
+            <li>
+              <strong>Offtime:</strong> Temporarily disconnect from distractions by blocking calls, texts, and notifications.
+              <br/><img src="./images/offtime.webp" alt="Offtime App" class="topic-image" style="max-width:80%;">
+            </li>
+            <li>
+              <strong>Flipd:</strong> This app locks your phone during designated periods, helping you stay away from unnecessary distractions.
+              <br/><img src="./images/flipd.png" alt="Flipd App" class="topic-image" style="max-width:80%;">
+            </li>
+            <li>
+              <strong>Forest:</strong> Grow a virtual tree while you focus. If you exit the app, the tree dies—providing a creative incentive to stay focused.
+              <br/><img src="./images/forest.png" alt="Forest App" class="topic-image" style="max-width:80%;">
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Benefits of a Minimalist Approach -->
+        <section class="topic-section">
+          <h3>Benefits of a Minimalist Approach</h3>
+          <p>
+            Embracing digital minimalism brings many benefits:
+          </p>
+          <ul>
+            <li>Creates a quieter digital environment with fewer distractions.</li>
+            <li>Clears mental clutter, allowing for enhanced creativity and focus.</li>
+            <li>Improves overall productivity by limiting non-essential interactions.</li>
+            <li>Fosters a more balanced lifestyle by prioritizing meaningful digital engagement.</li>
+          </ul>
+          <p>
+            "In a world dominated by constant notifications and endless feeds, embracing digital minimalism can be transformative. Tools like Forest help you cultivate a quieter digital environment, paving the way for deeper concentration and higher productivity."
+          </p>
+          <img src="./images/mini benef.png" alt="Benefits of Minimalism" class="topic-image">
+        </section>
+        
+        <!-- Practical Implementation -->
+        <section class="topic-section">
+          <h3>Practical Implementation</h3>
+          <p>
+            Implementing digital minimalism is about making conscious choices. Try these strategies:
+          </p>
+          <ul>
+            <li>Regularly review and declutter your apps and subscriptions.</li>
+            <li>Configure your devices to limit notifications to only the essential.</li>
+            <li>Establish tech-free zones or times—such as during meals or before bed.</li>
+            <li>Practice periodic digital detoxes to reclaim your time and focus.</li>
+          </ul>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="./images/freezon.png" alt="Tech-Free Zone" class="topic-image" style="max-width:45%; margin: 10px;">
+          </div>
+          
+        
+        <!-- Inspirational Video -->
+        <section class="topic-section">
+          <h3>Inspirational Video: Embracing Digital Minimalism</h3>
+          <div class="video-container">
+            <iframe src="./videos/Digital Minimalism by Cal Newport - A Visual Summary.mp4" allowfullscreen></iframe>
+          </div>
+          <p>
+            Watch this inspirational video to see how digital minimalism can transform your approach to technology—helping you create a more focused, intentional lifestyle.
+          </p>
+        </section>
+        
+        <!-- Daily Minimalism Checklist -->
+        <section class="topic-section">
+          <h3>Daily Minimalism Checklist</h3>
+          <p>
+            Use this checklist to help maintain a minimalist digital lifestyle:
+          </p>
+          <ul class="checklist">
+            <li><input type="checkbox" id="declutter" /> <label for="declutter">Declutter unused apps and subscriptions</label></li>
+            <li><input type="checkbox" id="disable-notifs" /> <label for="disable-notifs">Disable non-essential notifications</label></li>
+            <li><input type="checkbox" id="tech-free" /> <label for="tech-free">Set a daily tech-free period (e.g., 1 hour)</label></li>
+            <li><input type="checkbox" id="digital-review" /> <label for="digital-review">Review your digital habits weekly</label></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+    
+    <!-- Pagination -->
+    <div class="pagination">
+      <a href="topic1-6.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+      <a href="topic1-1.html" class="page-number">1</a>
+      <a href="topic1-2.html" class="page-number">2</a>
+      <a href="topic1-3.html" class="page-number">3</a>
+      <a href="topic1-4.html" class="page-number">4</a>
+      <a href="topic1-5.html" class="page-number">5</a>
+      <a href="topic1-6.html" class="page-number">6</a>
+      <a href="topic1-7.html" class="page-number active">7</a>
+      <a href="topic1-8.html" class="page-number">8</a>
+      <a href="topic1-9.html" class="page-number">9</a>
+      <a href="topic1-10.html" class="page-number">10</a>
+      <a href="topic1-8.html" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="team-members">
+        <div class="member">Balang, Clark</div>
+        <div class="member">Bumanlag, Sean</div>
+        <div class="member leader">Cabero, Cyrus Luigi</div>
+        <div class="member">Camaymayan, Xjhann</div>
+        <div class="member">Menidola, Nicole</div>
+        <div class="member">Reyes, Clint</div>
+        <div class="member">Roldan, Zedrick</div>
+        <div class="member">Tancio, Kurt</div>
+        <div class="member">Valiao, Joaquin</div>
+        <div class="member">Vargas, Johanne</div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Go to Top Button -->
+  <a href="#top" class="go-top-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+</body>
+</html>
+
+    

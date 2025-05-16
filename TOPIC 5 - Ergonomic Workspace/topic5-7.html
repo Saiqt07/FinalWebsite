@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimize Your Digital Environment for Well-being | Digital Wellness Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="topics.css">
+
+    <style>
+        
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .wellness-image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Strategy cards */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .strategy-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #2F4F4F; 
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .strategy-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color:  #B56576;
+        }
+
+        .strategy-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #2F4F4F; 
+        }
+
+        /* Tool box styles */
+        .tool-box {
+            background-color: #E0EEE0; 
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .tool-box h4 {
+            color: #355070;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .checklist {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .checklist li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #2E8B57; 
+        }
+
+        .quote-box {
+            background-color: #F5F5F5;
+            border-left: 4px solid #6D597A;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+
+        .quote-box:before {
+            content: '\201C';
+            font-size: 60px;
+            font-family: Georgia, serif;
+            color: #6D597A;
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            color: #2F4F4F; 
+        }
+
+        .quote-author {
+            font-weight: bold;
+            color: #355070;
+            text-align: right;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+		
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">Optimizing Your Digital Environment for Well-being</h1>
+                </div>
+
+                <div class="topic-content">
+                    <div class="topic-section">
+                        <h3>The Importance of a Healthy Digital Environment</h3>
+                        <p>In our increasingly digital world, the environment we cultivate online significantly impacts our mental and emotional well-being. Constant notifications, endless scrolling, and the pressure to stay connected can lead to stress, anxiety, and a feeling of being overwhelmed. Optimizing your digital environment is about taking conscious steps to create a more balanced and intentional relationship with technology, allowing you to focus on what truly matters.</p>
+
+                        <div class="wellness-image-container">
+                            <img src="https://images.stockcake.com/public/0/4/6/046406ab-effc-4e87-b273-33144cf82404_large/students-studying-outdoors-stockcake.jpg" alt="Person peacefully using a laptop in nature" class="topic-image">
+                            <p class="image-caption">Creating a digital space that supports peace and focus.</p>
+                        </div>
+
+                        <p>Just as we declutter our physical spaces to create a sense of calm and order, we can also declutter our digital lives to foster a healthier state of mind. This involves managing the influx of information, reducing distractions, and being more mindful of how we engage with technology.</p>
+                    </div>
+
+                    <div class="topic-section">
+                        <h3>Strategies for Managing Notifications</h3>
+                        <p>Notifications are designed to grab our attention, often disrupting our focus and pulling us away from important tasks or moments of rest. Taking control of your notifications is a crucial step towards a healthier digital environment.</p>
+
+                        <div class="strategy-grid">
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-bell-slash"></i></div>
+                                <h4 class="strategy-title">Be Selective</h4>
+                                <p>Review your app notification settings and disable all non-essential alerts. Only allow notifications from apps that genuinely require your immediate attention.</p>
+                            </div>
+
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-clock"></i></div>
+                                <h4 class="strategy-title">Scheduled Summaries</h4>
+                                <p>Utilize features that provide notification summaries at specific times of the day, rather than constant interruptions.</p>
+                            </div>
+
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-volume-mute"></i></div>
+                                <h4 class="strategy-title">Use Focus Modes</h4>
+                                <p>Employ focus modes or Do Not Disturb settings to silence notifications during work hours, meetings, or personal time.</p>
+                            </div>
+
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-palette"></i></div>
+                                <h4 class="strategy-title">Customize Sounds</h4>
+                                <p>Set distinct notification sounds for important apps, allowing you to prioritize without looking at your screen.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="topic-section">
+                        <h3>Techniques for Reducing Digital Distractions</h3>
+                        <p>Distractions are the enemy of focus and can significantly impact our productivity and sense of well-being. Implementing strategies to minimize these interruptions is key.</p>
+
+                        <div class="strategy-grid">
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-eye-slash"></i></div>
+                                <h4 class="strategy-title">Minimize Visual Clutter</h4>
+                                <p>Organize your desktop and app screens, uninstall unused applications, and hide distracting elements.</p>
+                            </div>
+
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-globe"></i></div>
+                                <h4 class="strategy-title">Limit Tab Usage</h4>
+                                <p>Keep only necessary tabs open in your browser to avoid the temptation of switching between tasks or getting lost in unrelated content.</p>
+                            </div>
+
+                            <div class="strategy-card">
+                                <div class="strategy-icon"><i class="fas fa-hourglass-half"></i></div>
+                                <h4 class="strategy-title">Time Blocking</h4>
+                                <p>Allocate specific time slots for focused work and digital communication, avoiding the urge to check messages constantly.</p>
+                            </div>
+
+                            <div class="strategy-card">
+                                 <div class="strategy-icon"><i class="fas fa-lock"></i></div>
+                                <h4 class="strategy-title">Website Blockers</h4>
+                                <p>Use browser extensions or apps that block distracting websites during designated work or focus periods.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="topic-section">
+                        <h3>Fostering a Healthier Relationship with Technology</h3>
+                        <p>A healthy relationship with technology is characterized by intentionality, balance, and a sense of control. It's about using technology as a tool to enhance our lives, rather than allowing it to dominate our time and attention.</p>
+
+                        <div class="tool-box">
+                            <h4>Tips for a Healthier Tech Relationship:</h4>
+                            <ul class="checklist">
+                                <li><strong>Practice Mindful Usage:</strong> Be aware of why and how you're using technology.</li>
+                                <li><strong>Establish Tech-Free Zones:</strong> Designate areas in your home (e.g., bedroom, dining table) where technology is not allowed.</li>
+                                <li><strong>Set Time Limits:</strong> Use built-in features or apps to limit your time on specific platforms.</li>
+                                <li><strong>Prioritize Offline Activities:</strong> Make time for hobbies, social interactions, and activities that don't involve screens.</li>
+                                <li><strong>Regular Digital Detoxes:</strong> Schedule short breaks from technology to reconnect with yourself and your surroundings.</li>
+                                 <li><strong>Reflect on Your Usage:</strong> Periodically review your digital habits and make adjustments as needed.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="topic-section">
+                        <h3>The Benefits of an Optimized Digital Environment</h3>
+                        <p>Investing time and effort in optimizing your digital environment can lead to significant improvements in your overall well-being.</p>
+                        <ul class="checklist">
+                            <li>Increased focus and productivity</li>
+                            <li>Reduced stress and anxiety</li>
+                            <li>Improved sleep quality</li>
+                            <li>More meaningful in-person connections</li>
+                            <li>Greater presence in the moment</li>
+                            <li>Enhanced creativity and mental clarity</li>
+                            <li>A stronger sense of control over your time and attention</li>
+                        </ul>
+                    </div>
+
+                    <div class="topic-section">
+                        <h3>Expert Insights</h3>
+						<p>Here's a synthesis of insights on the importance of digital health, attributed to key authors and organizations in these fields:</p>
+						<div class="quote-box">
+                            <p class="quote-text">"Empowering individuals with digital tools and information is key to promoting health literacy and engagement in their own care."</p>
+                            <p class="quote-author">— Australian Institute of Health and Welfare (AIHW)</p>
+                        </div>
+						
+						<div class="quote-box">
+                            <p class="quote-text">"The true value of digital health lies in its ability to empower individuals and create a more patient-centric healthcare ecosystem."</p>
+                            <p class="quote-author">— Nilmini Wickramasinghe</p>
+                        </div>
+						
+						<div class="qoute-box">
+						<p class="qoute-text"></p>
+						<p class="qoute-author"></p>
+						</div>
+						
+						<div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/t8Ofb3Bipqg?si=kAgYZcJBx5LCUNoC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p class="image-caption">A short video with practical tips for digital wellness.</p>
+                    </div>
+                        <p>Creating a healthier digital environment is an ongoing process that requires self-awareness and conscious effort. By implementing strategies to manage notifications, reduce distractions, and foster a more intentional relationship with technology, you can reclaim your focus, enhance your well-being, and ultimately live a more balanced and fulfilling life in the digital age.</p>
+                    </div>
+
+                    
+                </div>
+            <section class="topic-section">
+                <ul>
+
+                </ul>
+            </section>
+        </div>
+        <div class="pagination">
+            <a href="topic1-2.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="topic5.html" class="page-number">1</a>
+            <a href="topic5-2.html" class="page-number">2</a>
+            <a href="topic5-3.html" class="page-number">3</a>
+            <a href="topic5-4.html" class="page-number">4</a>
+            <a href="topic5-5.html" class="page-number">5</a>
+            <a href="topic5-6.html" class="page-number">6</a>
+            <a href="topic5-7.html" class="page-number active">7</a>
+            <a href="topic5-8.html" class="page-number">8</a>
+            <a href="topic5-9.html" class="page-number">9</a>
+            <a href="topic5-10.html" class="page-number">10</a>
+            <a href="#" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

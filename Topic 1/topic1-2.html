@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Digital Wellness? (Page 2) | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Topic page specific styles */
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">01</div>
+                    <h1 class="topic-title-large">What is Digital Wellness?</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <!-- Page 2: The Science Behind Digital Wellbeing -->
+                    <div id="page2" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>The Neuroscience of Digital Interaction</h3>
+                            <p>Scientific research has revealed fascinating insights into how digital technology affects our brains:</p>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://www.verywellmind.com/thmb/FJyWVF3u6D2dCOXIGg682JPpmqE=/1000x0/filters:no_upscale():max_bytes(150000):strip_icc()/evolvingtechnology-recirc1-06f70e12e46e4a8b9d76aea666057368.jpg" alt="Brain and Digital Technology" class="topic-image">
+                                <p class="image-caption">Neuroimaging studies show distinct brain activity patterns during digital media consumption</p>
+                            </div>
+                            
+                            <ul>
+                                <li>
+                                    <strong>Dopamine and Reward Pathways</strong>
+                                    <p>Research shows that notifications, likes, and social media interactions trigger dopamine release in the brain's reward center, creating feedback loops similar to those seen in behavioral addiction studies. This neurochemical response explains why digital activities can become compulsive.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Studies show a 50-80% increase in dopamine levels during rewarding digital interactions</li>
+                                        <li style="margin-left: 20px;">The same neural pathways activated by social rewards are implicated in behavioral addictions</li>
+                                        <li style="margin-left: 20px;">Variable reward schedules in social media platforms maximize dopamine response</li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <strong>Attention Networks</strong>
+                                    <p>Neuroscientists have documented how frequent digital interruptions can fragment attention, with studies showing that even the presence of a smartphone can reduce available cognitive capacity. The brain's anterior cingulate cortex, crucial for focused attention, shows altered activity patterns with excessive digital multitasking.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Research indicates a 20-40% reduction in cognitive performance during digital multitasking</li>
+                                        <li style="margin-left: 20px;">The mere presence of a smartphone reduces available working memory by approximately 10%</li>
+                                        <li style="margin-left: 20px;">Recovery time after digital interruptions averages 23 minutes before returning to deep focus</li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <strong>Memory Formation</strong>
+                                    <p>Research from cognitive neuroscience demonstrates that digital information consumption affects how memories are encoded. The hippocampus—essential for memory consolidation—functions differently when we outsource memory to digital devices rather than engaging in active recall.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Digital note-taking without conceptual engagement reduces retention by up to 30%</li>
+                                        <li style="margin-left: 20px;">The "Google Effect" shows people remember where to find information rather than the information itself</li>
+                                        <li style="margin-left: 20px;">Hippocampal activity decreases when individuals rely on external digital storage for information</li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <strong>Sleep Neurobiology</strong>
+                                    <p>Studies reveal that blue light from screens suppresses melatonin production and disrupts circadian rhythms. Neuroimaging shows that poor sleep quality from digital device use before bedtime impacts prefrontal cortex function, affecting decision-making and emotional regulation.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Blue light exposure reduces melatonin production by 50% when used within 2 hours of bedtime</li>
+                                        <li style="margin-left: 20px;">Sleep latency (time to fall asleep) increases by 10-30 minutes following pre-sleep screen use</li>
+                                        <li style="margin-left: 20px;">REM sleep quality decreases by 15-20% after evening digital device usage</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Psychological Effects of Digital Environments</h3>
+                            <p>Psychological research has identified several key mechanisms through which digital environments affect mental wellbeing:</p>
+                            
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/Czg_9C7gw0o" title="The Psychology of Technology" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            
+                            <ul>
+                                <li>
+                                    <strong>Social Comparison Theory</strong>
+                                    <p>Research shows that passive social media use increases upward social comparison, correlating with decreased self-esteem and increased depressive symptoms.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Studies show 60% of users report feelings of inadequacy after viewing others' social media profiles</li>
+                                        <li style="margin-left: 20px;">Upward social comparison on social platforms increases by 30% during periods of personal vulnerability</li>
+                                        <li style="margin-left: 20px;">Limiting social media consumption to 30 minutes daily reduces depression symptoms by 25%</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Fear of Missing Out (FOMO)</strong>
+                                    <p>Studies demonstrate that FOMO mediates the relationship between social media use and psychological distress.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Nearly 70% of young adults report experiencing FOMO when unable to check social media</li>
+                                        <li style="margin-left: 20px;">FOMO correlates with a 45% increase in anxiety symptoms among frequent social media users</li>
+                                        <li style="margin-left: 20px;">Digital detox periods of 72+ hours show significant reduction in FOMO-related stress</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Attentional Capacity</strong>
+                                    <p>Experimental psychology research indicates that digital context switching can reduce attentional capacity by up to 40%.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Task completion time increases by 25-40% when frequently interrupted by digital notifications</li>
+                                        <li style="margin-left: 20px;">Error rates in cognitive tasks increase by 20-35% during digital multitasking</li>
+                                        <li style="margin-left: 20px;">Sustained attention spans have decreased by approximately 25% over the past decade</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Digital Emotional Contagion</strong>
+                                    <p>Large-scale studies have confirmed that emotional states can transfer through digital networks, affecting mood and wellbeing.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Exposure to negative content online increases negative emotion expression by up to 25%</li>
+                                        <li style="margin-left: 20px;">Positive digital interactions can boost mood for 2-3 hours afterward</li>
+                                        <li style="margin-left: 20px;">Emotional contagion effects are 15% stronger in close digital social networks</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Technostress</strong>
+                                    <p>Workplace psychology research has identified specific digital stressors that contribute to burnout and reduced productivity.</p>
+                                    <ul>
+                                        <li style="margin-left: 20px;">Email overload contributes to approximately 30% of reported workplace stress</li>
+                                        <li style="margin-left: 20px;">After-hours work communications increase cortisol levels by 15-20%</li>
+                                        <li style="margin-left: 20px;">Implementing digital boundaries improves work satisfaction by 40%</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <br>
+                            <p>These evidence-based findings help explain why mindful digital habits are essential for maintaining psychological wellbeing in our increasingly connected world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic1.html" class="page-btn">Previous</a>
+                <a href="topic1.html" class="page-number">1</a>
+                <a href="topic1-2.html" class="page-number active">2</a>
+                <a href="topic1-3.html" class="page-number">3</a>
+                <a href="topic1-4.html" class="page-number">4</a>
+                <a href="topic1-5.html" class="page-number">5</a>
+                <a href="topic1-6.html" class="page-number">6</a>
+                <a href="topic1-7.html" class="page-number">7</a>
+                <a href="topic1-8.html" class="page-number">8</a>
+                <a href="topic1-9.html" class="page-number">9</a>
+                <a href="topic1-10.html" class="page-number">10</a>
+                <a href="topic1-3.html" class="page-btn">Next</a>
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

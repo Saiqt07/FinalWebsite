@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Minimalism: Less Tech, More Life (Page 8) | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Topic page specific styles */
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section ul {
+            padding-left: 20px;
+        }
+
+        .topic-section li {
+            margin-bottom: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .wellness-image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Strategy cards */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .strategy-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #355070;
+        }
+        
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .strategy-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #355070;
+        }
+        
+        .strategy-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #355070;
+        }
+        
+        /* Tool box styles */
+        .tool-box {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tool-box h4 {
+            color: #355070;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        /* Self-assessment styles */
+        .assessment-container {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #6D597A;
+        }
+        
+        .assessment-title {
+            color: #355070;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .assessment-question {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        /* Expert insights styles */
+        .expert-quote {
+            background-color: #f5f5f5;
+            border-left: 4px solid #6D597A;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .expert-quote:before {
+            content: '\201C';
+            font-size: 60px;
+            font-family: Georgia, serif;
+            color: #6D597A;
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            font-weight: bold;
+            color: #355070;
+            text-align: right;
+        }
+
+        /* Checklist styles */
+        .checklist {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .checklist li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #6D597A;
+        }
+
+        /* Before/After comparison */
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .comparison-column {
+            flex: 1;
+            min-width: 280px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-column ul {
+            padding-left: 20px;
+        }
+
+        .comparison-column.before {
+            border-top: 4px solid #B56576;
+        }
+
+        .comparison-column.after {
+            border-top: 4px solid #6D597A;
+        }
+
+        .comparison-title {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #355070;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">01</div>
+                    <h1 class="topic-title-large">Digital Minimalism: Less Tech, More Life</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <!-- Page 8: Digital Minimalism -->
+                    <div id="page8" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>What is Digital Minimalism?</h3>
+                            <p>Digital minimalism is a philosophy that helps you question what digital communication tools (and behaviors surrounding these tools) add the most value to your life. It is about being more intentional about technology use and stepping back from mindless scrolling, clicking, and consuming to focus on the digital tools and activities that support what you value most.</p>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Minimalist workspace with notebook and plant" class="topic-image">
+                                <p class="image-caption">A minimalist approach to technology creates space for what truly matters</p>
+                            </div>
+                            
+                            <p>The term was popularized by computer science professor Cal Newport in his book "Digital Minimalism: Choosing a Focused Life in a Noisy World." According to Newport, digital minimalism is:</p>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"A philosophy of technology use in which you focus your online time on a small number of carefully selected and optimized activities that strongly support things you value, and then happily miss out on everything else."</p>
+                                <p class="quote-author">— Cal Newport, Author of "Digital Minimalism"</p>
+                            </div>
+                            
+                            <p>Unlike a digital detox, which is often a temporary break from technology, digital minimalism is a sustainable, long-term approach to technology use that aligns with your core values and priorities.</p>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Core Principles of Digital Minimalism</h3>
+                            
+                            <div class="strategy-grid">
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-bullseye"></i></div>
+                                    <h4 class="strategy-title">Intentionality</h4>
+                                    <p>Use technology with clear purpose rather than defaulting to it out of habit or convenience. Ask: "Does this technology serve my values and goals?"</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-balance-scale"></i></div>
+                                    <h4 class="strategy-title">Cost-Benefit Analysis</h4>
+                                    <p>Evaluate the true value and cost of each technology in your life. Consider not just benefits but also the attention, time, and mental energy it demands.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-minus-circle"></i></div>
+                                    <h4 class="strategy-title">Subtraction Over Addition</h4>
+                                    <p>Focus on removing unnecessary technology rather than adding productivity tools. The goal is to create space, not fill it with "better" tech.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-hands"></i></div>
+                                    <h4 class="strategy-title">High-Quality Leisure</h4>
+                                    <p>Replace passive digital consumption with active, meaningful activities that require skill and engagement, such as crafts, sports, or face-to-face conversations.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-user-shield"></i></div>
+                                    <h4 class="strategy-title">Reclaiming Control</h4>
+                                    <p>Take back agency over how you spend your time and attention rather than letting apps and algorithms dictate your behavior.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-heart"></i></div>
+                                    <h4 class="strategy-title">Values Alignment</h4>
+                                    <p>Ensure that your technology use supports rather than undermines your deepest values and the life you want to live.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Benefits of Digital Minimalism</h3>
+                            
+                            <p>Embracing digital minimalism can lead to numerous benefits for your mental, emotional, and even physical well-being:</p>
+                            
+                            <ul class="checklist">
+                                <li><strong>Improved focus and attention span</strong> as you reduce digital distractions</li>
+                                <li><strong>Enhanced productivity</strong> through more intentional use of technology tools</li>
+                                <li><strong>Reduced anxiety and FOMO</strong> (fear of missing out) from constant social media exposure</li>
+                                <li><strong>More meaningful connections</strong> as you prioritize quality interactions over quantity</li>
+                                <li><strong>Greater presence</strong> in your daily life and with loved ones</li>
+                                <li><strong>Increased creativity</strong> as your mind has space to wander and make connections</li>
+                                <li><strong>Better sleep</strong> with reduced blue light exposure and evening stimulation</li>
+                                <li><strong>More time for activities</strong> that bring genuine satisfaction and joy</li>
+                                <li><strong>Reduced digital clutter</strong> leading to mental clarity</li>
+                                <li><strong>Greater autonomy</strong> over how you spend your time and attention</li>
+                            </ul>
+                            
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/sJdZ7kmA2QQ?si=dGvpsGO3hIqgZyql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                            </div>
+                            <p class="image-caption">Video: Understanding digital minimalism and how to implement it in your life</p>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Digital Minimalism vs. Traditional Technology Use</h3>
+                            
+                            <div class="comparison-container">
+                                <div class="comparison-column before">
+                                    <h4 class="comparison-title">Traditional Approach</h4>
+                                    <ul>
+                                        <li>Adopting new technologies by default</li>
+                                        <li>Using multiple apps and platforms without clear purpose</li>
+                                        <li>Constant connectivity and immediate responses</li>
+                                        <li>Passive scrolling and consumption</li>
+                                        <li>Technology as entertainment and time-filler</li>
+                                        <li>Allowing notifications and alerts to dictate attention</li>
+                                        <li>Digital activities replacing physical world experiences</li>
+                                        <li>Scattered focus across many digital channels</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="comparison-column after">
+                                    <h4 class="comparison-title">Digital Minimalist Approach</h4>
+                                    <ul>
+                                        <li>Carefully evaluating new technologies before adoption</li>
+                                        <li>Using select tools that align with personal values</li>
+                                        <li>Intentional connectivity with designated offline time</li>
+                                        <li>Active, purposeful engagement with digital content</li>
+                                        <li>Technology as a tool to support meaningful activities</li>
+                                        <li>Creating systems that put you in control of your attention</li>
+                                        <li>Digital tools enhancing rather than replacing real-world experiences</li>
+                                        <li>Concentrated attention on fewer, more valuable digital activities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Practical Steps Toward Digital Minimalism</h3>
+                            
+                            <h4>1. Conduct a Digital Declutter</h4>
+                            <p>Begin with a 30-day break from optional technologies in your life. This period allows you to reset your digital habits and rediscover activities that bring you genuine satisfaction.</p>
+                            
+                            <h4>2. Define Your Technology Values</h4>
+                            <p>Clarify what role you want technology to play in your life. What are your core values, and how can technology help support them rather than distract from them?</p>
+                            
+                            <h4>3. Establish Operating Procedures</h4>
+                            <p>Create clear rules for how and when you'll use various technologies. For example:</p>
+                            <ul>
+                                <li>Check email only at designated times (e.g., 10am and 3pm)</li>
+                                <li>Keep your phone in a drawer when working on important tasks</li>
+                                <li>No screens during the first and last hour of your day</li>
+                                <li>Use social media only through a browser, not apps</li>
+                                <li>Disable all non-essential notifications</li>
+                            </ul>
+                            
+                            <h4>4. Curate High-Quality Digital Tools</h4>
+                            <p>Be selective about the apps and services you allow into your digital life. For each tool, ask:</p>
+                            <ul>
+                                <li>Does this technology directly support something I deeply value?</li>
+                                <li>Is it the best way to support this value, or just the most convenient?</li>
+                                <li>What am I giving up to use this technology (time, attention, privacy)?</li>
+                                <li>Could I achieve the same benefit with less digital involvement?</li>
+                            </ul>
+                            
+                            <h4>5. Reclaim Leisure</h4>
+                            <p>Develop a repertoire of high-quality leisure activities that don't involve screens. These might include:</p>
+                            <ul>
+                                <li>Physical activities like hiking, gardening, or sports</li>
+                                <li>Creative pursuits such as drawing, writing, or playing music</li>
+                                <li>Social activities like board games, dinner parties, or community events</li>
+                                <li>Skill-building hobbies that provide a sense of accomplishment</li>
+                            </ul>
+                            
+                            <h4>6. Join the Attention Resistance</h4>
+                            <p>Recognize that many digital tools are designed to capture and monetize your attention. Fight back by:</p>
+                            <ul>
+                                <li>Deleting social media apps from your phone</li>
+                                <li>Using browser extensions that block distracting websites</li>
+                                <li>Setting up your devices to minimize temptation</li>
+                                <li>Creating physical distance between yourself and your devices</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Self-Assessment: Your Digital Minimalism Readiness</h3>
+                            
+                            <div class="assessment-container">
+                                <h4 class="assessment-title">Digital Minimalism Readiness Assessment</h4>
+                                
+                                <p class="assessment-question">1. How often do you find yourself checking your phone or other devices without a specific purpose?</p>
+                                
+                                <p class="assessment-question">2. Do you feel anxious when you're separated from your smartphone or unable to check social media?</p>
+                                
+                                <p class="assessment-question">3. How much of your leisure time is spent passively consuming digital content versus engaging in activities that require skill and effort?</p>
+                                
+                                <p class="assessment-question">4. When was the last time you went several hours without looking at a screen (while awake)?</p>
+                                
+                                <p class="assessment-question">5. Do you have clear rules or boundaries around your technology use?</p>
+                                
+                                <p class="assessment-question">6. How often do digital distractions prevent you from being fully present with others or completing important tasks?</p>
+                                
+                                <p class="assessment-question">7. What activities or hobbies have you neglected or abandoned due to increased screen time?</p>
+                                
+                                <p style="margin-top: 20px;"><em>Reflect on your answers to identify areas where digital minimalism might benefit your life the most.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Expert Insights on Digital Minimalism</h3>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"The key is to enjoy the benefits of technology while still maintaining your autonomy. Most people sense that there's a healthier way to live alongside these tools, but they're not sure how to get there. Digital minimalism provides a clear path."</p>
+                                <p class="quote-author">— Cal Newport, Computer Science Professor</p>
+                            </div>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"We don't need to reject technology entirely, but we do need to be more thoughtful about how we let it into our lives. Digital minimalism isn't about using technology less—it's about using it better."</p>
+                                <p class="quote-author">— Tristan Harris, Former Google Design Ethicist</p>
+                            </div>
+                            
+                            <p>Digital minimalism offers a sustainable approach to technology use that can help you reclaim your time, attention, and well-being in an increasingly connected world. By being more intentional about the digital tools you use and how you use them, you can ensure that technology enhances rather than detracts from the life you want to live. Remember that digital minimalism is a personal journey—what works for someone else may not work for you. The goal is to create a relationship with technology that reflects your unique values, needs, and circumstances.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic1-7.html" class="page-btn">Previous</a>
+                <a href="topic1.html" class="page-number">1</a>
+                <a href="topic1-2.html" class="page-number">2</a>
+                <a href="topic1-3.html" class="page-number">3</a>
+                <a href="topic1-4.html" class="page-number">4</a>
+                <a href="topic1-5.html" class="page-number">5</a>
+                <a href="topic1-6.html" class="page-number">6</a>
+                <a href="topic1-7.html" class="page-number">7</a>
+                <a href="topic1-8.html" class="page-number active">8</a>
+                <a href="topic1-9.html" class="page-number">9</a>
+                <a href="topic1-10.html" class="page-number">10</a>
+                <a href="topic1-9.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

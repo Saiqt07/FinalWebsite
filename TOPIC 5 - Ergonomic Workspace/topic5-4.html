@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posture & Productivity | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="topics.css">
+
+    <style>
+	
+        .strategy-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .strategy-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            border: 1px solid #e0e0e0; 
+        }
+
+        .card-header {
+            background-color: #6D597A;
+            color: white;
+            padding: 15px;
+            border-radius: 6px 6px 0 0;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+        .card-question {
+            margin-bottom: 10px;
+            color: #355070;
+            line-height: 1.6; 
+        }
+
+        .card-options {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .card-options li {
+            margin-bottom: 8px;
+        }
+
+        .card-options label {
+            display: block;
+            cursor: pointer;
+            line-height: 1.4; 
+        }
+
+        .card-options input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .card-feedback {
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .card-feedback.correct {
+            color: green;
+        }
+
+        .card-feedback.incorrect {
+            color: red;
+        }
+
+        .quiz-card .card-header {
+            background-color: #B56576;
+        }
+
+        .topic-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+            line-height: 1.2; 
+        }
+
+        .topic-content {
+            margin-top: 20px;
+            line-height: 1.6; 
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #EAE0D5; 
+            padding-bottom: 10px; 
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05); 
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            transition: transform 0.3s ease-in-out; 
+        }
+
+        .topic-image:hover {
+            transform: scale(1.02); 
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+
+        .submit-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: #B56576;  
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            width: 200px; 
+            margin: 20px auto; 
+            font-size: 1.1em;
+        }
+
+        .submit-button:hover {
+            background-color: #6D597A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .submit-button:active {
+            background-color: #B56576;
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .result {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #355070;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">The Posture-Productivity Connection</h1>
+                </div>
+                <div class="topic-content">
+                    <section class="topic-section">
+                        <h3>How Proper Alignment Impacts Focus, Energy Levels, and Overall Student Output</h3>
+                        <p>
+                            Have you ever felt sluggish and unfocused during study, even after a full night's sleep?  The culprit might be your posture.  The way we hold our bodies has a profound impact on our physical and mental state, influencing everything from our energy levels to our ability to concentrate.  This section explores the intricate connection between posture and productivity, and provides actionable strategies for improving both.
+                        </p>
+                    </section>
+
+                    <section class="topic-section">
+                        <h3>The Downward Spiral of Poor Posture</h3>
+                        <p>
+                            Modern student environments, often involving prolonged sitting and the use of digital devices, can contribute to poor posture. Slouching, hunching over a keyboard, and craning your neck to look at a monitor can lead to a cascade of negative effects:
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i>  <b>Reduced Energy Levels:</b> Poor posture restricts blood flow and lung capacity, leading to fatigue and decreased energy.</li>
+                            <li><i class="fas fa-arrow-right"></i>  <b>Increased Stress and Pain:</b>  Misalignment puts extra strain on muscles and ligaments, causing pain in the neck, shoulders, and back.  It can also contribute to tension headaches.</li>
+                            <li><i class="fas fa-arrow-right"></i>  <b>Decreased Focus and Concentration:</b>  When your body is uncomfortable, your mind is easily distracted.  Pain and fatigue make it difficult to concentrate on the task at hand.</li>
+                            <li><i class="fas fa-arrow-right"></i>  <b>Lowered Mood:</b>  Studies have shown a link between poor posture and negative emotions, including depression.</li>
+                            <li><i class="fas fa-arrow-right"></i>  <b>Impaired Digestion:</b> Slouching can compress your digestive organs, leading to digestive issues.</li>
+                        </ul>
+                        <img src="https://drdavidwarwick.com/wp-content/uploads/2018/04/poorpostureslouching-1080x628.jpg" alt="Impact of Poor Posture" class="topic-image" style="max-width: 80%; margin: 20px auto; display: block;">
+                        <p style="font-size: 0.9em; text-align: center; color: #555;"><i>The effects of poor posture on the body.</i></p>
+						
+						<section class="topic-section">
+                        <h2>Finding the Right Desk Height</h2>
+                        <p>
+                           Proper desk height is crucial for maintaining good posture and reducing strain, whether you're sitting or standing.
+                        </p>
+                         <div class="strategy-card-container">
+                            <div class="strategy-card">
+                                <div class="card-header">For Sitting:</div>
+                                <ul class="card-options">
+                                    <li><i class="fas fa-check-double"></i> Feet should be flat on the floor or supported by a footrest.</li>
+                                    <li><i class="fas fa-check-double"></i> Knees should be bent at a 90-degree angle.</li>
+                                    <li><i class="fas fa-check-double"></i> Elbows should be bent at a 90-degree angle and close to the body.</li>
+                                    <li><i class="fas fa-check-double"></i> The top of the monitor should be at or slightly below eye level.</li>
+                                </ul>
+                            </div>
+
+                            <div class="strategy-card">
+                                <div class="card-header">For Standing:</div>
+                                <ul class="card-options">
+                                     <li><i class="fas fa-check-double"></i>  Elbows should be bent at a 90-degree angle.</li>
+                                     <li><i class="fas fa-check-double"></i>  Wrists should be straight.</li>
+                                     <li><i class="fas fa-check-double"></i>  Monitor height should be the same as for sitting.</li>
+                                     <li><i class="fas fa-check-double"></i>  Use a footrest to shift weight between legs.</li>
+                                </ul>
+                            </div>
+                         </div>
+                    </section>
+
+                    </section>
+
+                    <section class="topic-section">
+                        <h3>The Upward Spiral of Good Posture</h3>
+                        <p>
+                            Conversely, maintaining proper posture can create a positive feedback loop, enhancing both your physical and mental well-being:
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-arrow-up"></i> <b>Increased Energy Levels:</b>  Good posture allows for optimal blood flow and lung expansion, boosting energy and reducing fatigue.</li>
+                            <li><i class="fas fa-arrow-up"></i> <b>Reduced Pain and Stress:</b>  Proper alignment minimizes strain on your body, alleviating pain and reducing stress levels.</li>
+                            <li><i class="fas fa-arrow-up"></i> <b>Improved Focus and Concentration:</b>  When you're comfortable and pain-free, you can focus more effectively on your schoolwork.</li>
+                            <li><i class="fas fa-arrow-up"></i> <b>Elevated Mood:</b>  Good posture has been linked to increased feelings of confidence and positivity.</li>
+                            <li><i class="fas fa-arrow-up"></i> <b>Enhanced Breathing:</b>  Sitting and standing tall allows your lungs to expand fully, leading to better oxygen intake.</li>
+                        </ul>
+                    </section>
+
+                    <section class="topic-section">
+                        <h2>Practical Strategies for Posture Improvement</h2>
+                        <p>Here are some practical strategies you can implement to improve your posture and enhance your productivity:</p>
+
+                        <div class="strategy-card-container">
+                            <div class="strategy-card">
+                                <div class="card-header">1. Optimize Your Workspace Ergonomics</div>
+                                <ul class="card-options">
+                                    <li><i class="fas fa-check-circle"></i>  Adjust your chair so your feet are flat on the floor and your knees are at a 90-degree angle.</li>
+                                    <li><i class="fas fa-check-circle"></i>  Position your monitor at arm's length and at eye level.</li>
+                                    <li><i class="fas fa-check-circle"></i>  Use a keyboard tray to keep your wrists straight and your elbows close to your body.</li>
+                                    <li><i class="fas fa-check-circle"></i>  Consider using a standing desk or taking regular standing breaks.</li>
+                                </ul>
+                            </div>
+
+                            <div class="strategy-card">
+                                <div class="card-header">2. Practice Mindful Posture</div>
+                                 <ul class="card-options">
+                                    <li><i class="fas fa-check-circle"></i>  Be aware of your posture throughout the day.  Set reminders to check in with your body.</li>
+                                    <li><i class="fas fa-check-circle"></i>  Engage your core muscles to support your spine.</li>
+                                    <li><i class="fas fa-check-circle"></i>  Avoid slouching, hunching, and leaning to one side.</li>
+                                    <li><i class="fas fa-check-circle"></i>  Imagine a string pulling you up from the crown of your head.</li>
+                                </ul>
+                            </div>
+
+                            <div class="strategy-card">
+                                <div class="card-header">3. Incorporate Posture-Improving Exercises</div>
+                                <ul class="card-options">
+                                     <li><i class="fas fa-check-circle"></i>  Perform stretches to counteract the effects of sitting, such as chest stretches, back extensions, and neck stretches.</li>
+                                     <li><i class="fas fa-check-circle"></i>  Strengthen your core muscles with exercises like planks and bridges.</li>
+                                     <li><i class="fas fa-check-circle"></i>  Consider yoga or Pilates, which focus on body alignment and flexibility.</li>
+                                     <li><i class="fas fa-check-circle"></i>  Take short breaks to move around and stretch.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="topic-section">
+                        <h3>The Long-Term Benefits</h3>
+                        <p>
+                            Making a conscious effort to improve your posture is an investment in your long-term health and productivity.  By aligning your body, you can unlock a wealth of benefits, including increased energy, reduced pain, sharper focus, and a more positive mood.  These improvements can translate to greater efficiency, higher quality work, and a more fulfilling and comfortable student experience.
+                        </p>
+                    </section>
+                </section>
+            </div>
+        <section class="topic-section">
+            <ul>
+
+            </ul>
+        </section>
+        </div>
+    <div class="pagination">
+        <a href="topic1-2.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+        <a href="topic5.html" class="page-number">1</a>
+        <a href="topic5-2.html" class="page-number">2</a>
+        <a href="topic5-3.html" class="page-number">3</a>
+        <a href="topic5-4.html" class="page-number active">4</a>
+        <a href="topic5-5.html" class="page-number">5</a>
+        <a href="topic5-6.html" class="page-number">6</a>
+        <a href="topic5-7.html" class="page-number">7</a>
+        <a href="topic5-8.html" class="page-number">8</a>
+        <a href="topic5-9.html" class="page-number">9</a>
+        <a href="topic5-10.html" class="page-number">10</a>
+        <a href="#" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

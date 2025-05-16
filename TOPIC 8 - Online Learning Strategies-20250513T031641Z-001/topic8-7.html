@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Strategies | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">08</div>
+                    <h1 class="topic-title-large">Online Learning Strategies</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <div id="page1" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Collaborative Learning Through Online Group Work</h3>
+                            <p>Because it encourages teamwork, critical thinking, and a deeper engagement with the course material, collaborative learning through online group projects is crucial.  Working with peers allows students to exchange ideas, acquire a variety of viewpoints, and dynamically hone their problem-solving abilities.  Additionally, online group projects foster the development of digital cooperation and communication skills, which are critical in the linked world of today.  As students help one another achieve deadlines and accomplish common objectives, it also promotes motivation and accountability.  Beyond the classroom, collaborative learning fosters interpersonal relationships, leadership, and flexibility, preparing students for success in both academic and professional settings.</p>
+                              
+                        </div>
+
+                        <br>
+                        <br>
+                        
+                        <div class="topic-section">
+                            <h3>Inquiring for Help</h3>
+                            <p>In online learning, seeking assistance is essential for sustaining motivation, conquering obstacles, and guaranteeing a fruitful educational journey.  Contacting teachers can give students the much-needed clarification and guidance they need when they are having trouble with challenging ideas or assignments.  Students can get individualized, direct help by participating in class discussion boards, visiting virtual office hours, or sending insightful emails.  By establishing a solid line of communication with teachers, students may ask questions, get guidance, and comprehend course contents more thoroughly, which improves the effectiveness and engagement of the learning process.</p>
+
+                            <div class="wellness-image-container">
+                                <img src="https://media.istockphoto.com/id/1468458501/photo/teacher-assisting-student-with-computer-science-lesson.jpg?s=612x612&w=0&k=20&c=ivmks2Joh771RZPPg30XEtyiithMJlFf2oXFXz4OBSg=" alt="Teacher helping student" class="topic-image">
+                                <p class="image-caption">Teacher helping student</p>
+                            </div>
+
+
+                            <br>
+                            <br>
+
+                            <h3>Discussion Forums and Peer Feedback</h3>
+                            <p>Another effective strategy for getting help is to participate in online forums, which allow students to connect with classmates, share ideas, and widen their horizons. Participating in course-related discussion threads encourages teamwork and critical thinking, and posing and responding to questions serves to solidify understanding.  Despite the virtual learning environment, forums allow students to learn about various approaches to problem-solving, get advice from their peers, and form a sense of community. A more engaging and encouraging learning environment is produced by this connection, allowing students to connect, exchange stories, and gain knowledge from one another.</p>
+                            <br>
+                            <br>
+                            <h3>Joining Study Groups</h3>
+                            <p>Participating in cooperative projects or organized study groups improves learning by fostering greater connection with the subject matter, motivation, and accountability.  Students can share resources, clear up misunderstandings, and improve their understanding through peer explanations when they collaborate.  Study groups frequently plan frequent get-togethers, make use of cooperative resources like virtual whiteboards or shared papers, and assist one another in fulfilling deadlines.  These exchanges foster collaborative learning, active learning, and a sense of support for students throughout their academic careers.</p>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://www.commonsense.org/sites/default/files/png/2020-12/how-technology-can-encourage-student-collaboration-article.png" alt="Peers doing work" class="topic-image">
+                                <p class="image-caption">Peers doing work</p>
+                            </div>
+                            
+                            <br>
+                            <br>
+
+                            <h3>Utilizing Digital Tools for Online Groupwork</h3>
+                            <p>Another successful strategy for getting help in online education is to make use of digital resources like interactive simulations, instructional podcasts, and online tutorials.  Learning is reinforced in a more interesting and approachable manner by seeing video demonstrations, listening to expert talks, and taking part in interactive exercises.  Numerous systems include adaptive learning tools that adjust content based on a student's development, guaranteeing that they get the help they need at every turn.  Students can improve their comprehension, hone their abilities, and more easily get past academic challenges by utilizing these digital resources.</p>
+
+                            <div class="wellness-image-container">
+                                <img src="https://www.siliconrepublic.com/wp-content/uploads/2022/08/Canva-Whiteboards-Banner.jpg" alt="Collaborative work on Canva" class="topic-image">
+                                <p class="image-caption">Collaborative work on Canva</p>
+                            </div>
+
+                            <br>
+        
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic8-6.html" class="page-btn">Previous</a>
+                <a href="topic8-1.html" class="page-number">1</a>
+                <a href="topic8-2.html" class="page-number">2</a>
+                <a href="topic8-3.html" class="page-number">3</a>
+                <a href="topic8-4.html" class="page-number">4</a>
+                <a href="topic8-5.html" class="page-number">5</a>
+                <a href="topic8-6.html" class="page-number">6</a>
+                <a href="topic8-7.html" class="page-number active">7</a>
+                <a href="topic8-8.html" class="page-number">8</a>
+                <a href="topic8-9.html" class="page-number">9</a>
+                <a href="topic8-10.html" class="page-number">10</a>
+                <a href="topic8-8.html" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

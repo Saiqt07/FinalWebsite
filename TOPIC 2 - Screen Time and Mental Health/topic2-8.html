@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits of Screen Time | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+         .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-section ul {
+            padding-left: 20px;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span>Home</a></li>
+                <li class="nav-item"><a href="../resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span>Resources</a></li>
+                <li class="nav-item"><a href="../aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span>About Us</a></li>
+                <li class="nav-item"><a href="../gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span>Photo Gallery</a></li>
+                <li class="nav-item"><a href="../contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">08</div>
+                    <h1 class="topic-title-large">Benefits of Screen Time: Finding a Balance</h1>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>The Positive Aspects of Screen Time</h3>
+                    <p>While much of the focus around screen time tends to emphasize its negative effects, it's important to recognize that, when used appropriately, digital technology can offer a variety of benefits. From educational opportunities to social connections, screen time plays a significant role in modern life. The key lies in balance and purposeful usage.</p>
+                    <p>Here are some of the positive ways that screen time can benefit children, adolescents, and even adults:</p>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>1. Educational Advantages</h3>
+                    <p>With the right apps, games, and websites, screen time can be a powerful learning tool. Educational programs and online resources provide access to information and interactive learning experiences that traditional methods cannot always offer.</p>
+                    <ul>
+                        <li><strong>Interactive Learning:</strong> Digital tools allow for hands-on experiences that reinforce classroom learning, whether through math games, language apps, or science simulations.</li>
+                        <li><strong>Access to Information:</strong> The internet offers a wealth of knowledge at one’s fingertips, making it easier for children and adults alike to access research materials, online courses, and educational videos from across the globe.</li>
+                        <li><strong>Improved Digital Literacy:</strong> With increased use of technology, children gain essential skills like coding, media literacy, and how to evaluate information critically—skills necessary in today’s job market.</li>
+                    </ul>
+                </div>
+            
+                <div class="wellness-image-container">
+                    <div align="center">
+                    <img src="learn.JPG" alt="Child learning on tablet" class="topic-image">
+                    <p class="image-caption">Technology can enhance learning by providing interactive, accessible resources.</p>
+                    </div>
+                    
+                </div>
+            
+                <div class="topic-section">
+                    <h3>2. Social Connections and Communication</h3>
+                    <p>Despite concerns over social isolation, when used mindfully, screens can facilitate meaningful social interactions. Through digital platforms, individuals can maintain relationships, meet like-minded people, and access support networks.</p>
+                    <ul>
+                        <li><strong>Virtual Communication:</strong> Video calls, chat platforms, and social media allow people to stay in touch with friends and family members regardless of physical distance.</li>
+                        <li><strong>Support Communities:</strong> Online communities and forums provide a sense of belonging for individuals with shared interests or challenges, whether that’s parenting, fitness, or mental health.</li>
+                        <li><strong>Collaboration and Networking:</strong> Platforms like Google Drive, Zoom, and Slack foster collaboration, whether for work projects, study groups, or hobby-based communities.</li>
+                    </ul>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>3. Creativity and Expression</h3>
+                    <p>Digital devices offer ample opportunities for self-expression, whether through art, writing, music, or video production. The creative potential offered by technology has empowered countless individuals to discover and share their talents with the world.</p>
+                    <ul>
+                        <li><strong>Creative Apps:</strong> Apps that allow for music composition, photo editing, drawing, and video production inspire children and adults to experiment with creative skills and hobbies.</li>
+                        <li><strong>Personal Expression:</strong> Platforms like YouTube, Instagram, and TikTok allow individuals to showcase their talents, interests, and passions in ways that were once inaccessible to the public.</li>
+                        <li><strong>Creative Problem Solving:</strong> Gaming platforms and interactive technologies promote strategic thinking, problem-solving, and the development of cognitive skills that foster creativity.</li>
+                    </ul>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>4. Work and Career Opportunities</h3>
+                    <p>Technology has revolutionized the way we work, offering both increased flexibility and new opportunities. Screen time is no longer just for entertainment or education—it's a powerful tool for professional growth, remote work, and career advancement.</p>
+                    <ul>
+                        <li><strong>Remote Work:</strong> With the rise of remote working, screen time enables professionals to communicate, collaborate, and manage tasks from anywhere in the world.</li>
+                        <li><strong>Online Learning:</strong> Many adults are using screen time to advance their careers through online certifications, skill-building programs, and industry-specific courses.</li>
+                        <li><strong>Entrepreneurship:</strong> Digital platforms provide entrepreneurs with the tools to market their products, manage their businesses, and connect with global audiences.</li>
+                    </ul>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>5. Mental Health Benefits and Well-being</h3>
+                    <p>While excessive screen time can contribute to negative mental health outcomes, controlled use of digital platforms can have therapeutic benefits. Many apps and online resources are designed to help individuals manage stress, anxiety, and even sleep problems.</p>
+                    <ul>
+                        <li><strong>Mindfulness and Meditation Apps:</strong> Platforms like Headspace, Calm, and Insight Timer have become popular for helping individuals manage stress and anxiety through guided meditation, breathing exercises, and mindfulness techniques.</li>
+                        <li><strong>Support Networks for Mental Health:</strong> Online therapy platforms and virtual support groups provide access to professional mental health services, regardless of location.</li>
+                        <li><strong>Fitness and Wellness:</strong> Many fitness apps offer customized workout plans, guided yoga, and nutrition tracking to help people maintain physical and mental well-being.</li>
+                    </ul>
+                </div>
+            
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nBydTL58mQM?si=-Z7OLI7jo3iza2hR" title="Benefits of Screen Time for Mental Health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Finding the Right Balance</h3>
+                    <p>While screen time can offer numerous benefits, the challenge lies in ensuring that it is balanced with offline activities that promote physical and mental well-being. Prioritizing face-to-face interactions, setting boundaries for screen use, and being mindful of screen time habits are essential steps toward making the most of digital technologies.</p>
+                </div>
+            </div>
+            
+
+            <div class="pagination">
+                <a href="topic2-7.html" class="page-btn">Previous</a>
+                <a href="topic2-1.html" class="page-number">1</a>
+                <a href="topic2-2.html" class="page-number">2</a>
+                <a href="topic2-3.html" class="page-number">3</a>
+                <a href="topic2-4.html" class="page-number">4</a>
+                <a href="topic2-5.html" class="page-number">5</a>
+                <a href="topic2-6.html" class="page-number">6</a>
+                <a href="topic2-7.html" class="page-number">7</a>
+                <a href="topic2-8.html" class="page-number active">8</a>
+                <a href="topic2-9.html" class="page-number">9</a>
+                <a href="topic2-10.html" class="page-number">10</a>
+                <a href="topic2-9.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Mendiola, Sherisse Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

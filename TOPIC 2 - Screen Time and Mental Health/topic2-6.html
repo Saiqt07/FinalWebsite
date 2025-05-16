@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Time in Children and Adolescents | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+         .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section ul {
+            padding-left: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span>Home</a></li>
+                <li class="nav-item"><a href="../resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span>Resources</a></li>
+                <li class="nav-item"><a href="../aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span>About Us</a></li>
+                <li class="nav-item"><a href="../gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span>Photo Gallery</a></li>
+                <li class="nav-item"><a href="../contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">06</div>
+                    <h1 class="topic-title-large">Screen Time in Children and Adolescents: Understanding the Impact</h1>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>The Rise of Screens in Early Life</h3>
+                    <p>From smartphones and tablets to smart TVs and gaming consoles, screens have become embedded in the everyday lives of children and teens. With access to digital devices starting as early as infancy, screen time has become both a convenience for caregivers and a concern for healthcare professionals. While digital tools offer educational benefits and entertainment, excessive and unmonitored screen exposure in youth poses several developmental and psychological challenges.</p>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Developmental Concerns of Prolonged Screen Use</h3>
+                    <ul>
+                        <li><strong>Delayed Language and Social Skills:</strong> Young children learn primarily through face-to-face interactions. Excessive screen use, especially passive content consumption, can delay language acquisition and social skill development.</li>
+                        <li><strong>Reduced Attention Span:</strong> Fast-paced digital media has been associated with difficulty focusing, impulsivity, and reduced cognitive flexibility, especially among early learners.</li>
+                        <li><strong>Sleep Disruptions:</strong> Evening screen use—particularly in adolescents—interferes with melatonin production, delays sleep onset, and leads to poor sleep quality, which affects academic and emotional performance.</li>
+                        <li><strong>Behavioral Issues:</strong> High screen time is linked to irritability, mood swings, and increased risk of aggression, particularly when children are exposed to violent or overstimulating content.</li>
+                    </ul>
+                </div>
+            
+                <div class="wellness-image-container">
+                    <div align="center">
+                        <img src="child.jpg" alt="Child with tablet and parent looking concerned" class="topic-image">
+                        <p class="image-caption">Balancing screen use with real-world interaction is essential for healthy development.</p>
+                    </div>
+                  
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Adolescents and Digital Habits</h3>
+                    <p>For teenagers, screens are a core part of their identity, learning, and social connection. However, excessive screen time can impact emotional well-being and academic performance:</p>
+                    <ul>
+                        <li><strong>Social Comparison & Self-Esteem:</strong> Constant exposure to filtered lives on social media can damage self-image and increase the risk of anxiety, body dissatisfaction, and depression.</li>
+                        <li><strong>Academic Distraction:</strong> Multitasking with screens during study time reduces memory retention and critical thinking abilities.</li>
+                        <li><strong>Dopamine Dependency:</strong> Teens may develop a reliance on digital rewards (likes, notifications) for mood regulation, mimicking addictive behaviors and reducing offline satisfaction.</li>
+                    </ul>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Screen Time Recommendations by Experts</h3>
+                    <p>The American Academy of Pediatrics (AAP) and World Health Organization (WHO) provide guidelines to ensure healthy screen use among youth:</p>
+                    <ul>
+                        <li><strong>Under 18 months:</strong> Avoid screen time (except for video chatting).</li>
+                        <li><strong>Ages 2–5:</strong> Limit to 1 hour of high-quality content per day, co-viewed with a parent or caregiver.</li>
+                        <li><strong>Ages 6–17:</strong> Consistent limits on screen time, with a focus on balance between media use and sleep, physical activity, and social interaction.</li>
+                    </ul>
+                    <p>Parental involvement and modeling healthy digital behavior play a crucial role in reinforcing these limits.</p>
+                </div>
+            
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zugBuwgLgcc?si=tM9aOlmmCWb7wmdS" title="Screen Time and Children’s Health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Healthy Habits for Young Digital Users</h3>
+                    <ul>
+                        <li><strong>Designate screen-free times:</strong> Encourage screen-free meals, family time, and bedtime routines.</li>
+                        <li><strong>Use media together:</strong> Co-viewing helps children interpret content, ask questions, and apply what they learn.</li>
+                        <li><strong>Encourage creative play:</strong> Prioritize activities that foster imagination, movement, and face-to-face communication.</li>
+                        <li><strong>Set parental controls:</strong> Use filters and app timers to limit exposure to inappropriate or excessive content.</li>
+                        <li><strong>Model responsible use:</strong> Parents and caregivers should demonstrate healthy screen habits by limiting their own use and being present with children.</li>
+                    </ul>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Empowering Youth for a Balanced Digital Life</h3>
+                    <p>Helping children and adolescents thrive in the digital age means teaching them digital literacy, emotional awareness, and the importance of unplugging. With guidance and mindful boundaries, screens can be a tool for growth rather than a source of harm. The goal is not to eliminate technology, but to help youth develop the skills to use it wisely and in ways that support their health, learning, and relationships.</p>
+                </div>
+            </div>
+            
+
+            <div class="pagination">
+                <a href="topic2-5.html" class="page-btn">Previous</a>
+                <a href="topic2-1.html" class="page-number">1</a>
+                <a href="topic2-2.html" class="page-number">2</a>
+                <a href="topic2-3.html" class="page-number">3</a>
+                <a href="topic2-4.html" class="page-number">4</a>
+                <a href="topic2-5.html" class="page-number">5</a>
+                <a href="topic2-6.html" class="page-number active">6</a>
+                <a href="topic2-7.html" class="page-number">7</a>
+                <a href="topic2-8.html" class="page-number">8</a>
+                <a href="topic2-9.html" class="page-number">9</a>
+                <a href="topic2-10.html" class="page-number">10</a>
+                <a href="topic2-7.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Mendiola, Sherisse Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

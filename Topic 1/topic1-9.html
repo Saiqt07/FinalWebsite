@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Connection Between Digital Habits & Happiness (Page 9) | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Topic page specific styles */
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .wellness-image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Strategy cards */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .strategy-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #355070;
+        }
+        
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .strategy-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #355070;
+        }
+        
+        .strategy-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #355070;
+        }
+        
+        /* Tool box styles */
+        .tool-box {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tool-box h4 {
+            color: #355070;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        /* Self-assessment styles */
+        .assessment-container {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #6D597A;
+        }
+        
+        .assessment-title {
+            color: #355070;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .assessment-question {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .assessment-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        
+        .assessment-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0 25px;
+            background-color: #f5f5f5;
+            border-radius: 20px;
+            padding: 10px 15px;
+        }
+        
+        .scale-label {
+            font-size: 0.9rem;
+            color: #666;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: all 0.2s ease;
+        }
+        
+        .scale-label:hover {
+            background-color: #EAAC8B;
+            color: white;
+        }
+        
+        /* Expert insights styles */
+        .expert-quote {
+            background-color: #f5f5f5;
+            border-left: 4px solid #6D597A;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .expert-quote:before {
+            content: '\201C';
+            font-size: 60px;
+            font-family: Georgia, serif;
+            color: #6D597A;
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            font-weight: bold;
+            color: #355070;
+            text-align: right;
+        }
+
+        /* Happiness metrics */
+        .happiness-metric {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #B56576;
+        }
+
+        .happiness-metric h4 {
+            color: #355070;
+            margin-bottom: 10px;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background-color: #6D597A;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Habit tracker */
+        .habit-tracker {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .habit-tracker h4 {
+            color: #355070;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">01</div>
+                    <h1 class="topic-title-large">The Connection Between Digital Habits & Happiness</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <!-- Page 9: The Connection Between Digital Habits & Happiness -->
+                    <div id="page9" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>How Digital Habits Impact Our Happiness</h3>
+                            <p>In today's hyperconnected world, our digital habits have a profound impact on our overall happiness and well-being. The way we interact with technology can either enhance or diminish our quality of life, affecting everything from our mood and stress levels to our relationships and sense of fulfillment.</p>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Person enjoying digital balance" class="topic-image">
+                                <p class="image-caption">Finding balance in our digital lives can significantly boost happiness</p>
+                            </div>
+                            
+                            <p>Research consistently shows that our relationship with technology is complex. While digital tools can connect us with loved ones, provide entertainment, and help us learn and grow, they can also lead to comparison, distraction, and disconnection from the present moment. Understanding this relationship is the first step toward developing digital habits that support rather than undermine our happiness.</p>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>The Science of Digital Well-being and Happiness</h3>
+                            <p>Numerous studies have examined the relationship between digital habits and happiness. Here's what the research tells us:</p>
+                            
+                            <div class="happiness-metric">
+                                <h4>Social Media Use and Life Satisfaction</h4>
+                                <p>Research from the University of Pennsylvania found that limiting social media use to 30 minutes per day led to significant reductions in loneliness and depression and improvements in well-being over three weeks.</p>
+                            </div>
+                            
+                            <div class="happiness-metric">
+                                <h4>Screen Time and Mental Health</h4>
+                                <p>A study published in JAMA Psychiatry found that adolescents who spent more than 7 hours a day on screens were twice as likely to be diagnosed with depression or anxiety than those who used screens for an hour a day.</p>
+                            </div>
+                            
+                            <div class="happiness-metric">
+                                <h4>Digital Connection and Relationships</h4>
+                                <p>Research from Harvard University suggests that meaningful online interactions can boost happiness, while passive scrolling tends to decrease it. The quality of digital interactions matters more than quantity.</p>
+                            </div>
+                            
+                            <div class="happiness-metric">
+                                <h4>Notifications and Stress</h4>
+                                <p>Studies show that the constant ping of notifications triggers stress hormones and can lead to a state of hypervigilance, reducing our ability to focus and experience flow states that contribute to happiness.</p>
+                            </div>
+                            
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/0K5OO2ybueM?si=_Ht1LTvEcXUTUGz1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <p class="image-caption">Video: How technology affects your brain and happiness</p>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Comparing Happiness-Boosting vs. Happiness-Draining Digital Habits</h3>
+                            
+                            <table class="comparison-table">
+                                <tr>
+                                    <th>Happiness-Boosting Digital Habits</th>
+                                    <th>Happiness-Draining Digital Habits</th>
+                                </tr>
+                                <tr>
+                                    <td>Using technology to connect meaningfully with others</td>
+                                    <td>Passive scrolling through social media feeds</td>
+                                </tr>
+                                <tr>
+                                    <td>Learning new skills through online courses</td>
+                                    <td>Comparing yourself to curated highlights on social media</td>
+                                </tr>
+                                <tr>
+                                    <td>Mindful consumption of positive, inspiring content</td>
+                                    <td>Doom-scrolling through negative news</td>
+                                </tr>
+                                <tr>
+                                    <td>Using apps that support meditation and mindfulness</td>
+                                    <td>Checking notifications constantly throughout the day</td>
+                                </tr>
+                                <tr>
+                                    <td>Creating digital boundaries that protect your time</td>
+                                    <td>Allowing work to bleed into personal time via digital devices</td>
+                                </tr>
+                                <tr>
+                                    <td>Using technology to pursue passions and hobbies</td>
+                                    <td>Mindless entertainment that leaves you feeling empty</td>
+                                </tr>
+                                <tr>
+                                    <td>Digital detox periods to reset and reconnect</td>
+                                    <td>Being constantly available and connected 24/7</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Strategies for Happiness-Enhancing Digital Habits</h3>
+                            
+                            <div class="strategy-grid">
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-heart"></i></div>
+                                    <h4 class="strategy-title">Practice Intentional Use</h4>
+                                    <p>Before picking up your device, ask yourself: "What is my purpose here?" Use technology with clear intentions rather than defaulting to it out of habit or boredom.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-hourglass-half"></i></div>
+                                    <h4 class="strategy-title">Time-Box Your Usage</h4>
+                                    <p>Set specific time limits for potentially problematic apps or activities. Use screen time management tools to help you stick to these limits.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-bell-slash"></i></div>
+                                    <h4 class="strategy-title">Tame Your Notifications</h4>
+                                    <p>Turn off non-essential notifications. Consider batching notifications to check at specific times rather than receiving them continuously.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-users"></i></div>
+                                    <h4 class="strategy-title">Prioritize Active Connection</h4>
+                                    <p>Use technology for active, meaningful interactions rather than passive consumption. Video calls, thoughtful messages, and collaborative activities boost happiness more than scrolling.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-moon"></i></div>
+                                    <h4 class="strategy-title">Create Tech-Free Zones</h4>
+                                    <p>Designate certain spaces (like your bedroom) and times (like meals) as technology-free to protect your presence and relationships.</p>
+                                </div>
+                                
+                                <div class="strategy-card">
+                                    <div class="strategy-icon"><i class="fas fa-filter"></i></div>
+                                    <h4 class="strategy-title">Curate Your Digital Environment</h4>
+                                    <p>Regularly audit and clean up your digital spaces. Unfollow accounts that trigger negative emotions and seek out content that inspires and uplifts you.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Friends enjoying time together without phones" class="topic-image">
+                                <p class="image-caption">Creating tech-free moments with loved ones can significantly boost happiness</p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Digital Habits Self-Assessment</h3>
+                            
+                            <div class="assessment-container">
+                                <h4 class="assessment-title">How Do Your Digital Habits Impact Your Happiness?</h4>
+                                <p>Rate how strongly you agree with each statement on a scale from 1 (strongly disagree) to 5 (strongly agree):</p>
+                                
+                                <p class="assessment-question">1. I often feel better about myself and my life after spending time on social media.</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">1 (Strongly Disagree)</span>
+                                    <span class="scale-label">2 (Disagree)</span>
+                                    <span class="scale-label">3 (Neutral)</span>
+                                    <span class="scale-label">4 (Agree)</span>
+                                    <span class="scale-label">5 (Strongly Agree)</span>
+                                </div>
+                                
+                                <p class="assessment-question">2. I regularly experience FOMO (fear of missing out) when I see what others are doing online.</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">1 (Strongly Disagree)</span>
+                                    <span class="scale-label">2 (Disagree)</span>
+                                    <span class="scale-label">3 (Neutral)</span>
+                                    <span class="scale-label">4 (Agree)</span>
+                                    <span class="scale-label">5 (Strongly Agree)</span>
+                                </div>
+                                
+                                <p class="assessment-question">3. I find it difficult to focus on tasks without checking my phone.</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">1 (Strongly Disagree)</span>
+                                    <span class="scale-label">2 (Disagree)</span>
+                                    <span class="scale-label">3 (Neutral)</span>
+                                    <span class="scale-label">4 (Agree)</span>
+                                    <span class="scale-label">5 (Strongly Agree)</span>
+                                </div>
+                                
+                                <p class="assessment-question">4. I use technology primarily to connect meaningfully with others rather than to pass time.</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">1 (Strongly Disagree)</span>
+                                    <span class="scale-label">2 (Disagree)</span>
+                                    <span class="scale-label">3 (Neutral)</span>
+                                    <span class="scale-label">4 (Agree)</span>
+                                    <span class="scale-label">5 (Strongly Agree)</span>
+                                </div>
+                                
+                                <p class="assessment-question">5. I have clear boundaries around when and how I use technology.</p>
+                                <div class="assessment-scale">
+                                    <span class="scale-label">1 (Strongly Disagree)</span>
+                                    <span class="scale-label">2 (Disagree)</span>
+                                    <span class="scale-label">3 (Neutral)</span>
+                                    <span class="scale-label">4 (Agree)</span>
+                                    <span class="scale-label">5 (Strongly Agree)</span>
+                                </div>
+                                
+                                <p style="margin-top: 20px;"><em>Scoring: Questions 1, 4, and 5 are positive indicators (higher scores are better), while questions 2 and 3 are negative indicators (lower scores are better). This assessment can help you identify areas where your digital habits may be impacting your happiness.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Tracking Your Digital Happiness</h3>
+                            <p>One effective way to understand how your digital habits affect your happiness is to track both your technology use and your mood. This can help you identify patterns and make adjustments that support your well-being.</p>
+                            
+                            <div class="habit-tracker">
+                                <h4>Digital Happiness Tracker</h4>
+                                <p>Try keeping a simple log for one week with the following information:</p>
+                                <ul style="padding-left: 30px;">
+                                    <li><strong>Digital Activity:</strong> What digital activities did you engage in today?</li>
+                                    <li><strong>Duration:</strong> How much time did you spend on each activity?</li>
+                                    <li><strong>Purpose:</strong> Why did you engage in this activity? (connection, information, entertainment, work, habit)</li>
+                                    <li><strong>Mood Before:</strong> How did you feel before the activity? (1-10 scale)</li>
+                                    <li><strong>Mood After:</strong> How did you feel after the activity? (1-10 scale)</li>
+                                    <li><strong>Insights:</strong> What patterns do you notice about which digital activities boost or drain your happiness?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Expert Insights on Digital Habits and Happiness</h3>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"The key to digital happiness isn't necessarily using technology less—it's using it more intentionally. Ask yourself: Is this digital activity bringing me closer to the things I value, or further away? That simple question can transform your relationship with technology."</p>
+                                <p class="quote-author">— Dr. Amy Blankson, Author of "The Future of Happiness"</p>
+                            </div>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"We often blame technology for our unhappiness, but technology itself is neutral. It's our habits and choices that determine whether digital tools enhance or diminish our well-being. The most powerful change you can make is shifting from reactive to proactive technology use."</p>
+                                <p class="quote-author">— Cal Newport, Author of "Digital Minimalism"</p>
+                            </div>
+                            
+                            <p>The connection between our digital habits and happiness is clear: technology can either be a tool that enhances our well-being or one that diminishes it. By becoming more intentional about how we use digital tools, setting healthy boundaries, and prioritizing meaningful connection over passive consumption, we can harness the benefits of technology while minimizing its potential negative impacts on our happiness.</p>
+                            
+                            <p>Remember that small changes can make a big difference. You don't need to completely transform your digital life overnight—even minor adjustments to your habits can significantly impact your happiness and well-being over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic1-8.html" class="page-btn">Previous</a>
+                <a href="topic1.html" class="page-number">1</a>
+                <a href="topic1-2.html" class="page-number">2</a>
+                <a href="topic1-3.html" class="page-number">3</a>
+                <a href="topic1-4.html" class="page-number">4</a>
+                <a href="topic1-5.html" class="page-number">5</a>
+                <a href="topic1-6.html" class="page-number">6</a>
+                <a href="topic1-7.html" class="page-number">7</a>
+                <a href="topic1-8.html" class="page-number">8</a>
+                <a href="topic1-9.html" class="page-number active">9</a>
+                <a href="topic1-10.html" class="page-number">10</a>
+                <a href="topic1-10.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

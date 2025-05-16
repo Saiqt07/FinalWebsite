@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Strategies | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">08</div>
+                    <h1 class="topic-title-large">Online Learning Strategies</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <div id="page1" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Assessment Preparation and Test-Taking Strategies Online</h3>
+                            <p>Effective study techniques, knowledge with digital test formats, and strategic preparation are all necessary for navigating online tests successfully and maximizing performance.  Students must modify their approach to meet the specific obstacles of online assessments, which differ from typical in-person exams. These hurdles may include time limits, technical difficulties, and different sorts of questions.</p>
+                              
+                        </div>
+
+                        <div class="wellness-image-container">
+                                <img src="https://jenniferfindley.com/wp-content/uploads/2017/03/Online-Test-Taking-Strategies-Blog-Post.png" alt="Taking Online Tests" class="topic-image">
+                                <p class="image-caption">Taking Online Tests</p>
+                            </div>
+
+                        <br>
+                        <br>
+                        
+                        <div class="topic-section">
+                            <h3>Understand the Test Format</h3>
+                            <p>Get acquainted with the platform, question types, and time constraints before to the test.  Knowing what to anticipate might help you be more efficient and less anxious when taking tests, whether they are multiple-choice, essay-based, or interactive.  Practice exams may be available on some systems; use them to become accustomed to the interface.</p>
+
+                            <br>
+                            <br>
+
+                            <p style="text-align: center; color: #6b1823;"><b>Always remember to read the directions carefully!</b></p>
+
+
+                            <br>
+                            <br>
+
+                            <h3>Practice Time Management</h3>
+                            <p>Pacing is important because many online tests have time limits. To increase accuracy and speed during preparation, practice answering questions in a predetermined amount of time. Think about setting timers for practice exams and managing your time well for the actual examination.</p>
+
+                            <div class="wellness-image-container">
+                                <img src="https://extensionhelpcenter.ucsd.edu/hc/article_attachments/30245298602893" alt="Canva" class="topic-image">
+                                <p class="image-caption">Time Limit on Online test</p>
+                            </div>
+
+                            <br>
+                            <br>
+                            <h3>Practice Tests and Mock Exams</h3>
+                            <p>Imitating actual test situations increases self-assurance and enhances time management abilities.  A student taking an online certification exam, for instance, might become accustomed to digital assessments by practicing with timed quizzes that replicate the format of the real exam.</p>
+                            
+                            
+                            <br>
+                            <br>
+
+                            <h3>Test Taking Techniques</h3>
+                            <p>Using strategic techniques improves exam accuracy.  When taking an online multiple-choice exam, a student may employ elimination procedures, dissecting each response logically before choosing the best one.  To ensure well-structured responses, a different student preparing for an essay-based exam would create an outline before writing.</p>
+
+                            <br>
+                            <br>
+
+                            <h3>Review Past Tests</h3>
+                            <p>Examining previous exams is a useful tactic for enhancing performance in the future and honing study methods.  Students can more efficiently focus their preparation by identifying patterns in question styles, common topics, and areas of difficulty by examining past tests.Examining incorrect responses in detail and figuring out why they were inaccurate is one strategy.  Were they brought on by hurrying through the test, ignorance, or misinterpreting the question?  Recognizing the rationale behind errors helps avoid making the same ones in subsequent tests.</p>
+
+                            <p>It's easy to see answers from the exams and quizzes you just took on an online platform. Like Canva, it provides an intuitive interface where students can review their responses, check correct answers, and analyze their mistakes to improve their understanding of the subject, only if the professors enabled it for them.</p>
+
+                            <div class="wellness-image-container">
+                                <img src="https://c8.alamy.com/comp/R438R1/button-answers-on-laptop-keyboard-viewed-through-the-magnifier-hold-by-male-hand-key-answers-on-modern-keyboard-background-searching-for-answers-in-internet-finding-answers-to-guestions-online-R438R1.jpg" alt="Canva" class="topic-image">
+                                <p class="image-caption">Looking answers online</p>
+                            </div>
+
+                            
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic8-9.html" class="page-btn">Previous</a>
+                <a href="topic8-1.html" class="page-number">1</a>
+                <a href="topic8-2.html" class="page-number">2</a>
+                <a href="topic8-3.html" class="page-number">3</a>
+                <a href="topic8-4.html" class="page-number">4</a>
+                <a href="topic8-5.html" class="page-number">5</a>
+                <a href="topic8-6.html" class="page-number">6</a>
+                <a href="topic8-7.html" class="page-number">7</a>
+                <a href="topic8-8.html" class="page-number">8</a>
+                <a href="topic8-9.html" class="page-number">9</a>
+                <a href="topic8-10.html" class="page-number active">10</a>
+                <a href="#" class="page-btn disabled">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

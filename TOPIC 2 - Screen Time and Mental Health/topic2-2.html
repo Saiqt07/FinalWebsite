@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact of Social Media on Self-Esteem | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+         .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section ul {
+            padding-left: 20px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span>Home</a></li>
+                <li class="nav-item"><a href="../resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span>Resources</a></li>
+                <li class="nav-item"><a href="../aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span>About Us</a></li>
+                <li class="nav-item"><a href="../gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span>Photo Gallery</a></li>
+                <li class="nav-item"><a href="../contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">02</div>
+                    <h1 class="topic-title-large">Impact of Social Media on Self-Esteem</h1>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-section">
+                        <h3>How Social Media Affects Self-Esteem</h3>
+                        <p>Frequent social media use can have a profound effect on how individuals perceive themselves. Platforms often highlight idealized lifestyles, appearances, and achievements, leading users to compare themselves to curated content.</p>
+                
+                        <div class="wellness-image-container">
+                            <div align="center">
+                                <img src="selfesteem.JPG" alt="Social media and self-perception" class="topic-image">
+                                <p class="image-caption">Endless scrolling through idealized images can distort self-image and breed insecurity.</p>
+                            </div>
+                          
+                        </div>
+                
+                        <p>People may begin to feel inadequate when their own lives don’t measure up to what they see online, affecting confidence and emotional well-being. Teens and young adults are especially vulnerable, as their sense of identity is still developing.</p>
+                    </div>
+                
+                    <div class="topic-section">
+                        <h3>Long-Term Consequences</h3>
+                        <p>Prolonged exposure to unrealistic standards and online validation-seeking can lead to:</p>
+                        <ul>
+                            <li><strong>Lower self-worth:</strong> Users often tie their value to likes, comments, and followers.</li>
+                            <li><strong>Body image issues:</strong> Filters and photo editing contribute to unhealthy physical comparisons.</li>
+                            <li><strong>Mental health concerns:</strong> Anxiety, depression, and loneliness are linked to excessive social media use.</li>
+                            <li><strong>Social anxiety:</strong> Feeling pressured to present a perfect image can lead to fear of judgment and reduce authentic interactions.</li>
+                        </ul>
+                
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ta7CrC7QTgE?si=i_sbB9NgN2xrdXTL" title="Social Media and Self-Esteem" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                
+                        <p>Being aware of these impacts encourages healthier digital consumption and more mindful interaction online.</p>
+                    </div>
+                
+                    <div class="topic-section">
+                        <h3>What the Research Says</h3>
+                        <p>Numerous studies have highlighted the connection between social media and self-esteem:</p>
+                        <ul>
+                            <li>A 2021 study by the American Psychological Association found that over 60% of teens felt worse about themselves after scrolling through social media.</li>
+                            <li>Instagram was rated the worst social platform for mental health, particularly among young women, due to body comparison and beauty standards.</li>
+                            <li>Researchers have noted a strong correlation between frequent social media use and symptoms of depression, especially in youth.</li>
+                        </ul>
+                        <p>While social media can foster connection, its psychological effects should not be overlooked, especially when content consumption becomes habitual and uncritical.</p>
+                    </div>
+                
+                    <div class="topic-section">
+                        <h3>Tips for Building Healthy Self-Esteem Online</h3>
+                        <ul>
+                            <li>Follow accounts that promote authenticity and positive self-image.</li>
+                            <li>Limit time spent on appearance-focused or influencer content.</li>
+                            <li>Engage in real-life activities that boost confidence and self-worth.</li>
+                            <li>Take regular breaks from social media to reconnect with yourself.</li>
+                            <li>Use apps or settings to track and limit screen time usage.</li>
+                            <li>Practice self-compassion and avoid comparing your life to highlights of others’ lives.</li>
+                        </ul>
+                
+                        <p>Empowering yourself through digital boundaries can help protect and strengthen your self-esteem in a social media-driven world. Social media should enhance your life, not define it.</p>
+                    </div>
+                
+                    <div class="topic-section">
+                        <h3>When to Seek Help</h3>
+                        <p>If social media use is starting to negatively impact your daily life, mood, or self-image, consider speaking with a counselor or therapist. Some warning signs include:</p>
+                        <ul>
+                            <li>Feeling depressed or anxious after scrolling.</li>
+                            <li>Obsessing over likes, followers, or online validation.</li>
+                            <li>Withdrawing from offline relationships or activities.</li>
+                            <li>Constant self-comparison or low self-worth triggered by online content.</li>
+                        </ul>
+                        <p>Seeking help is a sign of strength. You are not alone—and with the right support, it’s possible to create a healthier relationship with social media.</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="pagination">
+                <a href="topic2-1.html" class="page-btn">Previous</a>
+                <a href="topic2-1.html" class="page-number">1</a>
+                <a href="topic2-2.html" class="page-number active">2</a>
+                <a href="topic2-3.html" class="page-number">3</a>
+                <a href="topic2-4.html" class="page-number">4</a>
+                <a href="topic2-5.html" class="page-number">5</a>
+                <a href="topic2-6.html" class="page-number">6</a>
+                <a href="topic2-7.html" class="page-number">7</a>
+                <a href="topic2-8.html" class="page-number">8</a>
+                <a href="topic2-9.html" class="page-number">9</a>
+                <a href="topic2-10.html" class="page-number">10</a>
+                <a href="topic2-3.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Mendiola, Sherisse Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

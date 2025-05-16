@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindfulness & Meditation Apps for Enhanced Focus | Digital Wellness &amp; Productivity Hub</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Link to your external stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* General Body & Container */
+
+    .topic-container {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      max-width: 900px;
+    }
+    .topic-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .topic-number-large {
+      background-color: #6D597A;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .topic-title-large {
+      color: #355070;
+      font-size: 28px;
+      margin: 0;
+    }
+    .topic-content {
+      margin-top: 20px;
+    }
+    .topic-section {
+      margin-bottom: 30px;
+    }
+    .topic-section h3 {
+      color: #B56576;
+      font-size: 22px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #EAE0D5;
+      padding-bottom: 8px;
+    }
+    .topic-content p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .topic-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+    /* Video Container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    /* Checklist Styling */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    .checklist input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      gap: 10px;
+    }
+    .page-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      background-color: #6D597A;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    .page-btn:hover {
+      background-color: #B56576;
+      transform: translateY(-2px);
+    }
+    .page-btn.disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .page-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #EAE0D5;
+      color: #355070;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    .page-number.active {
+      background-color: #B56576;
+      color: white;
+    }
+    .page-number:hover:not(.active) {
+      background-color: #EAAC8B;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width:36px; height:36px;">
+        <span class="logo-text">Digital Wellness Hub</span>
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span> Home</a></li>
+        <li class="nav-item"><a href="resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span> Resources</a></li>
+        <li class="nav-item"><a href="aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span> About Us</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span> Photo Gallery</a></li>
+        <li class="nav-item"><a href="author.html" class="nav-link"><span class="nav-icon"><i class="fas fa-user-edit"></i></span> About the Author</a></li>
+        <li class="nav-item"><a href="contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span> Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section class="topic-container">
+      <div class="topic-header">
+        <div class="topic-number-large">5</div>
+        <h2 class="topic-title-large">Mindfulness & Meditation Apps for Enhanced Focus</h2>
+      </div>
+      <div class="topic-content">
+        <!-- The Role of Mindfulness in Focus -->
+        <section class="topic-section">
+          <h3>The Role of Mindfulness in Focus</h3>
+          <p>
+            Mindfulness is far more than a buzzword—it is a scientifically proven strategy to sharpen your concentration and manage stress. By training your mind to remain present, you develop the ability to dismiss distractions, clear mental clutter, and boost your overall cognitive performance.
+          </p>
+          <p>
+            Regular mindfulness practice supports enhanced focus by reducing anxiety and stress levels. Research has shown that even a few minutes of meditation each day can help regulate emotions and improve, memory, attention, and decision-making skills.
+          </p>
+        </section>
+        
+        <!-- Leading Meditation Apps -->
+        <section class="topic-section">
+          <h3>Leading Meditation Apps</h3>
+          <p>
+            Discover some of the top mindfulness and meditation apps that are transforming how individuals achieve mental clarity and focus:
+          </p>
+          <ul>
+            <li>
+              <strong>Calm:</strong> Provides guided meditations, sleep stories, and calming music designed to lower stress levels and enhance focus.  
+              <br/><img src="./images/calm screenshot.png" alt="Calm App Screenshot" style="max-width:95%; height:auto; margin-top:10px;">
+            </li>
+            <li>
+              <strong>Headspace:</strong> Known for its user-friendly interface and structured meditation programs, Headspace offers sessions for relaxation, focus, and even movement meditation.  
+              <br/><img src="./images/headspace screenshot.png" alt="Headspace App Screenshot" style="max-width:95%; height:auto; margin-top:10px;">
+            </li>
+            <li>
+              <strong>Insight Timer:</strong> A feature-rich app boasting thousands of free guided meditations, ambient soundscapes, and talks by meditation experts.  
+              <br/><img src="./images/insight screenshot.webp" alt="Insight Timer App Screenshot" style="max-width:95%; height:auto; margin-top:10px;">
+            </li>
+          </ul>
+        </section>
+        
+        <!-- User Experiences & Research -->
+        <section class="topic-section">
+          <h3>User Experiences & Research</h3>
+          <p>
+            Many users and studies attest to the effectiveness of mindfulness practices for enhancing focus. Regular meditation has been linked to reduced cortisol levels, improved attention, and better emotional regulation.
+          </p>
+          <p>
+            For example, a study in the "Journal of Applied Cognitive Studies" revealed that participants who practiced meditation daily experienced significant improvements in their ability to concentrate and manage stressful situations. Personal testimonials often highlight increased productivity, enhanced clarity, and a noticeable reduction in anxiety.
+          </p>
+        </section>
+        
+        <!-- Practical Tips for Mindfulness -->
+        <section class="topic-section">
+          <h3>Practical Tips for Mindfulness</h3>
+          <p>
+            Integrate mindfulness into your daily routine with these straightforward strategies:
+          </p>
+          <ul>
+            <li>Start your day with a short mindfulness exercise, even as little as 5 minutes of focused breathing.</li>
+            <li>Schedule regular breaks during work for a quick meditation session or a mindful walk.</li>
+            <li>Use guided meditation sessions on apps like Calm or Headspace to help maintain consistency.</li>
+            <li>Practice grounding exercises, such as focusing on your senses, to center yourself in the present moment.</li>
+            <li>End your day with gratitude journaling to remind you of positive moments and reduce stress.</li>
+          </ul>
+        </section>
+        
+        <!-- Daily Mindfulness Challenge Checklist -->
+        <section class="topic-section">
+          <h3>Daily Mindfulness Challenge Checklist</h3>
+          <p>
+            Use this checklist to integrate mindfulness into every day and enhance your focus:
+          </p>
+          <ul class="checklist">
+            <li><input type="checkbox" id="morningMeditation" /> <label for="morningMeditation">Perform a 5-minute morning breathing exercise</label></li>
+            <li><input type="checkbox" id="guidedSession" /> <label for="guidedSession">Complete one guided meditation session (Calm/Headspace)</label></li>
+            <li><input type="checkbox" id="middayBreak" /> <label for="middayBreak">Take a mindful break during your workday</label></li>
+            <li><input type="checkbox" id="sensoryFocus" /> <label for="sensoryFocus">Practice a 3-minute grounding exercise focusing on your senses</label></li>
+            <li><input type="checkbox" id="eveningReflection" /> <label for="eveningReflection">End your day with a brief mindful reflection or journaling session</label></li>
+          </ul>
+        </section>
+        
+        <!-- Example Video -->
+        <section class="topic-section">
+          <h3>Example Video: Guided Meditation for Focus</h3>
+          <div class="video-container">
+            <!-- Replace the YouTube URL with an appropriate guided meditation video -->
+            <iframe src="https://www.youtube.com/embed/inpok4MKVLM" allowfullscreen></iframe>
+          </div>
+          <p>
+            Watch this guided meditation video to learn techniques that improve focus and reduce stress. Whether you’re new to meditation or a seasoned practitioner, this session offers valuable insights to help you achieve a calm and concentrated state of mind.
+          </p>
+        </section>
+        
+      </div>
+    </section>
+    
+    <!-- Pagination -->
+    <div class="pagination">
+      <a href="page4.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+      <a href="page1.html" class="page-number">1</a>
+      <a href="page2.html" class="page-number">2</a>
+      <a href="page3.html" class="page-number">3</a>
+      <a href="page4.html" class="page-number">4</a>
+      <a href="page5.html" class="page-number active">5</a>
+      <a href="page6.html" class="page-number">6</a>
+      <a href="page7.html" class="page-number">7</a>
+      <a href="page8.html" class="page-number">8</a>
+      <a href="page9.html" class="page-number">9</a>
+      <a href="page10.html" class="page-number">10</a>
+      <a href="page6.html" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="team-members">
+        <div class="member">Balang, Clark</div>
+        <div class="member">Bumanlag, Sean</div>
+        <div class="member leader">Cabero, Cyrus Luigi</div>
+        <div class="member">Camaymayan, Xjhann</div>
+        <div class="member">Menidola, Nicole</div>
+        <div class="member">Reyes, Clint</div>
+        <div class="member">Roldan, Zedrick</div>
+        <div class="member">Tancio, Kurt</div>
+        <div class="member">Valiao, Joaquin</div>
+        <div class="member">Vargas, Johanne</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Go to Top Button -->
+  <a href="#top" class="go-top-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+</body>
+</html>

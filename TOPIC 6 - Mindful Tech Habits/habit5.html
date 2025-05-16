@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Tech Habits | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Topic page specific styles */
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);;
+            font-weight: 500;
+             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+        }
+        
+        .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+
+        .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">How to Cultivate a Healthy Relationship with Social Media</h1>
+        </div>
+        
+        <div class="topic-content">
+                    <!-- Page 5:   How to Cultivate a Healthy Relationship with Social Media   -->
+                    <div id="page2" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Cultivating a Healthy Relationship with Social Media</h3>
+
+                             <div class="wellness-image-container">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFRhNwqxp27gkJMt4J6BxtK8bU_kBZDx9rOA&s" alt="Brain and Digital Technology" class="topic-image">
+                            </div>
+
+                            <div class="wellness-image-container">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw-CUMzFG_Ko7hzBZGZyHgcv9INRlvZYRSKw&s" alt="Brain and Digital Technology" class="topic-image">
+                            </div>
+
+                            <ul>
+                                <li>
+                                    <strong>Why This Matters?</strong>
+                                    <p>Social media can be a powerful tool for connection, inspiration, and learning, but when used unconsciously, it can lead to:</p>
+                                    <p>Mindless scrolling</p>
+                                    <p>Constant comparison</p>
+                                    <p>Distraction from real life</p>
+                                    <p>Anxiety, stress, or low self-esteem</p>
+                                    <p>Cultivating a healthy relationship with social media means becoming aware of why, how, and how often you use it—and shaping it to support your mental well-being, not drain it.</p>
+                                </li>
+
+                                <li>
+                                    <strong>7 Practical Ways to Build a Healthier Relationship</strong>
+                                    <p>1. Check in with Your Intentions</p>
+                                    <p>2. Curate Your Feed</p>
+                                    <p>3 Limit Passive Consumption</p>
+                                    <p>4. Use Tools to Create Boundaries</p>
+                                    <p>5 Avoid the Comparison Trap</p>
+                                    <p>6. Take Regular Social Media Breaks</p>
+                                    <p>7. Make More Time for Real Life</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="topic-section">
+                            <h3>Maintain the Relationship</h3>
+                            <p>Comprehensive guide on Cultivating a Healthy Relationship with Social Media:</p>
+                            
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/ww7NIksva0E?si=STiF_0xVgSr2BvwR" title=" Incorporate Mindful Tech Habits for a Digital Detox" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <ul>
+                                <h2>Healthy Social Media Use: Daily Guide</h2>
+                                <li><strong>Step 1: Set Clear Intentions</strong> - Before opening any social app, pause and ask:</li>
+                                <p>“Why am I opening this?”</p>
+                                <p>To connect with a friend?</p>
+                                <p>To learn something?</p>
+                                <p>To relax for a few minutes?</p>
+                            
+                                <li><strong>Step 2: Clean Up Your Feed</strong> - Curate your digital environment:</li>
+                                <p>Follow creators who inspire, teach, or uplift you</p>
+                                <p>Unfollow/mute accounts that cause stress, comparison, or clutter</p>
+                                <p>Organize content into “favorites” or “collections” that align with your goals</p>
+                            </li>
+                                <li><strong>Step 3: Limit Time & Frequency</strong> - Try one or more of these:                                    
+                                <p>Set app time limits (e.g., 20–30 minutes/day)</p>
+                                <p>Schedule specific “scroll windows” (e.g., 10 minutes after lunch)</p>
+                                <p>Use tools like Screen Time, Digital Wellbeing, or app blockers</p>
+                                <p><em>Less access = less temptation = more control</em></p>
+                            </li>
+                                <li><strong>Step 4: Be a Creator, Not Just a Consumer</strong> - Instead of only scrolling:</li>
+                                <p>Post something meaningful</p>
+                                <p>Leave thoughtful comments</p>
+                                <p>Share your ideas or work</p>
+                                <p>*Engaging actively reduces feelings of comparison and passivity.*</p>
+                            </li>
+
+                            <li><strong>Step 5: Check Your Emotions</strong> - Throughout or after use, reflect:</li>
+                                <p>“How do I feel right now?”</p>
+                                <p>“Am I energized or drained?”</p>
+                                <p>“Did this uplift me or bring me down?”</p>
+                                <p>*If it leaves you feeling worse, that’s a signal to reset your habits.*</p>
+                             
+                           <li><strong>Step 6: Schedule Offline Joy</strong> - Balance is key. Plan activities that don’t involve a screen:</li>
+                                <p>Walks, journaling, hobbies, deep conversations</p>
+                                <p>Phone-free meals or mornings</p>
+                                <p>Social media–free days or weekends</p>
+                                <p>*The more present you are offline, the less you’ll rely on likes and scrolling for validation.*</p>
+                            </ul>
+                        </div>
+                    </div>        
+                </div>    
+            </div>    
+        </div>
+
+        <div class="pagination">
+                <a href="habit4.html" class="page-btn">Previous</a>
+                <a href="habit1.html" class="page-number">1</a>
+                <a href="habit2.html" class="page-number">2</a>
+                <a href="habit3.html" class="page-number">3</a>
+                <a href="habit4.html" class="page-number">4</a>
+                <a href="habit5.html" class="page-number active">5</a>
+                <a href="habit6.html" class="page-number">6</a>
+                <a href="habit7.html" class="page-number">7</a>
+                <a href="habit8.html" class="page-number">8</a>
+                <a href="habit9.html" class="page-number">9</a>
+                <a href="habit10.html" class="page-number">10</a>
+                <a href="habit6.html" class="page-btn">Next</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>  
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>
+
+
+

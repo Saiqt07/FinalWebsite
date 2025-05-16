@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Digital Wellness? | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="../../Topic 1/topics.css">
+
+    
+    <style>
+        
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #EAE0D5; 
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05); 
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+     <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">5 Simple Stretches for Digital Fatigue</h1>
+                </div>
+                <p style="color: #555; font-size: 1.1rem; margin-bottom: 20px; text-align: left;">Easy stretches to relieve tension in the neck, shoulders, wrists, and back.</p>
+
+                <section class="topic-section intro-section">
+                    <h3>Introduction to Digital Fatigue</h3>
+                    <p>Spending long hours in front of digital devices can lead to digital fatigue, characterized by symptoms like eye strain, headaches, and muscle tension. Incorporating short stretches into your workday can help alleviate these symptoms and improve your overall well-being. These stretches are designed to be easily performed at your desk, even in a busy Filipino work environment where "diskarte" and long hours are common.Digital fatigue, with symptoms like eye strain, headaches, and muscle tension, can result from long hours studying on digital devices. Taking short stretching breaks during your day can really help lessen these effects and improve how you feel overall. These stretches are easy to do right where you study, even with the "diskarte" and long hours that Filipino students often face.</p>
+                    <img src="https://www.cmarix.com/blog/wp-content/uploads/2023/01/Finding-Balance-in-the-Digital-Age-Ways-to-avoid-digital-burnout.jpg" alt="Digital Fatigue" class="topic-image">
+                </section>
+
+                <section class="topic-section stretch-section">
+                    <h2>5 Simple Stretches</h2>
+                    <p>Here are five simple stretches you can do at your desk to combat digital fatigue:</p>
+
+                    <div class="stretch-card">
+                        <h3>1. Neck Rolls</h3>
+                        <p>Gently roll your neck in a circular motion to relieve tension. Many Filipinos hold tension in their neck and shoulders due to long commutes and stressful work.</p>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/X-CUlo4zf0Y?si=5wrcfivR5qjmbETt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p><strong>How to:</strong></p>
+                        <ol>
+                            <li>Sit upright with your shoulders relaxed.</li>
+                            <li>Slowly lower your right ear towards your right shoulder.</li>
+                            <li>Gently roll your head forward, chin to chest.</li>
+                            <li>Continue rolling your left ear towards your left shoulder.</li>
+                            <li>Complete the circle and repeat 5-10 times in each direction.</li>
+                        </ol>
+                    </div>
+
+                    <div class="stretch-card">
+                        <h3>2. Shoulder Blade Stretch</h3>
+                        <p>This stretch helps to open up the chest and relieve tension in the shoulders, which can become rounded from prolonged computer use, a common posture in office settings.</p>
+                        <img src="https://www.dmoose.com/cdn/shop/articles/1_Main_Image_5db14a4e-660d-43ac-8b67-70e00c7962e1.jpg?v=1670938957" alt="Shoulder Blade Stretch" class="topic-image">
+                        <p><strong>How to:</strong></p>
+                        <ol>
+                            <li>Interlace your fingers behind your back.</li>
+                            <li>Keep your elbows straight and lift your arms up.</li>
+                            <li>Hold for 15-20 seconds.</li>
+                            <li>Repeat 2-3 times.</li>
+                        </ol>
+                    </div>
+
+                    <div class="stretch-card">
+                        <h3>3. Wrist Extension Stretch</h3>
+                        <p>Frequent typing can cause strain in the wrists and forearms. This stretch is particularly beneficial for those working long hours on computers.</p>
+                       <div class="video-container">
+					   <iframe width="560" height="315" src="https://www.youtube.com/embed/_uINTR_7X-g?si=1fmk2pmmNmdOTrvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+						<p><strong>How to:</strong></p>
+                        <ol>
+                            <li>Extend your right arm straight out in front of you, palm down.</li>
+                            <li>Bend your wrist, pointing your fingers towards the floor.</li>
+                            <li>With your left hand, gently pull your right fingers towards your body.</li>
+                            <li>Hold for 15-20 seconds.</li>
+                            <li>Repeat with the other wrist.</li>
+                            <li>Do this 2-3 times on each wrist.</li>
+                        </ol>
+                    </div>
+
+                    <div class="stretch-card">
+                        <h3>4. Back Extension Stretch</h3>
+                        <p>Counteract the hunched posture from sitting with this back extension. Good for those in the BPO industry who work long night shifts.</p>
+                        <div class="video-container">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/Si0OKWUogJk?si=EttKSFhrWH7grLBp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						</div>
+                        <p><strong>How to:</strong></p>
+                        <ol>
+                            <li>Sit upright in your chair.</li>
+                            <li>Place your hands interlocked behind your neck for support.</li>
+                            <li>Gently lean back, arching your spine.</li>
+                            <li>Keep your head and neck relaxed.</li>
+                            <li>Hold for 10-15 seconds.</li>
+                            <li>Repeat 2-3 times.</li>
+                        </ol>
+                    </div>
+
+                    <div class="stretch-card">
+                        <h3>5. Eye Strain Relief</h3>
+                        <p>Staring at screens for extended periods can strain your eyes. This exercise helps to relax the eye muscles. Important for those working in call centers.</p>
+                        <img src="https://www.icarevision.com/wp-content/uploads/2018/07/Eye-Exercises.jpg" alt="Eye Strain Relief" class="topic-image">
+                        <p><strong>How to:</strong></p>
+                        <ol>
+                            <li>Sit comfortably and close your eyes.</li>
+                            <li>Gently move your eyes in a circular motion, clockwise for 5-10 seconds.</li>
+                            <li>Then, move your eyes counter-clockwise for 5-10 seconds.</li>
+                            <li>Open your eyes and focus on a distant object for a few seconds.</li>
+                            <li>Repeat this 2-3 times.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="topic-section additional-tips">
+                    <h2>Additional Tips for Filipinos</h2>
+                    <p>Here are some additional tips to help you incorporate these stretches into your school day, keeping in mind the Filipino work culture:</p>
+                    <ul>
+                        <li><strong>Find a "tyempo":</strong> Even during busy days, find short breaks ("tyempo") to do these stretches. You can even do them during short breaks or while waiting for your computer to load.</li>
+                        <li><strong>Group effort:</strong> Encourage your colleagues to join you. A group stretch break can be a fun way to de-stress and bond with your classmates ("barkada").</li>
+                        <li><strong>Set a reminder:</strong> Use your phone or computer to set a reminder every hour to do these stretches.</li>
+                        <li><strong>Mindful breaks:</strong> Take a break ("merienda") from studying and do some stretching.</li>
+                    </ul>
+                </section>
+
+                <section class="topic-section conclusion-section">
+                    <h2>Conclusion</h2>
+                    <p>These simple stretches can be a quick and effective way for students to combat digital fatigue and improve their well-being. By incorporating them into your day, you can foster a more comfortable and productive study experience, even with the pressures of student life.</p>
+                </section>
+            </div>
+        </div>
+        
+        <section class="topic-section">
+            <ul>
+
+            </ul>
+        </section>
+        <div class="pagination">
+            <a href="topic1-2.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="topic5.html" class="page-number">1</a>
+            <a href="topic5-2.html" class="page-number">2</a>
+            <a href="topic5-3.html" class="page-number">3</a>
+            <a href="topic5-4.html" class="page-number">4</a>
+            <a href="topic5-5.html" class="page-number active">5</a>
+            <a href="topic5-6.html" class="page-number">6</a>
+            <a href="topic5-7.html" class="page-number">7</a>
+            <a href="topic5-8.html" class="page-number">8</a>
+            <a href="topic5-9.html" class="page-number">9</a>
+            <a href="topic5-10.html" class="page-number">10</a>
+            <a href="#" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+        </div>  
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

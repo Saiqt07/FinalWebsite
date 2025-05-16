@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Strategies | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">08</div>
+                    <h1 class="topic-title-large">Online Learning Strategies</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <div id="page1" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Why Time Management Matters in Online Learning</h3>
+                            <p>Time is your most valuable resource—especially when you’re learning online. Without fixed class schedules or instructors guiding your pace, it’s up to you to stay on track. That freedom is empowering, but it also requires discipline and planning.</p>
+                            <p>Online students must manage their time wisely to avoid stress, meet deadlines, and balance other responsibilities. Without good time management, it’s easy to fall behind or feel overwhelmed. But with the right approach, you can stay organized, productive, and even carve out more time for yourself.</p>
+                            <p>The good news? Time management is a learnable skill. Whether or not you're naturally organized, you can develop this habit through consistent effort, motivation, and a commitment to improvement. <br>Let’s explore practical strategies that can help you take control of your time and succeed in your online studies.</p>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Plan Your Week in Advance</h3>
+                            <p>While online courses are flexible, consistency is key. Create a weekly schedule that breaks your coursework into smaller, manageable tasks. Use a planner—digital or paper—to outline:</p>
+                            <ul style="padding-left: 75px;">
+                                <li>Assignment deadlines (including drafts and final versions)</li>
+                                <li>Study group sessions or program events</li>
+                                <li>Instructor office hours or advising meetings</li>
+                            </ul>
+                            <br>
+                            <h4>Sample Weekly Study Flow:</h4>
+                            <div class="wellness-image-container">
+                                <img src="https://worksheets.clipart-library.com/images2/weekly-study-schedule-printable/weekly-study-schedule-printable-12.jpg" alt="Week Study Schedule" class="topic-image">
+                                <p class="image-caption">Example of a week study schedule</p>
+                            </div>
+                            
+                            <h3>Focus on One Task at a Time</h3>
+                            <p>Avoid multitasking, which might actually reduce your productivity.  Concentrate on one task at a time, whether it's studying for an exam, reading a textbook, emailing a professor, or posting in an online forum.  Arrange your assignments in ascending order of importance, focusing on the three or four most difficult jobs.  Concentrate on what needs to be done right now and avoid thinking about the future.  If it's a tiny job that won't need to be completed for a few weeks, mark it on your calendar so you can focus on it when the deadline approaches. Helpful tools to stay focused:</p>
+                            <ul style="padding-left: 75px;">
+                                <li><b>Project Managers:</b> Trello, Smartsheet</li>
+                                <li><b>Digital To-Do Lists:</b> Todoist, ClickUp, Evernote</li>
+                            </ul>
+                            <br>
+                            <h3>Set Up a Productive Study Space</h3>
+                            <p>Your environment affects your focus. Whether you’re studying at home, in a library, or a coffee shop, ensure your workspace supports concentration.</p>
+                            <ul style="padding-left: 75px;">
+                                <li><b>Check your Wi-Fi:</b> Whether you're working from home or elsewhere, you should have access to high-speed internet.  If you're unclear about your connection speed, use an online speed test.  You should aim for a download speed of at least 6 Mbps—more if you share your connection with others.</li>
+                                <li><b>Make sure you're in a comfortable setting:</b>Your surroundings should promote effective study. Make sure you're in a pleasant environment with appropriate lighting and comfy chairs.</li>
+                                <li><b>Reduce auditory distractions:</b> Ensure that the background sounds you hear while studying is not distracting. For example, some people prefer to work with headphones on, whilst others prefer quietness or an ambient background with people quietly speaking.</li>
+                            </ul>
+
+                            
+                            <h3>Eliminate Distractions</h3>
+                            <p>Your tight schedule, mixed with regular distractions, might easily stand in the way of completing chores.  As a result, it is critical to understand how to set aside time to focus.  This includes maintaining a constant schedule and workspace, as well as avoiding distractions like Facebook, Twitter, and other social media platforms.
+                            <p><b>Close</b> any tabs or browser windows that are not relevant to your studies, and put your phone away.  This will allow you to focus more effectively on your work.</p>
+                            <p>If you're having trouble staying focused, consider using the Pomodoro Method.  This strategy improves productivity by structuring your work to be more efficient.  The tool is based on 25-minute work sessions, allowing you to optimize your time and focus on your online studies.</p>
+        
+                        
+                            <h3>Reward Yourself</h3>
+                            <p>To avoid burnout, it is necessary to reward oneself after completing a task successfully.  Otherwise, it will be impossible to focus on even the most basic chores. You can reward yourself by acknowledging your accomplishments and rewarding yourself to something you actually like, such as watching your favorite Netflix show or going out to dinner and a movie.  If you've been working on a task for several months in a row, give yourself a week vacation when you complete.</p>
+                        
+
+                        
+                            <h3>Find Work-Life-School Balance</h3>
+                            <p>Online students often juggle academics, work, and personal commitments. A healthy balance prevents burnout and helps you show up better in all areas of life.
+                            </p>
+                            <p>To maintain an efficient balance and avoid burnout, prioritize your time so that you may focus on education, work, and your personal life as needed.  Creating a consistent schedule can help you build a pattern that suits your lifestyle and allows you to devote your entire focus to each part of your life at any given time.</p>
+
+                            <div class="wellness-image-container">
+                                <img src="https://images.squarespace-cdn.com/content/v1/64b5a201e3879a426d059649/1734733109399-7K8AZJEUTGXSY67J980Q/iStock-1014754398.jpg" alt="Kids doing a hobby" class="topic-image">
+                                <p class="image-caption">Example of a child doing a hobby</p>
+                            </div>
+
+                        
+                            <h3>Prioritize Sleep</h3>
+                            <p>Sleep is vital for resting your body and keeping your mind sharp for the following day.  Try to obtain seven to eight hours of sleep each night.  In addition to the amount of sleep you get, it is critical to ensure that the quality of your sleep is enough.</p>
+
+                            <p>The Centers for Disease Control and Prevention (CDC) has issued the following guidelines for enhancing sleep quality:</p>
+                        
+                            <ul style="padding-left:75px;">
+                                <li><b>Be consistent: </b>go to bed and get up at the same hour every day, even weekends.</li>
+                                <li><b>Be comfy: </b>Maintain a suitable temperature in your bedroom, and make sure it is dark and quiet.</li>
+                                <li><b>Disconnect: </b>Turn off your electronics before going to bed and do not check them again until the morning.</li>
+                                <li><b>Avoid coffee: </b>Large meals and caffeine can disrupt sleep quality, so avoid them before bedtime.</li>
+                                <li><b>Exercise: </b>Physical activity during the day can help you sleep better at night.</li>
+                            </ul>
+                            <p>Pulling all-nighters is less productive than studying regularly. Include sleep in your schedule and you will notice a boost in energy and productivity.</p>
+                        
+                            <h3>Own Your Online Education Journey</h3>
+                            <p>Enrolling in an online degree program is a terrific opportunity to increase your education and eventually advance in your job, but you must take responsibility of your learning to make the most of your classes. One critical component of doing so is using good time management tactics to keep on top of your responsibilities.</p>
+
+                            <p>Being a good student is vital, but finding an online school that meets your needs is also critical to success. When selecting an online degree program, make important to conduct research and understand how the course material and structure connect with your own goals and ambitions.</p>
+
+                            <p>By choosing the right program to fit your needs and taking charge of your learning, you can prepare yourself for online learning success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn disabled">Previous</a>
+                <a href="topic8-1.html" class="page-number active">1</a>
+                <a href="topic8-2.html" class="page-number">2</a>
+                <a href="topic8-3.html" class="page-number">3</a>
+                <a href="topic8-4.html" class="page-number">4</a>
+                <a href="topic8-5.html" class="page-number">5</a>
+                <a href="topic8-6.html" class="page-number">6</a>
+                <a href="topic8-7.html" class="page-number">7</a>
+                <a href="topic8-8.html" class="page-number">8</a>
+                <a href="topic8-9.html" class="page-number">9</a>
+                <a href="topic8-10.html" class="page-number">10</a>
+                <a href="topic1-2.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="topics.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        
+        /* pagination and consistent code*/
+
+  
+
+
+
+
+.content-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.content-grid .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.card-header {
+    text-align: center;
+    background-color: #EAAC8B;
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-body {
+    padding: 1.5rem;
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+
+.highlight-card {
+    background-color: #F8F4F9;
+    border-left: 5px solid #B56576;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.highlight-card h3 {
+    color: #6D597A;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-grid img {
+    width: 48%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.content-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.content-grid .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.card-header {
+    text-align: center;
+    background-color: #EAAC8B;
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-body {
+    padding: 1.5rem;
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+
+.highlight-card {
+    background-color: #F8F4F9;
+    border-left: 5px solid #B56576;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.highlight-card h3 {
+    color: #6D597A;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-grid img {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.responsive-video {
+    display: block; 
+    margin: 0 auto; 
+    width: 100%;
+    max-width: 700px;
+    height: 300px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover; 
+}
+
+
+    
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="content">
+        <div class="container">
+
+            
+
+
+
+
+
+
+
+              
+              
+          
+          
+          
+            <section class="section-topic">
+                <div class="topic-header">
+                    <div class="topic-number-large">05</div>
+                    <h1 class="topic-title-large">Deep Work: Staying Focused in a Distracted World</h1>
+                </div>
+                
+            
+                <div class="intro card">
+                    <div class="card-body">
+                        <p class="lead-text">
+                            Set your determination to do some really deep work. This will completely rid distractions of their key and unlock your potential completely. Join me as I check out ways to inspire focus and remove distractions so that you can produce worthy results.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="card-header">
+                        <h3>What is Deep Work?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Deep work is the ability to focus without distraction on a difficult task. <br><br>This was defined in Cal Newport's book, Deep Work, as:</p>
+                        <ul>
+                            <li><strong>Focused Effort:</strong>  Working on tasks that demand your undivided attention.</li>
+                            <li><strong>High-Quality Results:</strong> Meaningful and high-impact work.</li>
+                            <li><strong>Distraction-Free Environment:</strong> To create an conditions suitable for concentration.</li>
+                            <li><strong>Flow State:</strong> To have that state of deep immersion into which productivity has great peaks.</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Why Deep Work Matters</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Deep Work is "the most crucial aspect in being able to arrive at the more meaningful results that the world has to offer us on the very distraction." Here are the reasons why it matters most:</p>
+                        <ul>
+                            <li><strong>Improved Productivity:</strong>  Deep work allows you to achieve more in less time.</li>
+                            <li><strong>Better Quality:</strong> Better results come from focused work.</li>
+                            <li><strong>Skill Development:</strong> Complex skills can be mastered in shorter periods and at a faster rate.</li>
+                            <li><strong>Reduced Stress:</strong> One task at a time leads to less mental fatigue.</li>
+                            <li><strong>Career Advancement:</strong> Standing out from the crowd with exceptional results.</li>
+                            <li><strong>Increased Creativity:</strong> Your head will be very much in the problems thus inspiring novel thinking through deep work.</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="highlight-card">
+                    <h3>How to Cultivate Deep Work</h3>
+                    <div class="card-body">
+                        <p><i class="fas fa-lightbulb"></i> Some practical techniques that can help you cultivate a deep work habit:</p>
+                        <ul>
+                            <li><strong>Schedule Deep Work:</strong> Schedule hours for intensive work, put away every other thing, and clear your mind.</li>
+                            <li><strong>Eliminate Distractions:</strong> Notifications should be turned off. Unneeded tabs should be closed. A quiet workspace should be created.</li>
+                            <li><strong>Set Clear Goals:</strong> Goals need to be defined. Deep work sessions must have stated objectives.</li>
+                            <li><strong>Take Breaks:</strong> Breaks are useful. One can use the Pomodoro Technique for recharged focus.</li>
+                            <li><strong>Track Progress:</strong> Progress should be measured. A journal can hold deep work hours and accomplishments.</li>
+                            <li><strong>Practice Mindfulness:</strong> Mindfulness should be practiced. Exercises in mindfulness can improve focus ability.</li>
+                        </ul>
+                    </div>
+                </div><br><br>
+            
+                <div class="image-card card">
+                    <div class="card-header">
+                        <h3 id="image-title" style="color: #6D597A;">📸 Visualize Deep Work in Action</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="image-grid">
+                            <img src="images/deepwork.png" alt="Focused Workspace" class="responsive-img">
+                        </div>
+                        <p class="image-caption" style="text-align: center;">Shallow work vs Deep work</p>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Success Stories</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Writers:</strong> Authors such as J.K. Rowling completed their masterpieces by using deep work.</li>
+                            <li><strong>Entrepreneurs:</strong> Business leaders like Elon Musk solved hard problems by dedicating time to focus.</li>
+                            <li><strong>Students:</strong> Deep work allows students to do well on exams and understand difficult subjects.</li>
+                            <li><strong>Developers:</strong> Programmers make code that is error-free by using deep work. Scientists make important discoveries. They depend on deep work.</li>
+                            <li><strong>Researchers:</strong> Scientists rely on deep work to make groundbreaking discoveries.</li>
+                            <li><strong>Designers:</strong> Creative professionals use deep work to produce innovative designs and solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="video-box card">
+                    <div class="card-header">
+                        <h3 class="subhead" style="color: #6D597A;">🎥 Watch: Mastering Deep Work</h3>
+                    </div>
+                    <div class="card-body">
+                        <iframe class="responsive-video" src="https://www.youtube.com/embed/3E7hkPZ-HTk" 
+                                title="Deep Work Explained" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                
+            </section>
+              
+  
+              
+              
+         
+        
+        
+
+
+
+
+
+
+
+
+
+        </div>
+    </main>
+
+
+    <div class="pagination">
+        <a href="productive4.html" class="page-btn"> Previous</a>
+        <a href="productive.html" class="page-number">1</a>
+        <a href="productive2.html" class="page-number">2</a>
+        <a href="productive3.html" class="page-number">3</a>
+        <a href="productive4.html" class="page-number">4</a>
+        <a href="productive5.html" class="page-number active">5</a>
+        <a href="productive6.html" class="page-number">6</a>
+        <a href="productive7.html" class="page-number">7</a>
+        <a href="productive8.html" class="page-number">8</a>
+        <a href="productive9.html" class="page-number">9</a>
+        <a href="productive10.html" class="page-number">10</a>
+        <a href="productive6.html" class="page-btn">Next</a>
+    </div><br><br>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Detox and Well-Being | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+         .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .topic-content {
+            margin-top: 20px;
+        }
+
+        .topic-section ul {
+            padding-left: 20px;
+        }
+
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span>Home</a></li>
+                <li class="nav-item"><a href="../resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span>Resources</a></li>
+                <li class="nav-item"><a href="../aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span>About Us</a></li>
+                <li class="nav-item"><a href="../gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span>Photo Gallery</a></li>
+                <li class="nav-item"><a href="../contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">10</div>
+                    <h1 class="topic-title-large">Digital Detox and Digital Well-Being: Reclaiming Balance in a Screen-Driven World</h1>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>What is a Digital Detox?</h3>
+                    <p>A digital detox refers to a period of time during which an individual refrains from using digital devices, particularly smartphones, computers, and social media platforms. The goal of a digital detox is to disconnect from the constant stream of notifications, emails, and social media updates in order to reset and restore mental and emotional well-being.</p>
+                    <p>As technology becomes increasingly integrated into our daily lives, it’s easy to become overwhelmed by the constant connectivity and digital noise. A digital detox offers a chance to step back, recharge, and regain control over how technology impacts our time and mental health.</p>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>The Importance of Digital Well-Being</h3>
+                    <p>Digital well-being refers to the state of balance between using technology and maintaining a healthy, fulfilling life. It encompasses the ways in which we manage our screen time, cultivate healthy digital habits, and ensure that technology serves our well-being rather than detracting from it.</p>
+                    <p>Digital well-being is not just about limiting screen time; it's also about using digital tools and devices in ways that promote positive outcomes. This includes engaging in activities that support mental health, social connections, productivity, and creativity, while avoiding excessive or mindless use that leads to stress, burnout, or negative emotional impacts.</p>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>1. The Impact of Constant Connectivity</h3>
+                    <p>In today’s hyper-connected world, we are constantly plugged in, whether it's checking social media, responding to emails, or staying updated on news. This constant connectivity can have significant effects on mental and emotional health. Studies show that overuse of digital devices can lead to stress, anxiety, depression, and sleep disruption.</p>
+                    <p>While technology can be beneficial for staying informed and connected, it's crucial to set boundaries. The digital world, with its rapid information flow and social comparison, can sometimes contribute to feelings of overwhelm, loneliness, or inadequacy.</p>
+                    <p>A digital detox offers a much-needed break, allowing individuals to disconnect from the pressure of being constantly available or accessible, helping to restore mental peace and clarity.</p>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>2. Benefits of a Digital Detox</h3>
+                    <p>Taking a break from screens can have profound benefits for both mental and physical health. Some key advantages include:</p>
+                    <ul>
+                        <li><strong>Reduced Stress and Anxiety:</strong> Disconnecting from the digital world can help reduce the feelings of being overwhelmed by constant notifications and the pressure to stay connected.</li>
+                        <li><strong>Improved Sleep:</strong> Reducing screen time, particularly before bed, can enhance sleep quality. The blue light emitted by screens interferes with melatonin production, which is essential for sleep regulation.</li>
+                        <li><strong>Enhanced Focus and Productivity:</strong> A digital detox allows for improved concentration by reducing distractions, enabling individuals to engage more fully with tasks without the temptation to check their devices.</li>
+                        <li><strong>Stronger Relationships:</strong> By spending less time on screens, individuals can dedicate more time to face-to-face interactions, fostering deeper, more meaningful connections with family, friends, and loved ones.</li>
+                        <li><strong>Increased Mindfulness:</strong> A detox offers a chance to be more present in the moment, enhancing mindfulness and helping individuals enjoy life’s simple pleasures without the distraction of devices.</li>
+                    </ul>
+                </div>
+            
+                <div class="wellness-image-container">
+                    <div align="center">
+                        <img src="detox.jpg" alt="Person relaxing without digital devices" class="topic-image">
+                        <p class="image-caption">A digital detox can promote mental relaxation and help break the cycle of constant digital engagement.</p>
+                    </div>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>3. How to Start a Digital Detox</h3>
+                    <p>Starting a digital detox doesn’t have to be an all-or-nothing approach. Here are some practical steps to gradually reduce screen time and incorporate more offline activities into your day:</p>
+                    <ul>
+                        <li><strong>Set Clear Goals:</strong> Decide on the length and type of detox you want to undertake. For example, you could aim to avoid all screens for one weekend, limit social media use for a week, or simply designate screen-free hours during the day.</li>
+                        <li><strong>Schedule Offline Time:</strong> Dedicate specific times for offline activities like reading, exercising, cooking, or spending time outdoors. These activities can help you reconnect with yourself and the world around you.</li>
+                        <li><strong>Limit Notifications:</strong> Turn off non-essential notifications on your phone or computer. This helps reduce the constant pull to check your devices and allows you to remain focused on more meaningful tasks.</li>
+                        <li><strong>Digital-Free Zones:</strong> Create areas in your home where screens are not allowed, such as the dining room or bedroom. This encourages more intentional interactions with family and a more restful environment for sleep.</li>
+                        <li><strong>Engage in Digital-Free Socializing:</strong> Plan gatherings or outings where digital devices are put away, allowing for face-to-face interactions without distractions.</li>
+                    </ul>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>4. Embracing Digital Well-Being Post-Detox</h3>
+                    <p>After completing a digital detox, it’s important to embrace a sustainable approach to digital well-being. Here are some tips for maintaining a healthy relationship with technology:</p>
+                    <ul>
+                        <li><strong>Mindful Screen Time:</strong> Be intentional about your screen time. Consider setting specific times for checking emails or browsing social media and avoid mindless scrolling.</li>
+                        <li><strong>Balance Work and Leisure:</strong> Ensure that your use of screens is balanced between work, learning, and leisure activities. Make time for offline hobbies that nourish your mind and body.</li>
+                        <li><strong>Monitor Emotional Impact:</strong> Pay attention to how screen use affects your mood and energy levels. If you notice negative effects such as increased stress or anxiety, consider scaling back your screen time or adjusting your digital habits.</li>
+                        <li><strong>Engage in Offline Communities:</strong> Strengthen connections with local communities, nature, or creative groups that don't involve technology. These connections provide a sense of belonging and fulfillment beyond the digital realm.</li>
+                    </ul>
+                </div>
+            
+                <div class="topic-section">
+                    <h3>Conclusion: Reclaiming Control in a Digital World</h3>
+                    <p>In our fast-paced digital world, a digital detox is an essential tool for regaining balance and prioritizing our mental, emotional, and physical well-being. By taking intentional breaks from technology, we can reconnect with ourselves, foster real-life relationships, and improve our overall quality of life.</p>
+                    <p>Digital well-being is about making conscious decisions on how we engage with technology, ensuring it serves our best interests and supports our long-term happiness. Through a combination of digital detoxes, mindfulness, and balanced tech use, we can create a healthier, more fulfilling relationship with screens.</p>
+                </div>
+
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/XorYLmFklEs?si=eUAuH1l9EJzFh4O0" title="How Screen Time Affects Your Attention Span" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <a href="topic2-9.html" class="page-btn">Previous</a>
+                <a href="topic2-1.html" class="page-number">1</a>
+                <a href="topic2-2.html" class="page-number">2</a>
+                <a href="topic2-3.html" class="page-number">3</a>
+                <a href="topic2-4.html" class="page-number">4</a>
+                <a href="topic2-5.html" class="page-number">5</a>
+                <a href="topic2-6.html" class="page-number">6</a>
+                <a href="topic2-7.html" class="page-number">7</a>
+                <a href="topic2-8.html" class="page-number">8</a>
+                <a href="topic2-9.html" class="page-number">9</a>
+                <a href="topic2-10.html" class="page-number active">10</a>
+                <a href="#" class="page-btn disabled">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Mendiola, Sherisse Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

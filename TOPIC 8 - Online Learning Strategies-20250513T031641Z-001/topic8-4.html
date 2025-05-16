@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Strategies | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
+
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
+
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
+
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">08</div>
+                    <h1 class="topic-title-large">Online Learning Strategies</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <div id="page1" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Using Technology Tools to Enhance Learning</h3>
+                            <p>In the current digital era, technology has developed into a potent instrument for improving education.  Students may learn more effectively, acquire new skills in innovative ways, and access information more quickly with the correct apps, platforms, and gadgets.  Technology can make learning more dynamic, individualized, and interesting, whether you're taking classes online, conducting research, or planning projects.  Here are several ways that digital tools can enhance your educational experience, along with real-world instances of their successful application.</p>
+                              
+                        </div>
+
+                        <br>
+                        <br>
+                        
+                        <div class="topic-section">
+                            <h3>Online Learning Platforms</h3>
+                            <p>A structured environment is offered via websites such as:</p> 
+                            <ul style="padding-left: 75px;">
+                                <li ><a href="https://classroom.google.com/" style="text-decoration: none; color: purple;" target="_blank">Google Classroom</a></li>
+                                <li><a href="https://moodle.org/" style="text-decoration: none; color: purple;" target="_blank">Moodle</a></li>
+                                <li><a href="https://www.instructure.com/canvas" style="text-decoration: none; color: purple;" target="_blank">Canvas</a></li>
+                                <li><a href="https://class.101.com/" style="text-decoration: none; color: purple;" target="_blank">Edmodo</a></li>
+                                
+                            </ul>
+
+                            <p>Allow students to access classes, turn in assignments, and interact with their teachers.  These systems facilitate the organization of assignments and the monitoring of due dates.  A lot of them also come with integrated discussion boards, quizzes, and grading features to help teachers and students.</p>
+
+                            <br>
+                            <br>
+
+                            <h3>Educational Apps and Games</h3>
+                            <p>Numerous apps are available to make learning engaging and dynamic.  Resources such as <a href="https://quizlet.com/ph" style="text-decoration: none; color: purple;" target="_blank">Quizlet</a> for flashcards, <a href="https://kahoot.com/" style="text-decoration: none; color: purple;" target="_blank">Kahoot</a> and <a href="https://www.duolingo.com/" style="text-decoration: none; color: purple;" target="_blank">Duolingo</a> for language learning!  because game-based tests make learning more interesting.  To keep users motivated and turn study time into enjoyment, these apps frequently incorporate levels, points, and awards.</p>
+                            <div class="wellness-image-container">
+                                <img src="https://kahoot.com/files/2017/04/Playing-Jumble-Kahoot.png" alt="Kahoot" class="topic-image">
+                                <p class="image-caption">Playing Kahoot in Classroom</p>
+                            </div>
+                            <br>
+                            <br>
+                            <h3>Digital Note-Taking Tools</h3>
+                            <p>Student's note-taking and note-management practices have been revolutionized by apps like Microsoft OneNote, Notion, Evernote, and Goodnotes.  In a single digital notebook, users can use these tools to type, sketch, highlight, add photographs, make voice notes, and link to online resources.  You may review your notes from anywhere at any time, including your phone, because many of them sync between devices.  These resources are particularly helpful for working with classmates, making study guides, and classifying ideas by subject.</p>
+                            <p>You can view more about Digital note taking here:</p>
+                            <a href="topic8-2.html" style="text-decoration: none; color: purple;">Different kinds of Study Methods</a>
+                            
+                            <br>
+                            <br>
+
+                            <h3>Video Conferencing Tools</h3>
+                            <p>For online consultations, collaborative projects, and virtual classes, platforms like <a href="https://www.zoom.com/" style="text-decoration: none; color: purple;" target="_blank">Zoom</a>, <a href="https://meet.google.com/landing" style="text-decoration: none; color: purple;" target="_blank">Google Meet</a>, and <a href="https://www.microsoft.com/en-us/microsoft-teams/log-in" style="text-decoration: none; color: purple;" target="_blank">Microsoft Teams</a> are crucial.  These solutions facilitate screen sharing for presentations, real-time audio and video collaboration, and even breakout spaces for activities involving small groups.  Online learning becomes more accessible and engaging with features like file sharing, chat, and reaction buttons.  Students who require flexible schedules or who live in rural places would particularly benefit from them.</p>
+
+                            <div class="wellness-image-container">
+                                <img src="https://www.yomly.com/wp-content/uploads/2024/07/Blog-Images-1.png" alt="Online Conference" class="topic-image">
+                                <p class="image-caption">Online meeting</p>
+                            </div>
+
+                            <br>
+                            <br>
+                            
+                            <h3>Cloud Storage and File Sharing</h3>
+                            <p>Students may safely save their files online and access them from any device with cloud storage services like <a href="https://drive.google.com/drive/quota" style="text-decoration: none; color: purple;" target="_blank">Google Drive</a>, <a href="https://www.dropbox.com/official-teams-page?_tk=paid_sem_goog_biz_b&_camp=20551930309&_kw=dropbox|e&_ad=718117649755||c&gad_source=1&gad_campaignid=20551930309&gbraid=0AAAAADubkg-NKVKzfuNut3geAF8KVq8F4&gclid=Cj0KCQjwlYHBBhD9ARIsALRu09oXmMh31m9MTiNdJWjd8HhFFu9esY-8ictgae9v9lRM9qIZnL4D6eUaAg1NEALw_wcB" style="text-decoration: none; color: purple;" target="_blank">Dropbox</a>, and <a href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage" style="text-decoration: none; color: purple;" target="_blank">OneDrive</a>.  This removes the possibility of losing crucial schoolwork because of USB drive loss or computer breakdowns.  Group projects are also made simpler by cloud tools, which let several people work on the same page at once and contribute ideas or comments.</p>
+
+                            <br>
+                            <br>
+        
+                        
+                            <h3>Time Management and Productivity Tools</h3>
+                            <p>Managing your time well is essential to juggling your personal life, activities, and education.  Students can stay productive, plan their days, and keep track of their homework with the aid of apps like Google Calendar, Trello, Notion, and Todoist.  With the help of these tools, students may prioritize assignments, make to-do lists, set reminders, and even divide large projects into manageable chunks.  Procrastination may be lessened by using apps that employ visual boards or daily concentration objectives.<p>
+                             <p>You can view more about Time management in here:</p>
+                            <a href="topic8-1.html" style="text-decoration: none; color: purple;">Time Management Matters in Online Learning</a>
+
+                            <br>
+                            <br>
+                                
+                            <h3>Online Research and e-Libraries</h3>
+                            <p>Access to a wealth of educational resources via the internet promotes deeper learning and improved research.  Academic content is freely or inexpensively available on websites such as <a href="https://www.jstor.org/" style="text-decoration: none; color: purple;" target="_blank">JSTOR</a>, <a href="https://scholar.google.com/" style="text-decoration: none; color: purple;" target="_blank">Google Scholar</a>, <a href="https://www.khanacademy.org/" style="text-decoration: none; color: purple;" target="_blank">Khan Academy</a>, <a href="https://www.coursera.org/courseraplus?utm_medium=sem&utm_source=gg&utm_campaign=b2c_apac_x_coursera_ftcof_courseraplus_cx_dr_bau_gg_sem_bd-ex_s2_all_m_hyb_23-12_x&campaignid=20989858741&adgroupid=157016705446&device=c&keyword=coursera&matchtype=e&network=g&devicemodel=&creativeid=696907040395&assetgroupid=&targetid=kwd-36262515261&extensionid=&placement=&gad_source=1&gad_campaignid=20989858741&gbraid=0AAAAADdKX6bS0pLPJoMVLlD2Mb3q05Tnl&gclid=Cj0KCQjwlYHBBhD9ARIsALRu09pjwFU0FbhgS0KOpYx_FSmCsxQ-XakYJn37gxb_6Dp_jXaQsvxpuOUaAkm6EALw_wcB" style="text-decoration: none; color: purple;" target="_blank">Coursera</a>, and even <a href="https://www.youtube.com/" style="text-decoration: none; color: purple;" target="_blank">YouTube</a>.  By providing access to up-to-date research papers, professional explanations, and excellent tutorials, these resources assist students in going beyond textbooks.  They are particularly beneficial for advanced assignments, self-paced review, and college-level study.</p>
+
+                            <div class="wellness-image-container">
+                                <img src="https://www.amgenfoundation.org/science-education/-/media/Themes/Amgen/www-amgenfoundation-org/www-amgenfoundation-org/images/khan-academy/Khan-Academy-2.png" alt="Online Conference" class="topic-image">
+                                <p class="image-caption">Credit for Image: Khan Academy</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic8-3.html" class="page-btn">Previous</a>
+                <a href="topic8-1.html" class="page-number">1</a>
+                <a href="topic8-2.html" class="page-number">2</a>
+                <a href="topic8-3.html" class="page-number">3</a>
+                <a href="topic8-4.html" class="page-number active">4</a>
+                <a href="topic8-5.html" class="page-number">5</a>
+                <a href="topic8-6.html" class="page-number">6</a>
+                <a href="topic8-7.html" class="page-number">7</a>
+                <a href="topic8-8.html" class="page-number">8</a>
+                <a href="topic8-9.html" class="page-number">9</a>
+                <a href="topic8-10.html" class="page-number">10</a>
+                <a href="topic8-5.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicolle</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wellness vs. Digital Detox: Key Differences (Page 5) | Digital Wellness & Productivity Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Topic page specific styles */
+        .topic-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .topic-number-large {
+            background-color: #6D597A;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .topic-title-large {
+            color: #355070;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .topic-content {
+            margin-top: 20px;
+        }
+        
+        .topic-section {
+            margin-bottom: 30px;
+        }
+
+        .topic-section ul {
+            padding-left: 20px;
+        }
+        
+        .topic-section h3 {
+            color: #B56576;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EAE0D5;
+            padding-bottom: 8px;
+        }
+        
+        .topic-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .wellness-image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            background-color: #6D597A;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            background-color: #B56576;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .page-btn.disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #355070;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .page-number.active {
+            background-color: #B56576;
+            color: white;
+            box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .page-number:hover:not(.active) {
+            background-color: #EAAC8B;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+        }
+        
+        .page-number:active:not(.active) {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-number {
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .page-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Comparison table styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background-color: #6D597A;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Approach cards */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .approach-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .approach-card.wellness {
+            border-left: 4px solid #355070;
+        }
+        
+        .approach-card.detox {
+            border-left: 4px solid #B56576;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .approach-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .approach-card.wellness .approach-icon {
+            color: #355070;
+        }
+        
+        .approach-card.detox .approach-icon {
+            color: #B56576;
+        }
+        
+        .approach-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .approach-card.wellness .approach-title {
+            color: #355070;
+        }
+        
+        .approach-card.detox .approach-title {
+            color: #B56576;
+        }
+        
+        /* Quote styles */
+        .expert-quote {
+            background-color: #f5f5f5;
+            border-left: 4px solid #6D597A;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .expert-quote:before {
+            content: '\201C';
+            font-size: 60px;
+            font-family: Georgia, serif;
+            color: #6D597A;
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            font-weight: bold;
+            color: #355070;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+                <span class="logo-text">Digital Wellness</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        Resources
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../aboutus.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-users"></i></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../gallery.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-images"></i></span>
+                        Photo Gallery
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="../contacts.html" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="container">
+            <div class="topic-container">
+                <div class="topic-header">
+                    <div class="topic-number-large">01</div>
+                    <h1 class="topic-title-large">Digital Wellness vs. Digital Detox: Key Differences</h1>
+                </div>
+                
+                <div class="topic-content">
+                    <!-- Page 5: Digital Wellness vs. Digital Detox: Key Differences -->
+                    <div id="page5" class="topic-page active">
+                        <div class="topic-section">
+                            <h3>Understanding the Approaches</h3>
+                            <p>As our digital lives become increasingly complex, two distinct approaches have emerged to help manage our relationship with technology: Digital Wellness and Digital Detox. While both aim to improve our relationship with technology, they represent fundamentally different philosophies and practices.</p>
+                            
+                            <div class="wellness-image-container">
+                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Digital wellness vs digital detox concept" class="topic-image">
+                                <p class="image-caption">Digital wellness focuses on sustainable balance, while digital detox emphasizes temporary disconnection</p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Side-by-Side Comparison</h3>
+                            <p>Let's examine the key differences between these two approaches to better understand which might be more suitable for your needs:</p>
+                            
+                            <table class="comparison-table">
+                                <tr>
+                                    <th>Aspect</th>
+                                    <th>Digital Wellness</th>
+                                    <th>Digital Detox</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>Philosophy</strong></td>
+                                    <td>Integration and mindful usage</td>
+                                    <td>Temporary abstinence or restriction</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Duration</strong></td>
+                                    <td>Ongoing, sustainable lifestyle</td>
+                                    <td>Time-limited periods (hours to weeks)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Approach to Technology</strong></td>
+                                    <td>Selective and intentional use</td>
+                                    <td>Complete or significant disconnection</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Goal</strong></td>
+                                    <td>Healthy, balanced relationship with technology</td>
+                                    <td>Reset habits and break dependencies</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Flexibility</strong></td>
+                                    <td>Adaptable to different contexts and needs</td>
+                                    <td>More rigid rules about technology use</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Focus</strong></td>
+                                    <td>Building positive habits and boundaries</td>
+                                    <td>Eliminating negative influences temporarily</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Long-term Effectiveness</strong></td>
+                                    <td>Potentially more sustainable</td>
+                                    <td>May lead to rebound effects without follow-up</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Practical Examples</h3>
+                            <p>To better understand how these approaches differ in practice, here are some examples of each:</p>
+                            
+                            <div class="approach-grid">
+                                <div class="approach-card wellness">
+                                    <div class="approach-icon"><i class="fas fa-balance-scale"></i></div>
+                                    <h4 class="approach-title">Digital Wellness Example</h4>
+                                    <p>Setting up app time limits that still allow essential usage while preventing mindless scrolling</p>
+                                </div>
+                                
+                                <div class="approach-card detox">
+                                    <div class="approach-icon"><i class="fas fa-ban"></i></div>
+                                    <h4 class="approach-title">Digital Detox Example</h4>
+                                    <p>Taking a complete weekend off from all screens and digital devices</p>
+                                </div>
+                                
+                                <div class="approach-card wellness">
+                                    <div class="approach-icon"><i class="fas fa-bell-slash"></i></div>
+                                    <h4 class="approach-title">Digital Wellness Example</h4>
+                                    <p>Configuring notification settings to only allow important alerts during work hours</p>
+                                </div>
+                                
+                                <div class="approach-card detox">
+                                    <div class="approach-icon"><i class="fas fa-power-off"></i></div>
+                                    <h4 class="approach-title">Digital Detox Example</h4>
+                                    <p>Deleting social media apps from your phone for a month-long break</p>
+                                </div>
+                                
+                                <div class="approach-card wellness">
+                                    <div class="approach-icon"><i class="fas fa-clock"></i></div>
+                                    <h4 class="approach-title">Digital Wellness Example</h4>
+                                    <p>Establishing tech-free zones in your home, like the bedroom or dining area</p>
+                                </div>
+                                
+                                <div class="approach-card detox">
+                                    <div class="approach-icon"><i class="fas fa-plane"></i></div>
+                                    <h4 class="approach-title">Digital Detox Example</h4>
+                                    <p>Going on a dedicated "digital detox retreat" where devices are prohibited</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>When to Choose Each Approach</h3>
+                            <p>Both approaches have their place in a healthy digital lifestyle. Here's when each might be most appropriate:</p>
+                            
+                            <h4 style="color: #355070; margin-top: 20px;">Consider Digital Wellness When:</h4>
+                            <ul>
+                                <li>You need to maintain digital connectivity for work or personal reasons</li>
+                                <li>You're looking for sustainable, long-term changes to your digital habits</li>
+                                <li>You want to develop a healthier relationship with technology without giving it up</li>
+                                <li>You prefer gradual, incremental improvements over dramatic changes</li>
+                                <li>You want to be more intentional about how and why you use technology</li>
+                            </ul>
+                            
+                            <h4 style="color: #B56576; margin-top: 20px;">Consider Digital Detox When:</h4>
+                            <ul>
+                                <li>You're feeling overwhelmed by digital stimulation and need a complete break</li>
+                                <li>You want to reset unhealthy habits that have become deeply ingrained</li>
+                                <li>You're on vacation or have a period where you can disconnect completely</li>
+                                <li>You're experiencing symptoms of digital burnout and need immediate relief</li>
+                                <li>You want to experience the contrast of a tech-free lifestyle to gain perspective</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="topic-section">
+                            <h3>Expert Insights</h3>
+                            <p>Digital wellness experts offer valuable perspectives on these different approaches:</p>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"Digital detox is like a crash diet—it can be useful for creating awareness and breaking patterns, but it's not a long-term solution. Digital wellness, on the other hand, is about creating a sustainable, healthy relationship with technology that fits into your life."</p>
+                                <p class="quote-author">— Dr. Mark Hurst, Digital Wellness Consultant</p>
+                            </div>
+                            
+                            <div class="expert-quote">
+                                <p class="quote-text">"The ideal approach combines elements of both: regular periods of intentional disconnection within an overall framework of mindful technology use. Think of it as intermittent digital fasting within a balanced digital diet."</p>
+                                <p class="quote-author">— Amy Blankson, Author of "The Future of Happiness"</p>
+                            </div>
+                            
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/YikbIEIXPlE?si=96nYyxLn7W4yzPlf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                
+                            <p>Understanding the differences between digital wellness and digital detox allows you to make informed choices about how to manage your relationship with technology. In many cases, a combined approach—incorporating elements of both philosophies—may provide the most comprehensive benefits for your digital well-being.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="topic1-4.html" class="page-btn">Previous</a>
+                <a href="topic1.html" class="page-number">1</a>
+                <a href="topic1-2.html" class="page-number">2</a>
+                <a href="topic1-3.html" class="page-number">3</a>
+                <a href="topic1-4.html" class="page-number">4</a>
+                <a href="topic1-5.html" class="page-number active">5</a>
+                <a href="topic1-6.html" class="page-number">6</a>
+                <a href="topic1-7.html" class="page-number">7</a>
+                <a href="topic1-8.html" class="page-number">8</a>
+                <a href="topic1-9.html" class="page-number">9</a>
+                <a href="topic1-10.html" class="page-number">10</a>
+                <a href="topic1-6.html" class="page-btn">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="team-members">
+                <div class="member">Balang, Clark</div>
+                <div class="member">Bumanlag, Sean</div>
+                <div class="member leader">Cabero, Cyrus Luigi</div>
+                <div class="member">Camaymayan, Xjhann</div>
+                <div class="member">Menidola, Nicole</div>
+                <div class="member">Reyes, Clint</div>
+                <div class="member">Roldan, Zedrick</div>
+                <div class="member">Tancio, Kurt</div>
+                <div class="member">Valiao, Joaquin</div>
+                <div class="member">Vargas, Johanne</div>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="go-top-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+</body>
+</html>
