@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro Power: Harnessing the 25/5 Method | Digital Wellness &amp; Productivity Hub</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Link to your external stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="topics.css" />
+  <style>
+
+    
+    /* PAGINATION STYLES */
+   
+    
+    /* TIMER STYLES */
+    .timer-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .timer-display {
+      font-size: 48px;
+      font-weight: bold;
+      color: #355070;
+      margin-bottom: 10px;
+    }
+    .timer-button {
+      padding: 10px 20px;
+      background-color: #6D597A;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    /* INFOGRAPHIC STYLES */
+    .infographic {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+    
+ 
+    
+
+  </style>
+</head>
+<body>
+  
+  <!-- NAVIGATION -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
+        <span class="logo-text">Digital Wellness</span>
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <span class="nav-icon"><i class="fas fa-home"></i></span>
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="resources.html" class="nav-link">
+            <span class="nav-icon"><i class="fas fa-book"></i></span>
+            Resources
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="aboutus.html" class="nav-link">
+            <span class="nav-icon"><i class="fas fa-users"></i></span>
+            About Us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="gallery.html" class="nav-link">
+            <span class="nav-icon"><i class="fas fa-images"></i></span>
+            Photo Gallery
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="contacts.html" class="nav-link">
+            <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+            Contact Us
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="container">
+    <section class="topic-container">
+      <div class="topic-header">
+        <div class="topic-number-large">2</div>
+        <h2 class="topic-title-large">Pomodoro Power: Harnessing the 25/5 Method</h2>
+      </div>
+      
+      <!-- Headline Banner -->
+      <div style="text-align: center; margin-bottom: 20px;">
+        <img src="./images/pomodoro.jpg" alt="Pomodoro Technique" class="topic-image" style="max-width: 100%; height: auto;">
+      </div>
+      
+      <div class="topic-content">
+        <!-- Overview of the Technique -->
+        <section class="topic-section">
+          <h3>Overview of the Technique</h3>
+          <p>
+            The Pomodoro Technique is a time-management method that advocates 25 minutes of deep, focused work followed by a 5-minute break. This cycle helps maintain high levels of concentration while providing necessary intervals for rest and rejuvenation. Studies suggest that these short breaks can help prevent mental fatigue and boost overall productivity.
+          </p>
+        </section>
+        
+        <!-- Popular Pomodoro Timers -->
+        <section class="topic-section">
+          <h3>Popular Pomodoro Timers</h3>
+          <p>
+            Discover tools that simplify your Pomodoro sessions:
+          </p>
+          <ul>
+            <li>
+              <strong>Focus Booster:</strong> A user-friendly app that tracks your timed sessions, offers detailed reports, and helps you manage your workday effectively. Visit Focus Booster at <a href="http://www.focusboosterapp.com" target="_blank">www.focusboosterapp.com</a>.
+            </li>
+            <li>
+              <strong>Marinara Timer:</strong> A simple, web-based timer that allows customization of Pomodoro intervals and breaks, perfect for quick adjustments. Visit Marinara Timer at <a href="http://www.marinaratimer.com" target="_blank">www.marinaratimer.com</a>.
+            </li>
+          </ul>
+        </section>
+        
+        <!-- User Guides & How-to Articles -->
+        <section class="topic-section">
+          <h3>User Guides & How-to Articles</h3>
+          <p>
+            Start your Pomodoro journey with our step-by-step guides:
+          </p>
+          <ul>
+            <li>Setting up your Pomodoro sessions for maximum efficiency.</li>
+            <li>Customizing intervals to match your unique work style.</li>
+            <li>Integrating the Pomodoro Technique into your daily routine.</li>
+          </ul>
+          <p>For more detailed articles, visit our <a href="resources.html">Resources</a> page.</p>
+        </section>
+        
+        <!-- Infographic for the Pomodoro Technique -->
+        <figure style="text-align: center;">
+          <img src="./images/pomodoro infograph.png" alt="Pomodoro Technique Infographic" class="infographic">
+          <figcaption>Visual guide to the 25/5 cycle of focused work and refreshing breaks.</figcaption>
+        </figure>
+        
+        <!-- Combined Interactive Pomodoro Timer -->
+        <section class="topic-section">
+          <h3>Interactive Pomodoro Timer</h3>
+          <div class="timer-container">
+            <div id="timerDisplay" class="timer-display">25:00</div>
+            <div id="timerStatus" style="text-align: center; margin: 10px 0; font-size: 18px; color: #B56576;"></div>
+            <div style="text-align: center; margin: 10px 0;">
+              <button id="startButton" class="timer-button" style="padding: 10px 20px; margin-right: 10px; background-color: #6D597A; color: #fff; border: none; border-radius: 5px; cursor: pointer;" onclick="startTimer()">Start Timer</button>
+              <button id="pauseButton" class="timer-button" style="padding: 10px 20px; background-color: #6D597A; color: #fff; border: none; border-radius: 5px; cursor: pointer;" onclick="pauseTimer()" disabled>Pause Timer</button>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <button class="mode-button" style="padding: 8px 16px; margin: 0 5px; background-color: #B56576; color: #fff; border: none; border-radius: 5px; cursor: pointer;" onclick="setMode('pomodoro')">Pomodoro</button>
+              <button class="mode-button" style="padding: 8px 16px; margin: 0 5px; background-color: #B56576; color: #fff; border: none; border-radius: 5px; cursor: pointer;" onclick="setMode('shortBreak')">Short Break</button>
+              <button class="mode-button" style="padding: 8px 16px; margin: 0 5px; background-color: #B56576; color: #fff; border: none; border-radius: 5px; cursor: pointer;" onclick="setMode('longBreak')">Long Break</button>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </section>
+    
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <a href="page1.html" class="page-btn">Previous</a>
+      <a href="page1.html" class="page-number">1</a>
+      <a href="page2.html" class="page-number active">2</a>
+      <a href="page3.html" class="page-number">3</a>
+      <a href="page4.html" class="page-number">4</a>
+      <a href="page5.html" class="page-number">5</a>
+      <a href="page6.html" class="page-number">6</a>
+      <a href="page7.html" class="page-number">7</a>
+      <a href="page8.html" class="page-number">8</a>
+      <a href="page9.html" class="page-number">9</a>
+      <a href="page10.html" class="page-number">10</a>
+      <a href="page3.html" class="page-btn">Next</a>
+    </div>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="team-members">
+        <div class="member">Balang, Clark</div>
+        <div class="member">Bumanlag, Sean</div>
+        <div class="member leader">Cabero, Cyrus Luigi</div>
+        <div class="member">Camaymayan, Xjhann</div>
+        <div class="member">Mendiola, Sherisse Nicolle</div>
+        <div class="member">Reyes, Clint</div>
+        <div class="member">Roldan, Zedrick</div>
+        <div class="member">Tancio, Kurt</div>
+        <div class="member">Valiao, Joaquin</div>
+        <div class="member">Vargas, Johanne</div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- GO TO TOP BUTTON -->
+  <a href="#top" class="go-top-btn">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+  
+  <!-- POMODORO TIMER SCRIPT -->
+  <script>
+    let timer;
+    let totalTime = 25 * 60; // default: 25 minutes
+
+    // Update the timer display
+    function updateDisplay() {
+      let minutes = Math.floor(totalTime / 60);
+      let seconds = totalTime % 60;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      document.getElementById('timerDisplay').textContent = minutes + ":" + seconds;
+    }
+
+    // Start the timer
+    function startTimer() {
+      if (timer) return; // Prevent multiple intervals
+      timer = setInterval(() => {
+        if (totalTime > 0) {
+          totalTime--;
+          updateDisplay();
+        } else {
+          clearInterval(timer);
+          timer = null;
+          document.getElementById('startButton').textContent = "Start Timer";
+          document.getElementById('pauseButton').disabled = true;
+          document.getElementById('timerStatus').textContent = "";
+        }
+      }, 1000);
+      document.getElementById('startButton').textContent = "Running...";
+      document.getElementById('pauseButton').disabled = false;
+      document.getElementById('timerStatus').textContent = "";
+    }
+
+    // Pause or resume the timer
+    function pauseTimer() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+        document.getElementById('pauseButton').textContent = "Resume Timer";
+        document.getElementById('timerStatus').textContent = "Paused";
+      } else {
+        startTimer();
+        document.getElementById('pauseButton').textContent = "Pause Timer";
+        document.getElementById('timerStatus').textContent = "";
+      }
+    }
+
+    // Set timer mode: pomodoro (25 min), shortBreak (5 min), or longBreak (15 min)
+    function setMode(mode) {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+      if (mode === 'pomodoro') {
+        totalTime = 25 * 60;
+      } else if (mode === 'shortBreak') {
+        totalTime = 5 * 60;
+      } else if (mode === 'longBreak') {
+        totalTime = 15 * 60;
+      }
+      updateDisplay();
+      document.getElementById('startButton').textContent = "Start Timer";
+      document.getElementById('pauseButton').textContent = "Pause Timer";
+      document.getElementById('pauseButton').disabled = true;
+      document.getElementById('timerStatus').textContent = "";
+    }
+
+    // Initialize display when the page loads
+    updateDisplay();
+  </script>
+</body>
+</html>
