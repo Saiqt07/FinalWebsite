@@ -46,7 +46,8 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    min-width: 150px; /* Prevents logo area from shrinking */}
+    transition: transform 0.3s ease;
+}
 
 .logo:hover {
     transform: scale(1.05);
@@ -95,7 +96,7 @@ body {
     color: #F8FAFC;
     text-decoration: none;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     padding: 12px 18px;
     border-radius: 6px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,6 +104,11 @@ body {
     align-items: center;
     gap: 8px;
     height: 42px;
+    line-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    min-width: 120px;
+    text-align: center;
     white-space: nowrap;
     position: relative;
     overflow: hidden;
@@ -122,8 +128,8 @@ body {
 .nav-link.active {
     background-color: rgba(181, 101, 118, 0.25);
     color: #EAAC8B;
-    font-weight: 600;
     box-shadow: 0 2px 8px rgba(181, 101, 118, 0.3);
+    transform: none !important;
 }
 
 .nav-link.active::after {
@@ -156,7 +162,6 @@ body {
     position: relative;
     transition: transform 0.3s ease;
 }
-
 /* Header Styles */
 .main-header {
     background: linear-gradient(135deg, #6D597A, #B56576);
@@ -396,23 +401,51 @@ footer {
     color: #CBD5E1;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+/* Responsive Design - Mobile First Approach */
+@media (max-width: 480px) {
+    .main-nav {
+        height: 60px;
+    }
+    
     .nav-container {
-        padding: 0 16px;
+        padding: 0 12px;
     }
     
     .nav-links {
-        gap: 2px;
+        gap: 4px;
+        padding: 0 4px;
     }
     
     .nav-link {
-        padding: 12px 14px;
-        font-size: 0.8125rem;
+        padding: 8px 10px;
+        font-size: 0.8rem;
+        height: 36px;
+    }
+    
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
     .main-nav {
         height: 65px;
     }
@@ -426,8 +459,8 @@ footer {
         -webkit-overflow-scrolling: touch;
         padding: 0 5px;
         gap: 5px;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
     
     .nav-links::-webkit-scrollbar {
@@ -460,6 +493,35 @@ footer {
     
     .wellness-image-container {
         margin: 20px 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-container {
+        padding: 0 16px;
+    }
+    
+    .nav-links {
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 12px 14px;
+        font-size: 0.8125rem;
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
