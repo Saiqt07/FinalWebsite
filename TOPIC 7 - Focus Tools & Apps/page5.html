@@ -6,55 +6,11 @@
   <title>Mindfulness & Meditation Apps for Enhanced Focus | Digital Wellness &amp; Productivity Hub</title>
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Link to your external stylesheet -->
+  <!-- Link to external stylesheets -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="topics.css" />
   <style>
-    /* General Body & Container */
-
-    .topic-container {
-      background-color: white;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin: 30px auto;
-      max-width: 900px;
-    }
-    .topic-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .topic-number-large {
-      background-color: #6D597A;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      height: 50px;
-      width: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      margin-right: 20px;
-    }
-    .topic-title-large {
-      color: #355070;
-      font-size: 28px;
-      margin: 0;
-    }
-    .topic-content {
-      margin-top: 20px;
-    }
-    .topic-section {
-      margin-bottom: 30px;
-    }
-    .topic-section h3 {
-      color: #B56576;
-      font-size: 22px;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #EAE0D5;
-      padding-bottom: 8px;
-    }
+    /* Custom styles specific to this page */
     .topic-content p {
       font-size: 16px;
       color: #333;
@@ -67,24 +23,7 @@
       font-size: 16px;
       color: #333;
     }
-    /* Video Container */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    
     /* Checklist Styling */
     .checklist {
       list-style: none;
@@ -99,6 +38,7 @@
       margin-right: 10px;
       transform: scale(1.2);
     }
+    
     /* Pagination Styles */
     .pagination {
       display: flex;
@@ -111,10 +51,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 16px;
+      padding: 12px 24px; /* Increased padding for larger buttons */
       background-color: #6D597A;
       color: white;
-      border-radius: 5px;
+      border-radius: 50px; /* Oval/Pill shape effect */
       text-decoration: none;
       transition: all 0.3s ease;
       font-weight: 500;
@@ -149,33 +89,79 @@
       background-color: #EAAC8B;
       color: white;
     }
+    
+    /* Go-to-Top Button */
+    .go-top-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #6D597A;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .go-top-btn:hover {
+      background-color: #B56576;
+    }
   </style>
 </head>
-<body>
+<body id="top">
+  
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-container">
       <div class="logo">
-        <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width:36px; height:36px;">
+        <img src="logo.jpg" alt="Digital Wellness Logo" class="logo-icon" style="width: 36px; height: 36px;">
         <span class="logo-text">Digital Wellness Hub</span>
       </div>
       <ul class="nav-links">
-        <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span> Home</a></li>
-        <li class="nav-item"><a href="resources.html" class="nav-link"><span class="nav-icon"><i class="fas fa-book"></i></span> Resources</a></li>
-        <li class="nav-item"><a href="aboutus.html" class="nav-link"><span class="nav-icon"><i class="fas fa-users"></i></span> About Us</a></li>
-        <li class="nav-item"><a href="gallery.html" class="nav-link"><span class="nav-icon"><i class="fas fa-images"></i></span> Photo Gallery</a></li>
-        <li class="nav-item"><a href="author.html" class="nav-link"><span class="nav-icon"><i class="fas fa-user-edit"></i></span> About the Author</a></li>
-        <li class="nav-item"><a href="contacts.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span> Contact Us</a></li>
+        <li class="nav-item">
+            <a href="../index.html" class="nav-link">
+                <span class="nav-icon"><i class="fas fa-home"></i></span>
+                Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../Resources/resources.html" class="nav-link">
+                <span class="nav-icon"><i class="fas fa-book"></i></span>
+                Resources
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../About us/aboutus.html" class="nav-link">
+                <span class="nav-icon"><i class="fas fa-users"></i></span>
+                About Us
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../Gallery/gallery.html" class="nav-link">
+                <span class="nav-icon"><i class="fas fa-images"></i></span>
+                Photo Gallery
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../Contacts/contacts.html" class="nav-link">
+                <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                Contact Us
+            </a>
+        </li>
       </ul>
     </div>
   </nav>
-
+  
   <!-- Main Content -->
-  <main>
+  <main class="content">
+    <div class="container">
     <section class="topic-container">
       <div class="topic-header">
         <div class="topic-number-large">5</div>
-        <h2 class="topic-title-large">Mindfulness & Meditation Apps for Enhanced Focus</h2>
+        <h2 class="topic-title-large">Mindfulness &amp; Meditation Apps for Enhanced Focus</h2>
       </div>
       <div class="topic-content">
         <!-- The Role of Mindfulness in Focus -->
@@ -185,7 +171,7 @@
             Mindfulness is far more than a buzzword—it is a scientifically proven strategy to sharpen your concentration and manage stress. By training your mind to remain present, you develop the ability to dismiss distractions, clear mental clutter, and boost your overall cognitive performance.
           </p>
           <p>
-            Regular mindfulness practice supports enhanced focus by reducing anxiety and stress levels. Research has shown that even a few minutes of meditation each day can help regulate emotions and improve, memory, attention, and decision-making skills.
+            Regular mindfulness practice supports enhanced focus by reducing anxiety and stress levels. Research has shown that even a few minutes of meditation each day can help regulate emotions and improve memory, attention, and decision-making skills.
           </p>
         </section>
         
@@ -197,15 +183,15 @@
           </p>
           <ul>
             <li>
-              <strong>Calm:</strong> Provides guided meditations, sleep stories, and calming music designed to lower stress levels and enhance focus.  
+              <strong>Calm:</strong> Provides guided meditations, sleep stories, and calming music designed to lower stress levels and enhance focus.
               <br/><img src="./images/calm screenshot.png" alt="Calm App Screenshot" style="max-width:95%; height:auto; margin-top:10px;">
             </li>
             <li>
-              <strong>Headspace:</strong> Known for its user-friendly interface and structured meditation programs, Headspace offers sessions for relaxation, focus, and even movement meditation.  
+              <strong>Headspace:</strong> Known for its user-friendly interface and structured meditation programs, Headspace offers sessions for relaxation, focus, and even movement meditation.
               <br/><img src="./images/headspace screenshot.png" alt="Headspace App Screenshot" style="max-width:95%; height:auto; margin-top:10px;">
             </li>
             <li>
-              <strong>Insight Timer:</strong> A feature-rich app boasting thousands of free guided meditations, ambient soundscapes, and talks by meditation experts.  
+              <strong>Insight Timer:</strong> A feature-rich app boasting thousands of free guided meditations, ambient soundscapes, and talks by meditation experts.
               <br/><img src="./images/insight screenshot.webp" alt="Insight Timer App Screenshot" style="max-width:95%; height:auto; margin-top:10px;">
             </li>
           </ul>
@@ -213,7 +199,7 @@
         
         <!-- User Experiences & Research -->
         <section class="topic-section">
-          <h3>User Experiences & Research</h3>
+          <h3>User Experiences &amp; Research</h3>
           <p>
             Many users and studies attest to the effectiveness of mindfulness practices for enhancing focus. Regular meditation has been linked to reduced cortisol levels, improved attention, and better emotional regulation.
           </p>
@@ -269,7 +255,7 @@
     
     <!-- Pagination -->
     <div class="pagination">
-      <a href="page4.html" class="page-btn"><i class="fas fa-chevron-left"></i> Previous</a>
+      <a href="page4.html" class="page-btn">Previous</a>
       <a href="page1.html" class="page-number">1</a>
       <a href="page2.html" class="page-number">2</a>
       <a href="page3.html" class="page-number">3</a>
@@ -280,7 +266,7 @@
       <a href="page8.html" class="page-number">8</a>
       <a href="page9.html" class="page-number">9</a>
       <a href="page10.html" class="page-number">10</a>
-      <a href="page6.html" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+      <a href="page6.html" class="page-btn">Next</a>
     </div>
   </main>
 
@@ -302,7 +288,7 @@
     </div>
   </footer>
 
-  <!-- Go to Top Button -->
+  <!-- Go-to-Top Button -->
   <a href="#top" class="go-top-btn">
     <i class="fa-solid fa-arrow-up"></i>
   </a>
