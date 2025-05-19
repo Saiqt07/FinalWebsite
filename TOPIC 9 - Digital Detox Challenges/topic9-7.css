@@ -393,24 +393,115 @@ footer {
     color: #CBD5E1;
 }
 
-@media (max-width: 1024px) {
+/* Responsive Design - Mobile First Approach */
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .main-nav {
+        height: 55px;
+    }
+    
     .nav-container {
-        padding: 0 16px;
+        padding: 0 10px;
     }
     
     .nav-links {
         gap: 2px;
+        padding: 0 2px;
     }
     
     .nav-link {
-        padding: 12px 14px;
-        font-size: 0.8125rem;
+        padding: 6px 8px;
+        font-size: 0.75rem;
+        height: 32px;
+        min-width: 80px;
+    }
+    
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+        display: none;
+    }
+    
+    .main-header {
+        padding: 2rem 0;
+    }
+    
+    .main-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .tagline {
+        font-size: 0.9rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .intro {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 20px 0 30px;
+    }
+    
+    .topic-title {
+        font-size: 16px;
+    }
+    
+    .topic-desc {
+        font-size: 13px;
+    }
+    
+    .wellness-image-container {
+        margin: 15px 0;
+    }
+    
+    .content {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .team-members {
+        gap: 10px;
+    }
+    
+    .member {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .go-top-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .go-top-btn i {
+        font-size: 16px;
     }
 }
 
-@media (max-width: 768px) {
+/* Small devices (landscape phones, 576px to 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
     .main-nav {
-        height: 65px;
+        height: 60px;
     }
     
     .nav-container {
@@ -431,10 +522,11 @@ footer {
     }
     
     .nav-link {
-        padding: 10px 14px;
-        font-size: 0.85rem;
-        height: 40px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        height: 38px;
         border-radius: 4px;
+        min-width: 100px;
     }
     
     .nav-link.active::after {
@@ -442,8 +534,12 @@ footer {
         right: 5px;
     }
 
+    .main-header {
+        padding: 3rem 0;
+    }
+
     .main-header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .logo-text {
@@ -451,11 +547,138 @@ footer {
     }
 
     .topics-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
     .wellness-image-container {
         margin: 20px 0;
+    }
+    
+    .content {
+        margin: 25px auto;
+        padding: 0 18px;
+    }
+    
+    .intro {
+        padding: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+    
+    .topic-title {
+        font-size: 16px;
+    }
+    
+    .topic-desc {
+        font-size: 13px;
+    }
+}
+
+/* Medium devices (tablets, 768px to 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .main-nav {
+        height: 65px;
+    }
+    
+    .nav-container {
+        padding: 0 16px;
+    }
+    
+    .nav-links {
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+        min-width: 110px;
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+    
+    .content {
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+    
+    .intro {
+        padding: 2rem;
+    }
+    
+    .main-header {
+        padding: 3.5rem 0;
+    }
+    
+    .main-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+}
+
+/* Large devices (desktops, 992px to 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    .content {
+        margin: 35px auto;
+    }
+    
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px to 1399.98px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .nav-container {
+        padding: 0 22px;
+        max-width: 1320px;
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
+    
+    .content {
+        max-width: 1320px;
+    }
+}
+
+/* XXL devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .nav-container {
+        padding: 0 24px;
+        max-width: 1400px;
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+    }
+    
+    .content {
+        max-width: 1400px;
     }
 }
 
