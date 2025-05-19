@@ -414,225 +414,6 @@ footer {
     font-size: 20px;
 }
 
-/* Responsive Design - Mobile First Approach */
-/* Extra small devices (phones, less than 576px) */
-@media (max-width: 575.98px) {
-    .main-nav {
-        height: 55px;
-    }
-    
-    .nav-container {
-        padding: 0 10px;
-    }
-    
-    .nav-links {
-        gap: 2px;
-        padding: 0 2px;
-    }
-    
-    .nav-link {
-        padding: 6px 8px;
-        font-size: 0.75rem;
-        height: 32px;
-        min-width: 80px;
-    }
-    
-    .logo-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 14px;
-    }
-    
-    .logo-text {
-        font-size: 1rem;
-        display: none;
-    }
-    
-    .challenge-title {
-        font-size: 1.8rem;
-    }
-    
-    .topic-title-large {
-        font-size: 22px;
-    }
-    
-    .topic-number-large {
-        height: 40px;
-        width: 40px;
-        font-size: 18px;
-    }
-    
-    .topic-container {
-        padding: 20px 15px;
-    }
-    
-    .content {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-    
-    .day-card {
-        padding: 1.5rem;
-    }
-    
-    .day-number {
-        height: 50px;
-        width: 50px;
-        font-size: 1.5rem;
-    }
-    
-    .day-title {
-        font-size: 1.5rem;
-    }
-    
-    .task-list li {
-        font-size: 0.9rem;
-    }
-    
-    .team-members {
-        gap: 10px;
-    }
-    
-    .member {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-    
-    .go-top-btn {
-        width: 40px;
-        height: 40px;
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .go-top-btn i {
-        font-size: 16px;
-    }
-}
-
-/* Small devices (landscape phones, 576px to 767.98px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .main-nav {
-        height: 60px;
-    }
-    
-    .nav-container {
-        padding: 0 15px;
-    }
-    
-    .nav-links {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 0 5px;
-        gap: 5px;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    
-    .nav-links::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .nav-link {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-        height: 38px;
-        border-radius: 4px;
-        min-width: 100px;
-    }
-    
-    .nav-link.active::after {
-        left: 5px;
-        right: 5px;
-    }
-
-    .logo-text {
-        display: none;
-    }
-    
-    .challenge-title {
-        font-size: 2.2rem;
-    }
-    
-    .content {
-        margin: 25px auto;
-        padding: 0 18px;
-    }
-    
-    .day-card {
-        padding: 1.8rem;
-    }
-}
-
-/* Medium devices (tablets, 768px to 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .main-nav {
-        height: 65px;
-    }
-    
-    .nav-container {
-        padding: 0 16px;
-    }
-    
-    .nav-links {
-        gap: 8px;
-    }
-    
-    .nav-link {
-        padding: 10px 14px;
-        font-size: 0.85rem;
-        min-width: 110px;
-    }
-    
-    .challenge-title {
-        font-size: 2.4rem;
-    }
-    
-    .content {
-        margin: 30px auto;
-        padding: 0 20px;
-    }
-}
-
-/* Large devices (desktops, 992px to 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .nav-container {
-        padding: 0 20px;
-    }
-    
-    .content {
-        margin: 35px auto;
-    }
-    
-    .challenge-title {
-        font-size: 2.6rem;
-    }
-}
-
-/* Extra large devices (large desktops, 1200px to 1399.98px) */
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-    .nav-container {
-        padding: 0 22px;
-        max-width: 1320px;
-    }
-    
-    .content {
-        max-width: 1320px;
-    }
-}
-
-/* XXL devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-    .nav-container {
-        padding: 0 24px;
-        max-width: 1400px;
-    }
-    
-    .content {
-        max-width: 1400px;
-    }
-}
-
 /* 7-Day Challenge Specific Styles */
 .challenge-hero {
     background: linear-gradient(135deg, #6D597A, #B56576);
@@ -969,5 +750,123 @@ footer {
     
     .progress-step {
         width: calc(33.333% - 1rem);
+    }
+}
+/* Responsive Design for Navigation - Mobile First Approach */
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .main-nav {
+        height: 55px;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    .nav-links {
+        gap: 2px;
+        padding: 0 2px;
+    }
+    
+    .nav-link {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+        height: 32px;
+        min-width: 80px;
+    }
+    
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+        display: none;
+    }
+}
+
+/* Small devices (landscape phones, 576px to 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .main-nav {
+        height: 60px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-links {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 5px;
+        gap: 5px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        height: 38px;
+        border-radius: 4px;
+        min-width: 100px;
+    }
+    
+    .nav-link.active::after {
+        left: 5px;
+        right: 5px;
+    }
+
+    .logo-text {
+        display: none;
+    }
+}
+
+/* Medium devices (tablets, 768px to 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .main-nav {
+        height: 65px;
+    }
+    
+    .nav-container {
+        padding: 0 16px;
+    }
+    
+    .nav-links {
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+        min-width: 110px;
+    }
+}
+
+/* Large devices (desktops, 992px to 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .nav-container {
+        padding: 0 22px;
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .nav-container {
+        padding: 0 24px;
+        max-width: 1400px;
     }
 }
