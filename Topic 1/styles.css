@@ -402,30 +402,41 @@ footer {
 }
 
 /* Responsive Design - Mobile First Approach */
-@media (max-width: 480px) {
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
     .main-nav {
-        height: 60px;
+        height: 55px;
     }
     
     .nav-container {
-        padding: 0 12px;
+        padding: 0 10px;
     }
     
     .nav-links {
-        gap: 4px;
-        padding: 0 4px;
+        gap: 2px;
+        padding: 0 2px;
     }
     
     .nav-link {
-        padding: 8px 10px;
-        font-size: 0.8rem;
-        height: 36px;
+        padding: 6px 8px;
+        font-size: 0.75rem;
+        height: 32px;
+        min-width: 80px;
     }
     
     .logo-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+        display: none;
+    }
+    
+    .main-header {
+        padding: 2rem 0;
     }
     
     .main-header h1 {
@@ -445,7 +456,8 @@ footer {
     }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+/* Small devices (landscape phones, 576px to 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
     .main-nav {
         height: 65px;
     }
@@ -496,7 +508,8 @@ footer {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Medium devices (tablets, 768px to 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
     .nav-container {
         padding: 0 16px;
     }
@@ -515,7 +528,8 @@ footer {
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1400px) {
+/* Large devices (desktops, 992px to 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
     .nav-container {
         padding: 0 20px;
     }
