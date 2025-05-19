@@ -402,41 +402,30 @@ footer {
 }
 
 /* Responsive Design - Mobile First Approach */
-/* Extra small devices (phones, less than 576px) */
-@media (max-width: 575.98px) {
+@media (max-width: 480px) {
     .main-nav {
-        height: 55px;
+        height: 60px;
     }
     
     .nav-container {
-        padding: 0 10px;
+        padding: 0 12px;
     }
     
     .nav-links {
-        gap: 2px;
-        padding: 0 2px;
+        gap: 4px;
+        padding: 0 4px;
     }
     
     .nav-link {
-        padding: 6px 8px;
-        font-size: 0.75rem;
-        height: 32px;
-        min-width: 80px;
+        padding: 8px 10px;
+        font-size: 0.8rem;
+        height: 36px;
     }
     
     .logo-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 14px;
-    }
-    
-    .logo-text {
-        font-size: 1rem;
-        display: none;
-    }
-    
-    .main-header {
-        padding: 2rem 0;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
     }
     
     .main-header h1 {
@@ -456,8 +445,7 @@ footer {
     }
 }
 
-/* Small devices (landscape phones, 576px to 767.98px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 481px) and (max-width: 768px) {
     .main-nav {
         height: 65px;
     }
@@ -508,8 +496,7 @@ footer {
     }
 }
 
-/* Medium devices (tablets, 768px to 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .nav-container {
         padding: 0 16px;
     }
@@ -528,8 +515,7 @@ footer {
     }
 }
 
-/* Large devices (desktops, 992px to 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 1025px) and (max-width: 1400px) {
     .nav-container {
         padding: 0 20px;
     }
