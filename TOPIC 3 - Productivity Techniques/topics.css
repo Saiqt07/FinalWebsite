@@ -448,89 +448,189 @@ ul.digital-impact-list li ul li {
 }
 
 /* Pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    gap: 8px;
-    flex-wrap: wrap;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-.page-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 18px;
-    background-color: #6D597A;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.95rem;
-    border: 2px solid transparent;
-}
+    .page-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        background-color: #6D597A;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
 
-.page-btn:hover {
-    background-color: #B56576;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
+    .page-btn:hover {
+        background-color: #B56576;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
 
-.page-btn.disabled {
-    background-color: #e0e0e0;
-    color: #999;
-    cursor: not-allowed;
-    pointer-events: none;
-    box-shadow: none;
-    opacity: 0.7;
-}
+    .page-btn.disabled {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        opacity: 0.7;
+    }
 
-.page-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background-color: #f5f5f5;
-    color: #355070;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-weight: 500;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
-    border: 2px solid transparent;
-}
+    .page-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        color: #355070;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-weight: 500;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
 
-.page-number.active {
-    background-color: #B56576;
-    color: white;
-    box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
-    transform: scale(1.1);
-}
+    .page-number.active {
+        background-color: #B56576;
+        color: white;
+        box-shadow: 0 3px 6px rgba(181, 101, 118, 0.3);
+        transform: scale(1.1);
+    }
 
-.page-number:hover:not(.active) {
-    background-color: #EAAC8B;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
-}
+    .page-number:hover:not(.active) {
+        background-color: #EAAC8B;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(234, 172, 139, 0.3);
+    }
 
-.page-number:active:not(.active) {
-    transform: translateY(1px);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
+    .page-number:active:not(.active) {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
 
 
 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* Extra Large Screens (≥1400px) */
+@media (min-width: 1400px) {
+    .topic-container {
+        padding: 40px;
+        max-width: 1320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .topic-title-large {
+        font-size: 32px;
+    }
+    
+    .topic-section h3 {
+        font-size: 26px;
+    }
+    
+    .strategy-grid, .symptom-grid, .approach-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .comparison-container {
+        gap: 30px;
+    }
+}
+
+/* Large Screens (≥1200px and <1400px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .topic-container {
+        padding: 35px;
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .topic-title-large {
+        font-size: 30px;
+    }
+    
+    .strategy-grid, .symptom-grid, .approach-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Medium-Large Screens (≥992px and <1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .topic-container {
+        padding: 30px;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .strategy-grid, .symptom-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium Screens (≥768px and <992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .topic-container {
+        padding: 25px;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .topic-title-large {
+        font-size: 26px;
+    }
+    
+    .topic-section h3 {
+        font-size: 20px;
+    }
+    
+    .strategy-grid, .symptom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .comparison-container {
+        gap: 15px;
+    }
+}
+
+/* Small Screens (≥576px and <768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .topic-container {
+        padding: 20px;
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
     .nav-container {
         flex-direction: column;
         gap: 15px;
@@ -550,6 +650,14 @@ ul.digital-impact-list li ul li {
         justify-content: center;
     }
     
+    .topic-title-large {
+        font-size: 24px;
+    }
+    
+    .topic-section h3 {
+        font-size: 18px;
+    }
+    
     .pagination {
         gap: 5px;
     }
@@ -567,25 +675,100 @@ ul.digital-impact-list li ul li {
     
     .comparison-container {
         flex-direction: column;
+        gap: 15px;
     }
     
     .strategy-grid, .symptom-grid, .approach-grid {
         grid-template-columns: 1fr;
     }
+    
+    .expert-quote, .tool-box, .assessment-container, .habit-tracker, .activity-box {
+        padding: 15px;
+    }
 }
 
-@media (max-width: 480px) {
+/* Extra Small Screens (<576px) */
+@media (max-width: 575px) {
+    .topic-container {
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    
     .topic-header {
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: 15px;
     }
     
     .topic-number-large {
         margin-right: 0;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
     }
     
     .topic-title-large {
-        font-size: 24px;
+        font-size: 22px;
+    }
+    
+    .topic-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .topic-section {
+        margin-bottom: 20px;
+    }
+    
+    .topic-image {
+        margin: 15px 0;
+    }
+    
+    .video-container {
+        margin: 15px 0;
+    }
+    
+    .strategy-grid, .symptom-grid, .approach-grid {
+        gap: 15px;
+        margin: 15px 0;
+    }
+    
+    .strategy-card, .symptom-card, .approach-card {
+        padding: 15px;
+    }
+    
+    .comparison-table th, .comparison-table td {
+        padding: 8px 10px;
+    }
+    
+    .expert-quote, .tool-box, .assessment-container, .habit-tracker, .activity-box {
+        padding: 12px;
+        margin: 15px 0;
+    }
+    
+    .pagination {
+        margin-top: 25px;
+        gap: 4px;
+    }
+    
+    .page-number {
+        min-width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+    
+    .page-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    ul.digital-impact-list {
+        padding-left: 20px;
+    }
+    
+    ul.digital-impact-list li {
+        margin-bottom: 10px;
     }
 }
