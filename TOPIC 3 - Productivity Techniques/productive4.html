@@ -91,6 +91,7 @@
 }
 
 
+
 .highlight {
     color: #B56576;
     font-weight: bold;
@@ -107,8 +108,20 @@
     
 }
 
-.card img {
-    max-width: 1030px;
+.card img.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-caption {
+    color: #6D597A;
+    font-style: italic;
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
 }
 
 .container {
@@ -246,10 +259,10 @@
 
     <div class="card">
         <h3 id="image-title" style="color: #6D597A;">📸 Visualize the 2-Minute Rule in Action</h3>
-        <div>
+        <div style="text-align: center; padding: 1rem;">
             <img src="images/2minute.png" alt="Example of 2-Minute Rule Task" class="responsive-img">
         </div>
-        <p class="image-caption">Examples from real life on the implementation of the 2-Minute Rule.</p>
+        <p class="image-caption" style="text-align: center;">Examples from real life on the implementation of the 2-Minute Rule.</p>
     </div>
 
     <div class="card">
